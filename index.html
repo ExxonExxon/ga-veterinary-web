@@ -81,20 +81,22 @@
     <!-- Hero Section -->
     <header class="relative min-h-[60vh] md:min-h-[85vh] -mt-[116px] flex items-center overflow-hidden">
         <!-- Background Image with Misty & Grain Effect -->
-        <div class="absolute inset-0 z-0">
-            <!-- The Image with Soft Focus -->
-            <img src="./src/assets/images/hero/koala-header.jpg" alt="Wildlife" class="w-full h-full object-cover object-[85%_20%] opacity-40 scale-100 transition-transform duration-[6s] ease-out hover:scale-[1.02] blur-[1px]">
-            
-            <!-- Film Grain Overlay -->
-            <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" 
-                 style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');">
+        <div class="absolute inset-0 z-0 flex items-center justify-end p-6 md:p-12">
+            <!-- The Image with Soft Focus - Now in a smaller, relative container -->
+            <div class="relative w-full md:w-[85%] h-[80%] md:h-[90%] rounded-[3rem] overflow-hidden">
+                <img src="./src/assets/images/hero/koala-header.jpg" alt="Wildlife" class="w-full h-full object-cover object-[85%_20%] opacity-40 scale-100 transition-transform duration-[6s] ease-out hover:scale-[1.02] blur-[1px]">
+                
+                <!-- Film Grain Overlay (moved inside the smaller container) -->
+                <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" 
+                     style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');">
+                </div>
             </div>
-
+            
             <!-- Breath of Air Overlays -->
             <!-- Left fade to keep text readable -->
-            <div class="absolute inset-0 bg-gradient-to-r from-base via-base/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-base via-base/60 to-transparent pointer-events-none"></div>
             <!-- Bottom fade to blend into the main canvas -->
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base pointer-events-none"></div>
         </div>
 
         <!-- Hero Content -->
