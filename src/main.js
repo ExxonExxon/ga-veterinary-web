@@ -50,19 +50,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
     const navContainer = document.getElementById('nav-container');
     
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            header.classList.add('bg-base/80', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
+    const updateHeader = () => {
+        const isMobile = window.innerWidth < 768;
+        if (window.scrollY > 20 || isMobile) {
+            header.classList.add('bg-base/90', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
             header.classList.remove('border-transparent');
-            navContainer.classList.remove('py-10');
+            navContainer.classList.remove('py-6', 'md:py-10');
             navContainer.classList.add('py-4');
         } else {
-            header.classList.remove('bg-base/80', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
+            header.classList.remove('bg-base/90', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
             header.classList.add('border-transparent');
-            navContainer.classList.add('py-10');
             navContainer.classList.remove('py-4');
+            navContainer.classList.add('py-6', 'md:py-10');
         }
-    });
+    };
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader, { passive: true });
+    updateHeader(); // Run on init
 
     console.log('GA Medical Veterinary site initialized with full accessibility support.');
 });
