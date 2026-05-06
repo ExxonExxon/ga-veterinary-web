@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('overflow-hidden'); // Prevent scrolling
             
             // Set focus to close button for keyboard users
-            setTimeout(() => mobileMenuClose.focus(), 100);
+            setTimeout(() => mobileMenuClose.focus(), 60);
         } else {
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.setAttribute('aria-hidden', 'true');
@@ -45,6 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
+
+    // Liquid Glass Header Scroll Effect
+    const header = document.getElementById('main-header');
+    const navContainer = document.getElementById('nav-container');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('bg-base/80', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
+            header.classList.remove('border-transparent');
+            navContainer.classList.remove('py-10');
+            navContainer.classList.add('py-4');
+        } else {
+            header.classList.remove('bg-base/80', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
+            header.classList.add('border-transparent');
+            navContainer.classList.add('py-10');
+            navContainer.classList.remove('py-4');
+        }
+    });
 
     console.log('GA Medical Veterinary site initialized with full accessibility support.');
 });

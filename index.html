@@ -15,11 +15,11 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navbar -->
-    <header>
-        <nav class="relative z-30 max-w-7xl mx-auto px-6 md:px-12 py-10 flex justify-between items-center" aria-label="Main Navigation">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+        <nav class="relative max-w-7xl mx-auto px-6 md:px-12 py-10 flex justify-between items-center transition-all duration-200" id="nav-container" aria-label="Main Navigation">
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-2 group cursor-pointer" aria-label="GA Medical Veterinary Home">
-                <div class="w-10 h-10 rounded-full border border-primary/40 flex items-center justify-center transition-all duration-700 group-hover:border-primary group-hover:rotate-12 bg-white/50 backdrop-blur-sm">
+                <div class="w-10 h-10 rounded-full border border-primary/40 flex items-center justify-center transition-all duration-[250ms] group-hover:border-primary group-hover:rotate-12 bg-white/50 backdrop-blur-sm">
                     <span class="text-primary font-semibold text-[12px] tracking-tighter">GA</span>
                 </div>
                 <div class="flex flex-col">
@@ -30,10 +30,9 @@
 
             <!-- Desktop Links -->
             <ul class="hidden md:flex items-center space-x-12">
-                <li><a href="#about" class="text-content/70 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-300">About</a></li>
-                <li><a href="#projects" class="text-content/70 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-300">Projects</a></li>
-                <li><a href="#products" class="text-content/70 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-300">Products</a></li>
-                <li><a href="#contact" class="text-content/70 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-300">Contact</a></li>
+                <li><a href="#about" class="text-content/70 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">About</a></li>
+                <li><a href="#projects" class="text-content/70 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Projects</a></li>
+                <li><a href="#services" class="text-content/70 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Products</a></li>
             </ul>
 
             <!-- Mobile Menu Toggle -->
@@ -57,7 +56,7 @@
          aria-modal="true" 
          aria-hidden="true" 
          aria-label="Mobile Menu"
-         class="fixed inset-0 z-[100] bg-base/98 backdrop-blur-xl translate-x-full transition-transform duration-500 ease-in-out">
+         class="fixed inset-0 z-[100] bg-base/98 backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out">
         <div class="flex flex-col h-full p-8">
             <div class="flex justify-end">
                 <button id="mobile-menu-close" 
@@ -69,10 +68,9 @@
                 </button>
             </div>
             <nav class="flex-grow flex flex-col justify-center items-center space-y-10" aria-label="Mobile Navigation Menu">
-                <a href="#about" class="mobile-nav-link text-2xl font-light text-content tracking-[0.2em] uppercase">About</a>
-                <a href="#projects" class="mobile-nav-link text-2xl font-light text-content tracking-[0.2em] uppercase">Projects</a>
-                <a href="#products" class="mobile-nav-link text-2xl font-light text-content tracking-[0.2em] uppercase">Products</a>
-                <a href="#contact" class="mobile-nav-link text-2xl font-light text-content tracking-[0.2em] uppercase">Contact</a>
+                <a href="#about" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">About</a>
+                <a href="#projects" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Projects</a>
+                <a href="#services" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Products</a>
             </nav>
             <div class="pt-20 text-center">
                 <p class="text-primary text-[12px] uppercase tracking-[0.3em] font-bold">GA Medical Veterinary</p>
@@ -85,7 +83,7 @@
         <!-- Background Image with Misty & Grain Effect -->
         <div class="absolute inset-0 z-0">
             <!-- The Image with Soft Focus -->
-            <img src="./src/assets/images/hero/koala-header.jpg" alt="Wildlife" class="w-full h-full object-cover object-[85%_20%] opacity-40 scale-105 transition-transform duration-[10s] ease-out hover:scale-100 blur-[2px]">
+            <img src="./src/assets/images/hero/koala-header.jpg" alt="Wildlife" class="w-full h-full object-cover object-[85%_20%] opacity-40 scale-105 transition-transform duration-[6s] ease-out hover:scale-100 blur-[2px]">
             
             <!-- Film Grain Overlay -->
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" 
@@ -100,20 +98,20 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-32 md:pt-24">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-32 md:pt-24 text-center md:text-left">
             <div class="max-w-4xl">
                 <h1 class="text-4xl sm:text-6xl md:text-[5.5rem] font-medium text-content tracking-tighter leading-[0.95] mb-10">
                     Precision engineering <br>
                     <span class="italic text-primary font-normal">for all life.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-content/80 leading-relaxed font-normal max-w-xl">
+                <p class="text-lg md:text-xl text-content/80 leading-relaxed font-normal max-w-xl mx-auto md:mx-0">
                     Designing and manufacturing custom surgical devices and instruments specifically for wildlife, marine mammals, fish, and birds.
                 </p>
                 
-                <div class="mt-14 flex items-center space-x-8">
+                <div class="mt-14 flex items-center justify-center md:justify-start space-x-8">
                     <a href="#projects" class="inline-flex items-center space-x-4 text-content font-bold tracking-[0.2em] uppercase text-[13px] group" aria-label="View our recent projects">
-                        <span class="group-hover:translate-x-1 transition-transform duration-500">View our work</span>
-                        <div class="w-16 h-[1px] bg-primary/40 group-hover:w-24 group-hover:bg-primary transition-all duration-700"></div>
+                        <span class="group-hover:translate-x-1 transition-transform duration-200">View our work</span>
+                        <div class="w-16 h-[1px] bg-primary/40 group-hover:w-24 group-hover:bg-primary transition-all duration-440ms"></div>
                     </a>
                 </div>
             </div>
@@ -122,10 +120,10 @@
 
     <main id="main-content" class="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-32">
         <!-- Helping Save Wildlife Section -->
-        <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
             
             <!-- Text Content -->
-            <div class="lg:col-span-7 space-y-12">
+            <div class="lg:col-span-7 space-y-12 text-center lg:text-left">
                 <div class="space-y-6">
                     <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
                         Helping <span class="italic text-primary">Save</span> Wildlife!
@@ -147,11 +145,13 @@
                 <!-- Call to Action -->
                 <div class="pt-10 border-t border-primary/10">
                     <h3 class="text-xl font-semibold text-content mb-6">Is there an Animal I can help with?</h3>
-                    <a href="#contact" 
-                       aria-label="Let me know about an animal that needs help"
-                       class="inline-flex items-center px-10 py-4 bg-action text-white text-[13px] uppercase tracking-[0.2em] font-bold hover:bg-content transition-all duration-500 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
-                        Let me know
-                    </a>
+                    <div class="flex justify-center lg:justify-start">
+                        <a href="mailto:info@gamedical.com.au" 
+                           aria-label="Send us an email about an animal that needs help"
+                           class="inline-flex items-center px-10 py-4 bg-action text-white text-[13px] uppercase tracking-[0.2em] font-bold hover:bg-content transition-all duration-300 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
+                            Let me know
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -159,24 +159,24 @@
             <div class="lg:col-span-5 space-y-6">
                 <!-- Large Featured Image -->
                 <div class="aspect-video rounded-3xl overflow-hidden bg-surface shadow-sm">
-                    <img src="./src/assets/images/general/kookaburra.jpg" alt="Kookaburra" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[2s]">
+                    <img src="./src/assets/images/general/kookaburra.jpg" alt="Kookaburra" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[1250ms]">
                 </div>
                 
                 <!-- Secondary Images Row -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="aspect-[3/2] rounded-2xl overflow-hidden bg-surface shadow-sm">
-                        <img src="./src/assets/images/general/turtle.jpg" alt="Sea Turtle" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[2s]">
+                        <img src="./src/assets/images/general/turtle.jpg" alt="Sea Turtle" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[1250ms]">
                     </div>
                     <div class="aspect-[3/2] rounded-2xl overflow-hidden bg-surface shadow-sm">
-                        <img src="./src/assets/images/general/koala-dental.jpg" alt="Koala Healthcare" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[2s]">
+                        <img src="./src/assets/images/general/koala-dental.jpg" alt="Koala Healthcare" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-[1250ms]">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- How I Can Help Section -->
-        <section id="services" class="mt-24 md:mt-40 space-y-12 md:space-y-20">
-            <div class="max-w-3xl">
+        <section id="services" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center md:text-left">
+            <div class="max-w-3xl mx-auto md:mx-0">
                 <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
                     How I <span class="italic text-primary font-normal">Can Help</span>
                 </h2>
@@ -187,7 +187,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Animal Specific Instruments</h3>
                     <p class="text-content/70 font-normal leading-relaxed text-[15px]">
                         Custom developed for the individual needs of specific animals and procedures.
@@ -195,7 +195,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Orthopaedic Implants & External Fixation</h3>
                     <p class="text-content/70 font-normal leading-relaxed text-[15px]">
                         Designed and manufactured for the smallest birds to other animals that may need unique fixation devices.
@@ -203,7 +203,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Custom Laryngoscopes</h3>
                     <p class="text-content/70 font-normal leading-relaxed text-[15px]">
                         These can be created to assist tubing patients with various gapes.
@@ -211,7 +211,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Custom Consumable Kits & Instruments</h3>
                     <p class="text-content/70 font-normal leading-relaxed text-[15px]">
                         I can provide options and manufacture various single use devices, such as sterile custom-made suture kits.
@@ -219,7 +219,7 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5">
+                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Assisting Veterinarians Improve Surgical Outcomes</h3>
                     <p class="text-content/70 font-normal leading-relaxed text-[15px]">
                         By sitting in or assisting in procedures and developing new instruments and apparatus.
@@ -227,7 +227,7 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="group p-10 bg-action/5 rounded-[2.5rem] border border-action/20 hover:border-action/40 transition-all duration-500 hover:shadow-2xl hover:shadow-action/5">
+                <div class="group p-10 bg-action/5 rounded-[2.5rem] border border-action/20 hover:border-action/40 transition-all duration-300 hover:shadow-2xl hover:shadow-action/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">From Sharks to Hairy Nosed Wombats</h3>
                     <p class="text-content/70 font-normal leading-relaxed text-[15px]">
                         Developing specialized instruments for avian, marine mammal, fish and unique wildlife across the globe.
@@ -237,8 +237,8 @@
         </section>
 
         <!-- My Projects & News Section -->
-        <section id="projects" class="mt-40 space-y-20">
-            <div class="max-w-3xl">
+        <section id="projects" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center lg:text-left">
+            <div class="max-w-3xl mx-auto lg:mx-0">
                 <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
                     My <span class="italic text-primary font-normal">Projects & News</span>
                 </h2>
@@ -262,7 +262,7 @@
                 <div class="lg:col-span-6 space-y-8 order-1 lg:order-2">
                     <div class="space-y-4">
                         <h3 class="text-2xl md:text-3xl font-semibold text-content tracking-tight">Hitam - Operation Sun Bear</h3>
-                        <div class="w-20 h-[1px] bg-primary/40"></div>
+                        <div class="w-20 h-[1px] bg-primary/40 mx-auto lg:mx-0"></div>
                     </div>
                     
                     <div class="space-y-6 text-content/80 font-normal leading-relaxed text-[15px]">
@@ -277,7 +277,7 @@
                         </p>
                     </div>
 
-                    <div class="pt-6">
+                    <div class="pt-6 flex justify-center lg:justify-start">
                         <a href="#" target="_blank" 
                            aria-label="Visit the Operation Sun Bear Project Website (opens in new tab)"
                            class="inline-flex items-center space-x-4 text-action font-bold tracking-[0.15em] uppercase text-[12px] group">
@@ -292,7 +292,7 @@
         </section>
 
         <!-- Donation / Sponsor Section -->
-        <section id="donate" class="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-primary/10">
+        <section id="donate" class="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-primary/10 text-center lg:text-left">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
                 <!-- Left: Title -->
                 <div class="lg:col-span-5">
@@ -309,14 +309,16 @@
                     </p>
 
                     <div class="space-y-8">
-                        <a href="https://www.paypal.com/donate?token=0YylM6cJJIRoRjNkgv97TyxBn21L6ekMZqCz_gI_CDDx3PTIw1b4tj8NyITI3XPVJ5vgYmTIzmEjHrAB" 
-                           target="_blank" 
-                           aria-label="Sponsor GA Medical Veterinary via PayPal (opens in new tab)"
-                           class="inline-flex items-center px-12 py-5 bg-action text-white text-[13px] uppercase tracking-[0.25em] font-bold hover:bg-content transition-all duration-500 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
-                            Sponsor My Work
-                        </a>
+                        <div class="flex justify-center lg:justify-start">
+                            <a href="https://www.paypal.com/donate?token=0YylM6cJJIRoRjNkgv97TyxBn21L6ekMZqCz_gI_CDDx3PTIw1b4tj8NyITI3XPVJ5vgYmTIzmEjHrAB" 
+                               target="_blank" 
+                               aria-label="Sponsor GA Medical Veterinary via PayPal (opens in new tab)"
+                               class="inline-flex items-center px-12 py-5 bg-action text-white text-[13px] uppercase tracking-[0.25em] font-bold hover:bg-content transition-all duration-300 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
+                                Sponsor My Work
+                            </a>
+                        </div>
                         
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center justify-center lg:justify-start space-x-4">
                             <div class="w-8 h-[1px] bg-primary/30"></div>
                             <p class="text-[11px] uppercase tracking-[0.3em] text-primary/80 font-bold">Secure Donation via PayPal</p>
                         </div>
@@ -325,7 +327,7 @@
             </div>
         </section>
         <!-- Sponsors Section -->
-        <section id="sponsors" class="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-primary/10">
+        <section id="sponsors" class="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-primary/10 text-center lg:text-left">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
                 <!-- Left: Thank You Text -->
                 <div class="lg:col-span-5">
@@ -338,13 +340,13 @@
                 <!-- Right: Sponsor Logos -->
                 <div class="lg:col-span-7">
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-12 items-center">
-                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-500 opacity-80 hover:opacity-100">
+                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
                             <img src="./src/assets/images/sponsors/creative-victoria.jpg" alt="Creative Victoria Logo" class="max-h-16 w-auto object-contain">
                         </div>
-                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-500 opacity-80 hover:opacity-100">
+                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
                             <img src="./src/assets/images/sponsors/gravurem.png" alt="Gravurem Heidenpeter Logo" class="max-h-12 w-auto object-contain">
                         </div>
-                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-500 opacity-80 hover:opacity-100">
+                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
                             <img src="./src/assets/images/sponsors/bank-australia.png" alt="Bank Australia Logo" class="max-h-14 w-auto object-contain">
                         </div>
                     </div>
@@ -354,19 +356,19 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface pt-20 pb-10" aria-label="Site Footer">
+    <footer class="bg-surface pt-16 md:pt-20 pb-10" aria-label="Site Footer">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12 pb-20 border-b border-primary/10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12 pb-20 border-b border-primary/10 text-center md:text-left">
                 
                 <!-- Column 1: Brand -->
                 <div class="space-y-6">
-                    <div class="flex items-center space-x-2">
+                    <div class="flex items-center justify-center md:justify-start space-x-2">
                         <div class="w-10 h-10 rounded-full border border-primary/40 flex items-center justify-center bg-white">
                             <span class="text-primary font-semibold text-[12px] tracking-tighter">GA</span>
                         </div>
                         <span class="text-content font-bold tracking-tight uppercase text-sm">GA Medical</span>
                     </div>
-                    <p class="text-content/80 font-normal text-[14px] leading-relaxed max-w-[240px]">
+                    <p class="text-content/80 font-normal text-[14px] leading-relaxed max-w-[240px] mx-auto md:mx-0">
                         Precision engineering for all life. Custom surgical solutions for the world's wildlife.
                     </p>
                 </div>
@@ -377,8 +379,7 @@
                     <ul class="space-y-4">
                         <li><a href="#about" class="text-content/70 hover:text-content text-[15px] font-semibold transition-colors">About</a></li>
                         <li><a href="#projects" class="text-content/70 hover:text-content text-[15px] font-semibold transition-colors">Projects</a></li>
-                        <li><a href="#products" class="text-content/70 hover:text-content text-[15px] font-semibold transition-colors">Products</a></li>
-                        <li><a href="#contact" class="text-content/70 hover:text-content text-[15px] font-semibold transition-colors">Contact</a></li>
+                        <li><a href="#services" class="text-content/70 hover:text-content text-[15px] font-semibold transition-colors">Products</a></li>
                     </ul>
                 </div>
 
@@ -409,14 +410,14 @@
                 <!-- Column 4: Socials -->
                 <div class="space-y-6">
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Connect</h4>
-                    <div class="flex space-x-5">
-                        <a href="http://www.instagram.com/ga_veterinary/" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-11 h-11 rounded-xl bg-white flex items-center justify-center border border-primary/10 text-content/70 hover:text-primary hover:border-primary/30 transition-all duration-300">
+                    <div class="flex items-center justify-center md:justify-start space-x-5">
+                        <a href="http://www.instagram.com/ga_veterinary/" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-11 h-11 rounded-xl bg-white flex items-center justify-center border border-primary/10 text-content/70 hover:text-primary hover:border-primary/30 transition-all duration-200">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
-                        <a href="http://www.facebook.com/GAMEDICAL.au/" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-white flex items-center justify-center border border-primary/10 text-content/70 hover:text-primary hover:border-primary/30 transition-all duration-300">
+                        <a href="http://www.facebook.com/GAMEDICAL.au/" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-white flex items-center justify-center border border-primary/10 text-content/70 hover:text-primary hover:border-primary/30 transition-all duration-200">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
                         </a>
-                        <a href="http://www.linkedin.com/in/girius-antanaitis-38651244/" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-11 h-11 rounded-xl bg-white flex items-center justify-center border border-primary/10 text-content/70 hover:text-primary hover:border-primary/30 transition-all duration-300">
+                        <a href="http://www.linkedin.com/in/girius-antanaitis-38651244/" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-11 h-11 rounded-xl bg-white flex items-center justify-center border border-primary/10 text-content/70 hover:text-primary hover:border-primary/30 transition-all duration-200">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>

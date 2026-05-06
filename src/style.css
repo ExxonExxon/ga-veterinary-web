@@ -21,3 +21,8 @@
     @apply left-6 top-6 w-auto h-auto px-6 py-3 bg-action text-white rounded-full shadow-xl font-bold uppercase tracking-widest text-xs;
   }
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
