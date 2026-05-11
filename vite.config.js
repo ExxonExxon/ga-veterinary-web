@@ -5,6 +5,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        contact: 'contact.html',
+        projects: 'projects.html',
         // Future pages can be added here, e.g.:
         // products: 'products.html',
       }
