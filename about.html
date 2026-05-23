@@ -84,10 +84,10 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative min-h-[50vh] md:min-h-[65vh] -mt-[116px] flex items-center overflow-hidden">
+    <header class="relative min-h-[45vh] md:min-h-[55vh] -mt-[116px] flex items-center overflow-hidden">
         <!-- Background Image with Misty & Grain Effect -->
         <div class="fixed inset-0 -z-10 pointer-events-none">
-            <img src="./src/assets/images/hero/koala-header.jpg" alt="Wildlife" class="w-full h-full object-cover object-[85%_20%] opacity-40 blur-[1px]">
+            <img src="./src/assets/images/hero/koala-header.jpg" id="hero-bg" alt="Wildlife" class="w-full h-full object-cover object-[85%_20%] opacity-40 blur-[1px]">
             
             <!-- Film Grain Overlay -->
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" 
@@ -99,16 +99,16 @@
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base"></div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-52 md:pt-24 text-center md:text-left">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-64 md:pt-52 text-center md:text-left">
             <div class="max-w-3xl">
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-medium text-content tracking-tight leading-tight mb-8">
+                <h1 class="text-3xl sm:text-5xl md:text-7xl font-medium text-content tracking-tight leading-tight mb-0">
                     About <span class="italic text-action font-normal">me</span>
                 </h1>
             </div>
         </div>
     </header>
 
-    <main id="main-content" class="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32">
+    <main id="main-content" class="max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-24 md:pt-16 md:pb-32">
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             
             <!-- Left Column: Text Content -->
@@ -210,38 +210,178 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Design & Development</h3>
                     <p class="text-content/90 font-normal leading-relaxed text-lg">
-                        Design and Manufacture custom made medical devices. Including adaption and modification of existing devices.
+                        Design and manufacture custom medical devices, including adaptation and modification of existing equipment.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Surgical Instruments</h3>
                     <p class="text-content/90 font-normal leading-relaxed text-lg">
-                        Develop new and animal specific surgical instruments. Including implants, dental devices, external skeletal fixtures and hand tools.
+                        Develop animal-specific instruments, including implants, dental devices, and skeletal fixtures.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Apparatus</h3>
                     <p class="text-content/90 font-normal leading-relaxed text-lg">
-                        Design and manufacture new apparatus for assisting in surgical procedures, dental procedures, animal transportation and general healthcare.
+                        Design new apparatus for surgical and dental procedures, transportation, and general healthcare.
                     </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Consumables</h3>
                     <p class="text-content/90 font-normal leading-relaxed text-lg">
-                        Create custom made consumables adapted for specific animals. Including hypodermic needles, suture kits, various single use instruments, etc…
+                        Create custom consumables for specific animals, including needles, suture kits, and single-use tools.
                     </p>
                 </div>
+            </div>
+        </section>
+
+        <!-- GA Veterinary in the News Section -->
+        <section id="news" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center md:text-left border-t border-primary/10 pt-24">
+            <div class="max-w-3xl mx-auto md:mx-0">
+                <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
+                    GA Veterinary <span class="italic text-primary font-normal">in the news</span>
+                </h2>
+                <p class="mt-6 text-lg md:text-xl text-content/80 font-normal leading-relaxed">
+                    Sharing our mission and projects with the world.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- News Article 1 -->
+                <a href="https://www.australiangeographic.com.au/topics/wildlife/2021/12/wombat-dental-gags-and-monster-whale-needles-meet-the-designer-developing-life-saving-tools-for-our-wildlife/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group block space-y-6">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                        <img src="./src/assets/images/news1.jpg" alt="Australian Geographic Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="space-y-3 px-2">
+                        <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Australian Geographic</h3>
+                        <p class="text-content/80 text-[15px] leading-relaxed">From wombat dental gags to massive whale needles, Australian Geographic explores how bespoke industrial design is saving our most vulnerable wildlife.</p>
+                        <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
+                            <span>Read Article</span>
+                            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News Article 2 -->
+                <a href="https://www.vetpracticemag.com.au/girius-antanaitis-likes-tooling-around/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group block space-y-6">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                        <img src="./src/assets/images/news2.png" alt="Vet Practice Magazine Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="space-y-3 px-2">
+                        <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Vet Practice Magazine</h3>
+                        <p class="text-content/80 text-[15px] leading-relaxed">A profile on how industrial design expertise is being applied to solve the complex anatomical challenges of exotic animal surgery.</p>
+                        <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
+                            <span>Read Article</span>
+                            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News Article 3 -->
+                <a href="https://orangutanfoundation.org.au/operation-sun-bear-borneo/" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group block space-y-6">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                        <img src="./src/assets/images/news3.jpg" alt="Operation Sun Bear Borneo" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="space-y-3 px-2">
+                        <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Orangutan Foundation</h3>
+                        <p class="text-content/80 text-[15px] leading-relaxed">A world-first surgical mission featuring a custom pelvic implant to relieve the daily pain of a rescued sun bear.</p>
+                        <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
+                            <span>Read Article</span>
+                            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News Article 4 -->
+                <a href="https://www.lrt.lt/naujienos/laisvalaikis/13/1109158/lokiukes-gyvybe-isgelbejes-girius-antanaitis-kaunieciams-papasakos-apie-tai-kaip-gydo-banginius-ir-vombatus" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group block space-y-6">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                        <img src="./src/assets/images/news4.jpg" alt="LRT News Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="space-y-3 px-2">
+                        <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">LRT</h3>
+                        <p class="text-content/80 text-[15px] leading-relaxed">Innovative work creating life-saving surgical instruments for wildlife, including specialized implants for rescued animals (Lithuanian).</p>
+                        <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
+                            <span>Read Article</span>
+                            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News Article 5 -->
+                <a href="https://www.vda.lt/lt/dizaino-inovaciju-centras/naujienos/naujienos/po-itin-sekmingos-diagnoze-dizaino-veterinarija-premjeros-paskaitos-pakartojimas-kaune" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group block space-y-6">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                        <img src="./src/assets/images/news5.jpg" alt="VDA News Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="space-y-3 px-2">
+                        <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Vilnius Academy of Arts</h3>
+                        <p class="text-content/80 text-[15px] leading-relaxed">A lecture on the powerful intersection of industrial design and wildlife veterinary medicine (Lithuanian).</p>
+                        <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
+                            <span>Read Article</span>
+                            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- News Article 6 -->
+                <a href="https://www.15min.lt/gyvenimas/naujiena/pokalbiai/australijos-lietuvio-israsti-medicininiai-instrumentai-gelbsti-gyvunus-sukure-ir-adata-banginiui-1040-1108520#_" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group block space-y-6">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                        <img src="./src/assets/images/news6.jpg" alt="15min News Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    <div class="space-y-3 px-2">
+                        <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">15min</h3>
+                        <p class="text-content/80 text-[15px] leading-relaxed">Exploring specialized inventions that enable humane treatment for wild animals across the globe (Lithuanian).</p>
+                        <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
+                            <span>Read Article</span>
+                            <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
     </main>

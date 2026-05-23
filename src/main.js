@@ -101,10 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Liquid Glass Header Scroll Effect
     const header = document.getElementById('main-header');
     const navContainer = document.getElementById('nav-container');
+    const heroBg = document.getElementById('hero-bg');
     
     const updateHeader = () => {
         const isMobile = window.innerWidth < 768;
-        if (window.scrollY > 20 || isMobile) {
+        const scrollY = window.scrollY;
+
+        if (scrollY > 20 || isMobile) {
             header.classList.add('bg-base/90', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
             header.classList.remove('border-transparent');
             navContainer.classList.remove('py-6', 'md:py-10');
@@ -114,6 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.add('border-transparent');
             navContainer.classList.remove('py-4');
             navContainer.classList.add('py-6', 'md:py-10');
+        }
+
+        // Dynamic Hero Blur Effect (Experiment)
+        if (heroBg) {
+            // Calculate blur: starts at 1px, reaches 4px after 400px of scrolling
+            const maxScroll = 400;
+            const startBlur = 1;
+            const extraBlur = 3;
+            const currentBlur = startBlur + Math.min(extraBlur, (scrollY / maxScroll) * extraBlur);
+            heroBg.style.filter = `blur(${currentBlur}px)`;
         }
     };
 
