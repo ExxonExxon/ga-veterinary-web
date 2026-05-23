@@ -26,3 +26,31 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Custom Premium Scrollbar matching Organic Minimalism design system */
+@layer base {
+  html {
+    scrollbar-color: #6D7A6D #F1F4F1; /* thumb track */
+    scrollbar-width: auto;
+  }
+
+  /* WebKit styles */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F1F4F1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6D7A6D;
+    border: 3px solid #F1F4F1;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5D6B5D;
+  }
+}

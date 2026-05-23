@@ -29,7 +29,7 @@
 
             <!-- Desktop Links -->
             <ul class="hidden md:flex items-center space-x-12">
-                <li><a href="#about" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">About</a></li>
+                <li><a href="about.html" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">About</a></li>
                 <li><a href="projects.html" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Projects</a></li>
                 <li><a href="contact.html" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Contact</a></li>
                 <li>
@@ -72,21 +72,21 @@
                 </button>
             </div>
             <nav class="flex-grow flex flex-col justify-center items-center space-y-10" aria-label="Mobile Navigation Menu">
-                <a href="#about" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">About</a>
+                <a href="about.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">About</a>
                 <a href="projects.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Projects</a>
                 <a href="contact.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Contact</a>
                 <a href="https://www.paypal.com/donate?token=by-qJDHLz1Ip6xn1vfTcEd1DAPJzvhjgsifT4_Zwx1scyuAx8eDpACNaal0tZw4SsDUKcGKgkCHSgT2g" target="_blank" rel="noopener noreferrer" class="mobile-nav-link py-3 text-2xl font-semibold text-primary tracking-[0.2em] uppercase">Donate</a>
             </nav>
             <div class="pt-20 text-center">
-                <p class="text-primary text-[12px] uppercase tracking-[0.3em] font-bold">GA Medical Veterinary</p>
+                <p class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">GA Medical Veterinary</p>
             </div>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <header class="relative min-h-[60vh] md:min-h-[85vh] -mt-[116px] flex items-center overflow-hidden">
+    <header class="relative min-h-[60vh] md:min-h-[85vh] -mt-[96px] flex items-center overflow-hidden">
         <!-- Background Image with Misty & Grain Effect -->
-        <div class="absolute inset-0 z-0">
+        <div class="fixed inset-0 -z-10 pointer-events-none">
             <!-- The Image with Soft Focus -->
             <img src="./src/assets/images/hero/koala-header.jpg" alt="Wildlife" class="w-full h-full object-cover object-[85%_20%] opacity-40 scale-100 transition-transform duration-[6s] ease-out hover:scale-[1.02] blur-[1px]">
             
@@ -103,9 +103,9 @@
         </div>
 
         <!-- Hero Content -->
-        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-40 md:pt-24 text-center md:text-left">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-52 md:pt-24 text-center md:text-left">
             <div class="max-w-4xl">
-                <h1 class="text-4xl sm:text-6xl md:text-[5.5rem] font-medium text-content tracking-tighter leading-[0.95] mb-10">
+                <h1 class="text-3xl sm:text-6xl md:text-[5.5rem] font-medium text-content tracking-tighter leading-[0.95] mb-10">
                     Precision engineering <br>
                     <span class="italic text-primary font-normal">for all life.</span>
                 </h1>
@@ -130,15 +130,15 @@
             <!-- Text Content -->
             <div class="lg:col-span-7 space-y-12 text-center lg:text-left">
                 <div class="space-y-6">
-                    <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
-                        Helping <span class="italic text-primary">Save</span> Wildlife!
+                    <h2 class="text-4xl md:text-6xl font-medium text-content tracking-tight leading-tight">
+                        Helping <span class="italic text-action">Save</span> Wildlife!
                     </h2>
-                    <p class="text-lg md:text-xl text-content/90 leading-relaxed font-normal">
+                    <p class="text-xl md:text-2xl text-content/90 leading-relaxed font-normal">
                         GA Medical Veterinary is here to help wildlife, Australian marsupials, fish, marine mammals and avian patients receive better healthcare and improved surgical outcomes.
                     </p>
                 </div>
 
-                <div class="space-y-8 text-content/80 font-normal leading-relaxed">
+                <div class="space-y-8 text-content/80 font-normal leading-relaxed text-lg md:text-xl">
                     <p>
                         It is a labour of love that drives me to help when and where I can. I do what most medical device companies find cost prohibitive, or not profitable. 
                     </p>
@@ -148,12 +148,12 @@
                 </div>
 
                 <!-- Call to Action -->
-                <div class="pt-10 border-t border-primary/10">
-                    <h3 class="text-xl font-semibold text-content mb-6">Is there an Animal I can help with?</h3>
+                <div class="pt-10 border-t border-primary/20">
+                    <h3 class="text-2xl font-semibold text-content mb-6">Is there an Animal I can help with?</h3>
                     <div class="flex justify-center lg:justify-start">
                         <a href="mailto:info@gamedical.com.au" 
                            aria-label="Send us an email about an animal that needs help"
-                           class="inline-flex items-center px-10 py-4 bg-action text-white text-[13px] uppercase tracking-[0.2em] font-bold hover:bg-content transition-all duration-300 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
+                           class="inline-flex items-center px-10 py-4 bg-action text-white text-[14px] uppercase tracking-[0.2em] font-bold hover:bg-content transition-all duration-300 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
                             Let me know
                         </a>
                     </div>
@@ -192,49 +192,49 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Animal Specific Instruments</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-[15px]">
+                    <p class="text-content/90 font-normal leading-relaxed text-lg">
                         Custom developed for the individual needs of specific animals and procedures.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Orthopaedic Implants & External Fixation</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-[15px]">
+                    <p class="text-content/90 font-normal leading-relaxed text-lg">
                         Designed and manufactured for the smallest birds to other animals that may need unique fixation devices.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Custom Laryngoscopes</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-[15px]">
+                    <p class="text-content/90 font-normal leading-relaxed text-lg">
                         These can be created to assist tubing patients with various gapes.
                     </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Custom Consumable Kits & Instruments</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-[15px]">
+                    <p class="text-content/90 font-normal leading-relaxed text-lg">
                         I can provide options and manufacture various single use devices, such as sterile custom-made suture kits.
                     </p>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="group p-10 bg-surface/50 rounded-[2.5rem] border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Assisting Veterinarians Improve Surgical Outcomes</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-[15px]">
+                    <p class="text-content/90 font-normal leading-relaxed text-lg">
                         By sitting in or assisting in procedures and developing new instruments and apparatus.
                     </p>
                 </div>
 
                 <!-- Card 6 -->
-                <div class="group p-10 bg-action/5 rounded-[2.5rem] border border-action/20 hover:border-action/40 transition-all duration-300 hover:shadow-2xl hover:shadow-action/5 text-center md:text-left">
+                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center md:text-left">
                     <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">From Sharks to Hairy Nosed Wombats</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-[15px]">
+                    <p class="text-content/90 font-normal leading-relaxed text-lg">
                         Developing specialized instruments for avian, marine mammal, fish and unique wildlife across the globe.
                     </p>
                 </div>
@@ -243,11 +243,12 @@
 
         <!-- My Projects & News Section -->
         <section id="projects" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center lg:text-left">
-            <div class="max-w-3xl mx-auto lg:mx-0">
-                <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
+            <div class="max-w-4xl mx-auto lg:mx-0">
+                <h2 class="text-4xl md:text-6xl font-medium text-content tracking-tight leading-tight">
                     My <span class="italic text-primary font-normal">Projects & News</span>
                 </h2>
-                <p class="mt-6 text-lg md:text-xl text-content/80 font-normal leading-relaxed">
+                <div class="w-24 h-[1px] bg-primary/30 my-8 lg:mx-0 mx-auto"></div>
+                <p class="mt-6 text-xl md:text-2xl text-content/80 font-normal leading-relaxed">
                     I’m pleased and very honoured to have been part of a very exciting project with a dedicated team of international veterinarians and Orangutan Foundation International Australia to help save a Sun Bear in Borneo.
                 </p>
             </div>
@@ -256,7 +257,7 @@
                 <!-- Project Image -->
                 <div class="lg:col-span-6 order-2 lg:order-1">
                     <div class="relative group">
-                        <div class="absolute -inset-4 bg-primary/5 rounded-[3rem] -z-10"></div>
+                        <div class="absolute -inset-4 bg-primary/10 rounded-[3rem] -z-10"></div>
                         <div class="aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/10">
                             <img src="./src/assets/images/projects/sun-bear.jpg" alt="Hitam the Sun Bear during Operation Sun Bear Borneo" class="w-full h-full object-cover">
                         </div>
@@ -266,11 +267,11 @@
                 <!-- Project Text -->
                 <div class="lg:col-span-6 space-y-8 order-1 lg:order-2">
                     <div class="space-y-4">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-content tracking-tight">Hitam - Operation Sun Bear</h3>
+                        <h3 class="text-3xl md:text-4xl font-semibold text-content tracking-tight">Hitam - Operation Sun Bear</h3>
                         <div class="w-20 h-[1px] bg-primary/40 mx-auto lg:mx-0"></div>
                     </div>
                     
-                    <div class="space-y-6 text-content/80 font-normal leading-relaxed text-[15px]">
+                    <div class="space-y-6 text-content/80 font-normal leading-relaxed text-lg">
                         <p>
                             The project named <span class="text-content font-semibold italic">Operation Sun Bear Borneo</span> is a sad story of a sun bear that was taken from the forest when she was young and sold as a caged “pet”.
                         </p>
@@ -285,7 +286,7 @@
                     <div class="pt-6 flex justify-center lg:justify-start">
                         <a href="#" target="_blank" 
                            aria-label="Visit the Operation Sun Bear Project Website (opens in new tab)"
-                           class="inline-flex items-center space-x-4 text-action font-bold tracking-[0.15em] uppercase text-[12px] group">
+                           class="inline-flex items-center space-x-4 text-action font-bold tracking-[0.15em] uppercase text-[13px] group">
                             <span>Project Website</span>
                             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -297,11 +298,11 @@
         </section>
 
         <!-- Donation / Sponsor Section -->
-        <section id="donate" class="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-primary/10 text-center lg:text-left">
+        <section id="donate" class="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-primary/20 text-center lg:text-left">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
                 <!-- Left: Title -->
                 <div class="lg:col-span-5">
-                    <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
+                    <h2 class="text-4xl md:text-6xl font-medium text-content tracking-tight leading-tight">
                         You Can Help Too <br>
                         <span class="italic text-primary font-normal">by Sponsoring me...</span>
                     </h2>
@@ -309,7 +310,7 @@
 
                 <!-- Right: Content & CTA -->
                 <div class="lg:col-span-7 space-y-10">
-                    <p class="text-lg md:text-xl text-content/80 font-normal leading-relaxed">
+                    <p class="text-xl md:text-2xl text-content/80 font-normal leading-relaxed">
                         Most of what I do is self-funded. So every little bit helps. Click below to sponsor my work helping develop vital medical devices for wildlife!
                     </p>
 
@@ -318,14 +319,46 @@
                             <a href="https://www.paypal.com/donate?token=0YylM6cJJIRoRjNkgv97TyxBn21L6ekMZqCz_gI_CDDx3PTIw1b4tj8NyITI3XPVJ5vgYmTIzmEjHrAB" 
                                target="_blank" 
                                aria-label="Sponsor GA Medical Veterinary via PayPal (opens in new tab)"
-                               class="inline-flex items-center px-12 py-5 bg-action text-white text-[13px] uppercase tracking-[0.25em] font-bold hover:bg-content transition-all duration-300 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
+                               class="inline-flex items-center px-12 py-5 bg-action text-white text-[14px] uppercase tracking-[0.25em] font-bold hover:bg-content transition-all duration-300 rounded-full shadow-lg shadow-action/10 hover:shadow-xl hover:-translate-y-1">
                                 Sponsor My Work
                             </a>
                         </div>
                         
                         <div class="flex items-center justify-center lg:justify-start space-x-4">
-                            <div class="w-8 h-[1px] bg-primary/30"></div>
-                            <p class="text-[11px] uppercase tracking-[0.3em] text-primary/80 font-bold">Secure Donation via PayPal</p>
+                            <div class="w-10 h-[1px] bg-primary/40"></div>
+                            <p class="text-[12px] uppercase tracking-[0.3em] text-primary font-bold">Secure Donation via PayPal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Feed Section -->
+        <section id="instagram" class="mt-24 md:mt-40 pt-16 md:pt-24 border-t border-primary/10">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
+                            Latest from <br>
+                            <span class="italic text-primary font-normal">Instagram...</span>
+                        </h2>
+                    </div>
+                    <a href="http://www.instagram.com/ga_veterinary/" target="_blank" class="text-action font-bold tracking-[0.2em] uppercase text-[12px] group flex items-center space-x-3">
+                        <span>Follow @ga_veterinary</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div id="instagram-feed" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <!-- Behold Feed will load here dynamically -->
+                    <!-- Loading State -->
+                    <div class="col-span-full py-20 flex justify-center">
+                        <div class="animate-pulse flex space-x-4">
+                            <div class="rounded-full bg-primary/10 h-3 w-3"></div>
+                            <div class="rounded-full bg-primary/10 h-3 w-3"></div>
+                            <div class="rounded-full bg-primary/10 h-3 w-3"></div>
                         </div>
                     </div>
                 </div>
@@ -345,13 +378,13 @@
                 <!-- Right: Sponsor Logos -->
                 <div class="lg:col-span-7">
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-12 items-center">
-                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
+                        <div class="flex items-center justify-center p-4 transition-all duration-300 hover:scale-105">
                             <img src="./src/assets/images/sponsors/creative-victoria.jpg" alt="Creative Victoria Logo" class="max-h-16 w-auto object-contain">
                         </div>
-                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
+                        <div class="flex items-center justify-center p-4 transition-all duration-300 hover:scale-105">
                             <img src="./src/assets/images/sponsors/gravurem.png" alt="Gravurem Heidenpeter Logo" class="max-h-12 w-auto object-contain">
                         </div>
-                        <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100">
+                        <div class="flex items-center justify-center p-4 transition-all duration-300 hover:scale-105">
                             <img src="./src/assets/images/sponsors/bank-australia.png" alt="Bank Australia Logo" class="max-h-14 w-auto object-contain">
                         </div>
                     </div>
@@ -369,7 +402,10 @@
                 <div class="space-y-6">
                     <div class="flex items-center justify-center md:justify-start space-x-3">
                         <img src="./src/assets/images/Veterinary Header Wildlife Devices.png" alt="GA Medical Veterinary Icon" class="h-10 w-auto">
-                        <span class="text-content font-bold tracking-tight uppercase text-sm">GA Medical</span>
+                        <div class="flex flex-col">
+                            <span class="text-content font-bold tracking-tight leading-none uppercase text-sm">GA Medical</span>
+                            <span class="text-action text-[11px] uppercase tracking-[0.25em] font-semibold leading-none mt-1">Veterinary</span>
+                        </div>
                     </div>
                     <p class="text-content/80 font-normal text-[14px] leading-relaxed max-w-[240px] mx-auto md:mx-0">
                         Precision engineering for all life. Custom surgical solutions for the world's wildlife.
@@ -392,7 +428,7 @@
                 <div class="space-y-6">
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Explore</h4>
                     <ul class="space-y-4">
-                        <li><a href="#about" class="text-content/90 hover:text-content text-[15px] font-semibold transition-colors">About</a></li>
+                        <li><a href="about.html" class="text-content/90 hover:text-content text-[15px] font-semibold transition-colors">About</a></li>
                         <li><a href="projects.html" class="text-content/90 hover:text-content text-[15px] font-semibold transition-colors">Projects</a></li>
                         <li><a href="contact.html" class="text-content/90 hover:text-content text-[15px] font-semibold transition-colors">Contact</a></li>
                     </ul>
@@ -447,7 +483,7 @@
             </div>
 
             <div class="pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[12px] uppercase tracking-[0.2em] text-content/80 font-bold">
-                <p>&copy; <span id="copyright-year">2024</span> GA Medical Veterinary. All rights reserved.</p>
+                <p>&copy; <span id="copyright-year">2024</span> <span class="text-primary">GA Medical Veterinary</span>. All rights reserved.</p>
                 <div class="flex items-center space-x-2">
                     <span>Designed for Precision</span>
                     <div class="w-4 h-[1px] bg-primary/30"></div>

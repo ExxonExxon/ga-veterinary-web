@@ -9,9 +9,9 @@ module.exports = {
       colors: {
         base: '#FAFBF9',
         surface: '#F1F4F1',
-        primary: '#4A544A', 
-        action: '#3D443D',  
-        content: '#1A1D1A',
+        primary: '#6D7A6D', 
+        action: '#5D6B5D',  
+        content: '#2F352F',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
