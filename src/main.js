@@ -40,54 +40,63 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => toggleMenu(false));
     });
 
-    // Handle Contact Form with reCAPTCHA v3
+    // Handle Contact Form via Web3Forms
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
-            
-            // Set Loading State
+
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `
-                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Verifying Security...
-            `;
-            
-            // Execute reCAPTCHA v3
-            if (typeof grecaptcha !== 'undefined') {
-                grecaptcha.ready(() => {
-                    grecaptcha.execute('6Lfm4OMsAAAAAIYqAqeHPeLPHPDnHVy-9zOKoq5E', {action: 'submit'}).then((token) => {
-                        // Add the token to the hidden input
-                        document.getElementById('g-recaptcha-response').value = token;
-                        
-                        console.log('reCAPTCHA Token generated:', token);
-                        
-                        // Final state
-                        submitBtn.innerHTML = 'Message Sent';
-                        submitBtn.classList.remove('bg-action');
-                        submitBtn.classList.add('bg-content');
-                        
-                        // If using a service, uncomment below:
-                        // contactForm.submit();
-                        
-                        alert('Thank you! Your inquiry has been sent for verification.');
-                    }).catch(err => {
-                        console.error('reCAPTCHA Error:', err);
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnText;
-                        alert('Verification failed. Please try again.');
-                    });
+            submitBtn.innerHTML = 'Sending...';
+            if (formStatus) formStatus.className = '';
+
+            document.getElementById('from_name').value = document.getElementById('full-name').value;
+            document.getElementById('replyto').value = document.getElementById('email').value;
+
+            const formData = new FormData(contactForm);
+            const plainFormData = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(plainFormData)
                 });
-            } else {
-                console.warn('reCAPTCHA not loaded.');
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    submitBtn.innerHTML = 'Message Sent';
+                    submitBtn.classList.remove('bg-action');
+                    submitBtn.classList.add('bg-content');
+                    contactForm.reset();
+                    if (formStatus) {
+                        formStatus.textContent = 'Thank you! Your inquiry has been sent successfully.';
+                        formStatus.className = 'text-green-600 text-sm font-medium mt-4 text-center lg:text-left';
+                    }
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                    if (formStatus) {
+                        formStatus.textContent = 'Failed to send message. Please try again.';
+                        formStatus.className = 'text-red-600 text-sm font-medium mt-4 text-center lg:text-left';
+                    }
+                }
+            } catch {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
+                if (formStatus) {
+                    formStatus.textContent = 'A network error occurred. Please try again.';
+                    formStatus.className = 'text-red-600 text-sm font-medium mt-4 text-center lg:text-left';
+                }
             }
         });
     }
@@ -123,8 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heroBg) {
             // Calculate blur: starts at 1px, reaches 4px after 400px of scrolling
             const maxScroll = 400;
-            const startBlur = 1;
-            const extraBlur = 3;
+            const startBlur = 3;
+            const extraBlur = 5;
             const currentBlur = startBlur + Math.min(extraBlur, (scrollY / maxScroll) * extraBlur);
             heroBg.style.filter = `blur(${currentBlur}px)`;
         }
@@ -134,5 +143,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateHeader, { passive: true });
     updateHeader(); // Run on init
 
-    console.log('GA Medical Veterinary site initialized with full accessibility support.');
 });

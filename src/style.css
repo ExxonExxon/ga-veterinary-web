@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-base text-content antialiased;
+    @apply bg-base text-content antialiased text-sm md:text-base;
   }
 
   /* Professional Accessibility: Visible Focus States */
