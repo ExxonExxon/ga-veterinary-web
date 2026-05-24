@@ -8,10 +8,11 @@ module.exports = {
     extend: {
       colors: {
         base: '#FAFBF9',
-        surface: '#F1F4F1',
-        primary: '#6D7A6D', 
-        action: '#5D6B5D',  
-        content: '#2F352F',
+        surface: '#F5F7F5', // Neutral soft grey-white, not minty
+        primary: '#638263', // Vibrant but sophisticated Sage
+        action: '#4A634A',  // Deep Forest accent
+        content: '#1A1C1A', // Richer contrast
+        black: '#0A0B0A',   // Deep "Charcoal Black" for the footer
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

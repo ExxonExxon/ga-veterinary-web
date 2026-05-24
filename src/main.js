@@ -134,51 +134,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateHeader, { passive: true });
     updateHeader(); // Run on init
 
-    // --- Instagram Feed Integration (Behold.so) ---
-    async function loadInstagramFeed() {
-        const container = document.getElementById('instagram-feed');
-        if (!container) return;
-
-        // PASTE YOUR BEHOLD JSON FEED URL BELOW
-        const BEHOLD_URL = ''; 
-
-        if (!BEHOLD_URL) {
-            container.innerHTML = '<div class="col-span-full py-10 text-center text-content/50 italic text-sm">Instagram feed URL not configured.</div>';
-            return;
-        }
-
-        try {
-            const response = await fetch(BEHOLD_URL);
-            if (!response.ok) throw new Error('Feed fetch failed');
-            
-            const posts = await response.json();
-
-            // Render top 6 posts with design system styling
-            container.innerHTML = posts.slice(0, 6).map(post => `
-                <a href="${post.permalink}" target="_blank" rel="noopener noreferrer" 
-                   class="group relative overflow-hidden rounded-2xl aspect-square bg-surface border border-primary/5 block">
-                    <img src="${post.mediaUrl}" 
-                         alt="${post.caption || 'Instagram Post'}" 
-                         class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
-                         loading="lazy">
-                    <div class="absolute inset-0 bg-content/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                        <div class="flex flex-col items-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                             <svg class="w-6 h-6 text-white mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                             </svg>
-                             <span class="text-white text-[10px] uppercase tracking-[0.2em] font-bold">View Post</span>
-                        </div>
-                    </div>
-                </a>
-            `).join('');
-        } catch (error) {
-            console.error('Instagram Feed Error:', error);
-            container.innerHTML = '<div class="col-span-full py-10 text-center text-content/50 italic text-sm">Unable to load feed. Check console for details.</div>';
-        }
-    }
-
-    loadInstagramFeed();
-
     console.log('GA Medical Veterinary site initialized with full accessibility support.');
 });
