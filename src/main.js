@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         const formStatus = document.getElementById('form-status');
+        const accessKeyInput = document.getElementById('access_key');
+        if (accessKeyInput) {
+            accessKeyInput.value = import.meta.env.VITE_WEB3FORMS_KEY || '';
+        }
 
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
