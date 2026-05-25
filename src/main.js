@@ -49,8 +49,24 @@ document.addEventListener('DOMContentLoaded', () => {
             accessKeyInput.value = import.meta.env.VITE_WEB3FORMS_KEY || '';
         }
 
+        const honeypot = document.getElementById('website');
+        const formLoadedAt = Date.now();
+        const MIN_SUBMIT_TIME = 4000;
+
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            if (honeypot && honeypot.value.trim() !== '') {
+                return;
+            }
+
+            if (Date.now() - formLoadedAt < MIN_SUBMIT_TIME) {
+                if (formStatus) {
+                    formStatus.textContent = 'Please wait a moment before submitting.';
+                    formStatus.className = 'text-red-600 text-sm font-medium mt-4 text-center lg:text-left';
+                }
+                return;
+            }
 
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
