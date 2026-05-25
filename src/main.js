@@ -56,6 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            if (!import.meta.env.VITE_WEB3FORMS_KEY) {
+                if (formStatus) {
+                    formStatus.textContent = 'Form configuration error. Please contact the site owner.';
+                    formStatus.className = 'text-red-600 text-sm font-medium mt-4 text-center lg:text-left';
+                }
+                return;
+            }
+
             if (honeypot && honeypot.value.trim() !== '') {
                 return;
             }
@@ -63,6 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Date.now() - formLoadedAt < MIN_SUBMIT_TIME) {
                 if (formStatus) {
                     formStatus.textContent = 'Please wait a moment before submitting.';
+                    formStatus.className = 'text-red-600 text-sm font-medium mt-4 text-center lg:text-left';
+                }
+                return;
+            }
+
+            if (!document.getElementById('full-name').value.trim() || !document.getElementById('email').value.trim() || !document.getElementById('message').value.trim()) {
+                if (formStatus) {
+                    formStatus.textContent = 'Please fill in all required fields.';
                     formStatus.className = 'text-red-600 text-sm font-medium mt-4 text-center lg:text-left';
                 }
                 return;
@@ -105,8 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
+                    const msg = result.message || 'Failed to send message. Please try again.';
                     if (formStatus) {
-                        formStatus.textContent = 'Failed to send message. Please try again.';
+                        formStatus.textContent = msg;
                         formStatus.className = 'text-red-600 text-sm font-medium mt-4 text-center lg:text-left';
                     }
                 }
