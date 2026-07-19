@@ -3,14 +3,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export default defineConfig({
+  root: 'src',
+  publicDir: path.resolve(__dirname, 'public'),
   build: {
+    outDir: path.resolve(__dirname, 'dist'),
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: 'index.html',
-        contact: 'contact.html',
-        projects: 'projects.html',
-        about: 'about.html',
-        notFound: '404.html',
+        main: path.resolve(__dirname, 'src/index.html'),
+        about: path.resolve(__dirname, 'src/about.html'),
+        contact: path.resolve(__dirname, 'src/contact.html'),
+        projects: path.resolve(__dirname, 'src/projects.html'),
+        faq: path.resolve(__dirname, 'src/faq.html'),
+        privacy: path.resolve(__dirname, 'src/privacy.html'),
+        notFound: path.resolve(__dirname, 'src/404.html'),
       }
     }
   },
