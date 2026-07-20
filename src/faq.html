@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FAFBF9">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://w.behold.so; connect-src 'self' https://api.web3forms.com https://w.behold.so; img-src 'self' data:; form-action 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.behold.so; connect-src 'self' https://api.web3forms.com https://*.behold.so; img-src 'self' data: https:; media-src https:; frame-src https://*.behold.so; worker-src https://*.behold.so; form-action 'none';">
     <title>Frequently Asked Questions | GA Medical Veterinary</title>
     <meta name="description" content="Find answers to common questions about custom veterinary surgical instruments, wildlife medical devices, and how GA Medical Veterinary can help your zoo, wildlife hospital, or veterinary practice.">
     <meta name="author" content="GA Medical Veterinary">
@@ -32,6 +32,27 @@
     <link rel="alternate" hreflang="en-AU" href="https://gamedical.com.au/faq.html">
 
     <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        opacity 0.3s ease;
+        }
+        .faq-answer.open {
+            max-height: 600px;
+            opacity: 1;
+        }
+        .faq-question:focus-visible {
+            outline: 2px solid #638263;
+            outline-offset: -2px;
+            border-radius: 0.75rem;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://w.behold.so">
@@ -195,6 +216,46 @@
             "@type": "Answer",
             "text": "You can support my work via the PayPal donation link on the website. Your contribution helps me develop vital medical devices for wildlife, marine mammals, fish, and birds that would otherwise go untreated."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What information do you need to start designing an instrument?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To get started, I need details about the animal species, the specific medical condition or surgical challenge, and any existing imaging such as X-rays, CT scans, or measurements. The more information you can provide, the more precisely I can design the instrument for your needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work remotely from X-rays or scans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. I regularly collaborate with veterinarians around the world without being physically present. I can design instruments from X-rays, CT scans, photographs, and detailed measurements sent to me remotely. Prototypes can then be shipped to you for testing and refinement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you manufacture everything in-house or outsource?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I manufacture most devices in-house for full quality control. For specialised components or larger production runs, I work with trusted Australian manufacturers. Every device is personally inspected and tested before delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you have a catalogue or standard price list?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because most of my work is custom-made for individual animals, I don't maintain a standard price list. However, I do have a catalogue of previously designed instruments and apparatus that you can request by contacting me."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a custom surgical instrument typically cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Costs vary significantly depending on complexity, materials, and development time. Simple modifications are more affordable, while complex multi-component devices are naturally more involved. I provide a quote after understanding your needs."
+          }
         }
       ]
     }
@@ -262,9 +323,9 @@
                 </button>
             </div>
             <nav class="flex-grow flex flex-col justify-center items-center space-y-10" aria-label="Mobile Navigation Menu">
-                <a href="about.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">About</a>
-                <a href="projects.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Projects</a>
-                <a href="contact.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Contact</a>
+                <a href="about.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">About</a>
+                <a href="projects.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Projects</a>
+                <a href="contact.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Contact</a>
                 <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="mobile-nav-link py-3 text-2xl font-semibold text-primary tracking-[0.2em] uppercase">Donate</a>
             </nav>
             <div class="pt-20 text-center">
@@ -274,7 +335,7 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative min-h-[45vh] md:min-h-[55vh] -mt-[116px] flex items-center overflow-hidden">
+    <header class="relative min-h-[30vh] md:min-h-[36vh] -mt-[116px] flex items-center overflow-hidden">
         <!-- Background Image with Misty & Grain Effect -->
         <div class="fixed inset-0 -z-10 pointer-events-none">
             <img src="./assets/images/hero/koala-header.jpg" fetchpriority="high" id="hero-bg" alt="Koala resting in a eucalyptus tree" class="w-full h-full object-cover object-[85%_20%] opacity-40 blur-[3px]" width="6144" height="1872">
@@ -285,142 +346,320 @@
             </div>
 
             <!-- Breath of Air Overlays -->
-            <div class="absolute inset-0 bg-gradient-to-r from-base via-base/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-base via-base/95 to-transparent/10"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-64 md:pt-52 text-center md:text-left">
             <div class="max-w-3xl">
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-medium text-content tracking-tight leading-tight mb-0">
-                    Frequently Asked <span class="italic text-action font-normal">Questions</span>
-                </h1>
+        
             </div>
         </div>
     </header>
 
-    <main id="main-content" class="max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-24 md:pt-16 md:pb-32">
-        <!-- Breadcrumb -->
-        <nav aria-label="Breadcrumb" class="mb-12">
-            <ol class="flex items-center space-x-2 text-[13px] text-content/60 font-semibold uppercase tracking-[0.15em]">
-                <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
-                <li><span class="mx-2 text-primary/30">/</span></li>
-                <li><a href="faq.html" class="hover:text-primary transition-colors" aria-current="page">FAQ</a></li>
-            </ol>
-        </nav>
+    <main id="main-content" class="max-w-7xl mx-auto px-6 md:px-12 pt-0 pb-24 md:pt-0 md:pb-32">
 
         <!-- Intro Section -->
-        <section class="max-w-3xl mb-16 md:mb-24">
-            <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
-                Everything you need to <span class="italic text-primary font-normal">know</span>
-            </h2>
-            <p class="mt-6 text-lg md:text-xl text-content/80 font-normal leading-relaxed">
-                Common questions about custom veterinary surgical instruments, how I work, and how to get in touch.
+        <section class="max-w-2xl mx-auto text-center space-y-6 mb-16 md:mb-20">
+            <h1 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
+                Frequently Asked <span class="italic text-primary font-normal">Questions</span>
+            </h1>
+            <p class="text-lg text-content/80 leading-relaxed">
+                Everything you need to know about custom veterinary instruments, how I work, and how we can help your animal patients.
             </p>
         </section>
 
-        <!-- FAQ Grid -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Q1 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">What types of custom veterinary instruments do you design?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    I design and manufacture a wide range of custom surgical instruments for wildlife, marine mammals, fish, and birds. This includes orthopaedic implants, fixation devices, laryngoscopes, surgical forceps, specialised needles, suture kits, and consumable devices. Every instrument is designed for the specific anatomy of the animal it will treat.
-                </p>
+        <!-- Category Pills -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-16 md:mb-20">
+            <a href="#about" class="inline-flex items-center px-5 py-2.5 rounded-full border border-primary/20 text-xs md:text-sm font-medium text-content/80 hover:text-primary hover:border-primary/40 hover:bg-primary/[0.04] transition-all duration-200">About My Work</a>
+            <a href="#process" class="inline-flex items-center px-5 py-2.5 rounded-full border border-primary/20 text-xs md:text-sm font-medium text-content/80 hover:text-primary hover:border-primary/40 hover:bg-primary/[0.04] transition-all duration-200">Process &amp; Collaboration</a>
+            <a href="#manufacturing" class="inline-flex items-center px-5 py-2.5 rounded-full border border-primary/20 text-xs md:text-sm font-medium text-content/80 hover:text-primary hover:border-primary/40 hover:bg-primary/[0.04] transition-all duration-200">Manufacturing &amp; Materials</a>
+            <a href="#funding" class="inline-flex items-center px-5 py-2.5 rounded-full border border-primary/20 text-xs md:text-sm font-medium text-content/80 hover:text-primary hover:border-primary/40 hover:bg-primary/[0.04] transition-all duration-200">Funding &amp; Support</a>
+        </div>
+
+        <!-- FAQ: About My Work -->
+        <section id="about" class="scroll-mt-32 mb-16 md:mb-20">
+            <div class="mb-10">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Category 01</span>
+                <div class="flex items-center gap-4 mt-2">
+                    <h2 class="text-xl md:text-2xl font-medium text-content tracking-tight shrink-0">About My Work</h2>
+                    <div class="flex-1 h-px bg-primary/15"></div>
+                </div>
             </div>
 
-            <!-- Q2 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Do you create instruments for a single animal?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    Yes, most of my projects are for a single animal or a small group. Whether it's a sun bear needing a custom pelvic implant, a dolphin requiring a fin corer, or a small bird needing micro fixation pins, I design and manufacture instruments for the individual animal in front of me.
-                </p>
+            <div class="bg-surface/60 rounded-[2rem] px-6 md:px-10 divide-y divide-primary/5">
+                <!-- Q1 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">What types of custom veterinary instruments do you design?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">I design and manufacture a wide range of custom surgical instruments for wildlife, marine mammals, fish, and birds. This includes orthopaedic implants, fixation devices, laryngoscopes, surgical forceps, specialised needles, suture kits, and consumable devices. Every instrument is designed for the specific anatomy of the animal it will treat.</div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">Do you create instruments for a single animal?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">Yes, most of my projects are for a single animal or a small group. Whether it's a sun bear needing a custom pelvic implant, a dolphin requiring a fin corer, or a small bird needing micro fixation pins, I design and manufacture instruments for the individual animal in front of me.</div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">What animals have you created instruments for?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">I have created instruments for sun bears, whales, dolphins, sharks, kangaroos, wombats, koalas, kookaburras, turtles, and many other species. I specialise in animals that most medical device companies do not service because they are not commercially viable.</div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">Do you work with zoos and wildlife hospitals internationally?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">Yes, I work with zoos, wildlife hospitals, and veterinary organisations around the world. I have collaborated with teams in Australia, Borneo, Europe, and other regions to develop custom instruments for wildlife surgery.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ: Process & Collaboration -->
+        <section id="process" class="scroll-mt-32 mb-16 md:mb-20">
+            <div class="mb-10">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Category 02</span>
+                <div class="flex items-center gap-4 mt-2">
+                    <h2 class="text-xl md:text-2xl font-medium text-content tracking-tight shrink-0">Process &amp; Collaboration</h2>
+                    <div class="flex-1 h-px bg-primary/15"></div>
+                </div>
             </div>
 
-            <!-- Q3 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">How long does it take to design and manufacture a custom surgical device?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    The timeline varies depending on complexity. Simple instruments can be designed and manufactured in a few weeks, while more complex devices like custom orthopaedic implants may take several months of design, prototyping, testing, and refinement.
-                </p>
+            <div class="bg-surface/60 rounded-[2rem] px-6 md:px-10 divide-y divide-primary/5">
+                <!-- Q5 -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">How can I request a custom surgical device?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">You can reach me via the <a href="contact.html" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">contact form</a>, email me directly at <a href="mailto:info@gamedical.com.au" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">info@gamedical.com.au</a>, or call <a href="tel:+61421238399" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">+61 (0) 421 238 399</a>. Describe the animal and the surgical challenge, and I will work with you to develop a solution.</div>
+                    </div>
+                </div>
+
+                <!-- Q6 - NEW -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">What information do you need to start designing an instrument?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">To get started, I need details about the animal species, the specific medical condition or surgical challenge, and any existing imaging such as X-rays, CT scans, or measurements. If possible, photographs of the animal or the surgical site also help. The more information you can provide, the more precisely I can design the instrument for your needs.</div>
+                    </div>
+                </div>
+
+                <!-- Q7 - NEW -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">Can you work remotely from X-rays or scans?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">Yes, absolutely. I regularly collaborate with veterinarians around the world without being physically present. I can design instruments from X-rays, CT scans, photographs, and detailed measurements sent to me remotely. Prototypes can then be shipped to you for testing and refinement. I'm accustomed to working across different time zones and will communicate with you throughout the process.</div>
+                    </div>
+                </div>
+
+                <!-- Q8 (was Q3) -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">How long does it take to design and manufacture a custom surgical device?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">The timeline varies depending on complexity. Simple instruments can be designed and manufactured in a few weeks, while more complex devices like custom orthopaedic implants may take several months of design, prototyping, testing, and refinement. I will provide a realistic estimate after understanding your requirements.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ: Manufacturing & Materials -->
+        <section id="manufacturing" class="scroll-mt-32 mb-16 md:mb-20">
+            <div class="mb-10">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Category 03</span>
+                <div class="flex items-center gap-4 mt-2">
+                    <h2 class="text-xl md:text-2xl font-medium text-content tracking-tight shrink-0">Manufacturing &amp; Materials</h2>
+                    <div class="flex-1 h-px bg-primary/15"></div>
+                </div>
             </div>
 
-            <!-- Q4 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">What animals have you created instruments for?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    I have created instruments for sun bears, whales, dolphins, sharks, kangaroos, wombats, koalas, kookaburras, turtles, and many other species. I specialise in animals that most medical device companies do not service because they are not commercially viable.
-                </p>
+            <div class="bg-surface/60 rounded-[2rem] px-6 md:px-10 divide-y divide-primary/5">
+                <!-- Q9 (was Q8) -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">What materials do you use for your instruments?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">I use medical-grade materials including surgical stainless steel, titanium (ideal for rust-proof marine animal instruments), and other biocompatible materials. Each material is chosen for the specific requirements of the procedure and the animal.</div>
+                    </div>
+                </div>
+
+                <!-- Q10 - NEW -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">Do you manufacture everything in-house or outsource?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">I manufacture most devices in-house, which gives me full control over quality, precision, and turnaround time. For specialised components or larger production runs, I partner with trusted Australian manufacturers who meet my quality standards. Every device, whether made in-house or with a partner, is personally inspected and tested before delivery.</div>
+                    </div>
+                </div>
+
+                <!-- Q11 (was Q7) -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">Do you provide on-ground support during surgeries?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">Yes, where possible I sit in on procedures, assist veterinarians, and develop new instruments on the spot. Being present during surgeries helps me understand the challenges firsthand and design better instruments.</div>
+                    </div>
+                </div>
+
+                <!-- Q12 - NEW -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">Do you have a catalogue or standard price list?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">Because most of my work is custom-made for individual animals, I don't maintain a standard price list. However, I do have a catalogue of previously designed instruments and apparatus that you can request by <a href="contact.html" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">contacting me</a>. It will give you a sense of the range of work I do and what's possible.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ: Funding & Support -->
+        <section id="funding" class="scroll-mt-32 mb-16 md:mb-20">
+            <div class="mb-10">
+                <span class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold">Category 04</span>
+                <div class="flex items-center gap-4 mt-2">
+                    <h2 class="text-xl md:text-2xl font-medium text-content tracking-tight shrink-0">Funding &amp; Support</h2>
+                    <div class="flex-1 h-px bg-primary/15"></div>
+                </div>
             </div>
 
-            <!-- Q5 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Do you work with zoos and wildlife hospitals internationally?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    Yes, I work with zoos, wildlife hospitals, and veterinary organisations around the world. I have collaborated with teams in Australia, Borneo, Europe, and other regions to develop custom instruments for wildlife surgery.
-                </p>
-            </div>
+            <div class="bg-surface/60 rounded-[2rem] px-6 md:px-10 divide-y divide-primary/5">
+                <!-- Q13 (was Q9) -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">How are your projects funded?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">Most of my projects are self-funded. I donate a lot of my time to designing and developing devices for wildlife. Many devices never pay themselves off when you account for time, development, engineering, and production costs. Donations and sponsorships help me take on more projects.</div>
+                    </div>
+                </div>
 
-            <!-- Q6 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">How can I request a custom surgical device?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    You can reach me via the contact form on this website, email me directly at <a href="mailto:info@gamedical.com.au" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">info@gamedical.com.au</a>, or call <a href="tel:+61421238399" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">+61 (0) 421 238 399</a>. Describe the animal and the surgical challenge, and I will work with you to develop a solution.
-                </p>
-            </div>
+                <!-- Q14 - NEW -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">What does a custom surgical instrument typically cost?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">Costs vary significantly depending on complexity, materials, and development time. Simple modifications or single-purpose instruments are more affordable, while complex multi-component devices requiring prototyping and testing are naturally more involved. I'm transparent about pricing and will provide a quote after understanding your needs. I encourage you to <a href="contact.html" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">get in touch</a> to discuss your specific case.</div>
+                    </div>
+                </div>
 
-            <!-- Q7 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Do you provide on-ground support during surgeries?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    Yes, where possible I sit in on procedures, assist veterinarians, and develop new instruments on the spot. Being present during surgeries helps me understand the challenges firsthand and design better instruments.
-                </p>
-            </div>
-
-            <!-- Q8 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">What materials do you use for your instruments?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    I use medical-grade materials including surgical stainless steel, titanium (for rust-proof marine animal instruments), and other biocompatible materials. Each material is chosen for the specific requirements of the procedure and the animal.
-                </p>
-            </div>
-
-            <!-- Q9 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">How are your projects funded?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    Most of my projects are self-funded. I donate a lot of my time to designing and developing devices for wildlife. Many devices never pay themselves off when you account for time, development, engineering, and production costs. Donations and sponsorships help me take on more projects.
-                </p>
-            </div>
-
-            <!-- Q10 -->
-            <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
-                <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">How can I support GA Medical Veterinary's work?</h3>
-                <p class="text-content/90 font-normal leading-relaxed text-lg">
-                    You can support my work via the <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">PayPal donation link</a> on the website. Your contribution helps me develop vital medical devices for wildlife, marine mammals, fish, and birds that would otherwise go untreated.
-                </p>
+                <!-- Q15 (was Q10) -->
+                <div class="faq-item">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left cursor-pointer group" aria-expanded="false">
+                        <span class="faq-question-text text-base md:text-lg font-semibold text-content transition-colors duration-200 group-hover:text-primary pr-4">How can I support GA Medical Veterinary's work?</span>
+                        <span class="faq-toggle shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full border border-primary/25 flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:bg-primary/[0.04]">
+                            <svg class="w-3.5 h-3.5 md:w-4 md:h-4 text-primary transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer overflow-hidden">
+                        <div class="pb-5 md:pb-6 text-content/75 leading-relaxed text-[15px] md:text-base">You can support my work via the <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-content transition-colors underline decoration-primary/30 underline-offset-4">PayPal donation link</a>. Your contribution helps me develop vital medical devices for wildlife, marine mammals, fish, and birds that would otherwise go untreated. Every bit helps, and I am grateful for your support.</div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Still Have Questions CTA -->
-        <section class="mt-24 md:mt-32 text-center border-t border-primary/10 pt-24">
-            <div class="max-w-2xl mx-auto space-y-8">
-                <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
+        <section class="text-center border-t border-primary/10 pt-16 md:pt-20">
+            <div class="max-w-xl mx-auto space-y-8">
+                <h2 class="text-2xl md:text-3xl font-medium text-content tracking-tight leading-tight">
                     Still have <span class="italic text-primary font-normal">questions?</span>
                 </h2>
-                <p class="text-lg md:text-xl text-content/80 font-normal leading-relaxed">
-                    Get in touch and I will get back to you as soon as possible.
+                <p class="text-lg text-content/80 leading-relaxed">
+                    Get in touch and I'll get back to you as soon as possible.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="inline-flex items-center px-10 py-4 bg-action text-white text-[13px] font-bold uppercase tracking-[0.15em] rounded-full hover:bg-content transition-all duration-300 shadow-lg shadow-action/10">
-                        Contact Me
-                    </a>
-                    <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-10 py-4 border border-primary/30 rounded-full text-primary hover:bg-primary hover:text-white text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300">
-                        Support My Work
-                    </a>
+                    <a href="contact.html" class="inline-flex items-center px-10 py-4 bg-action text-white text-[13px] font-bold uppercase tracking-[0.15em] rounded-full hover:bg-content transition-all duration-300 shadow-lg shadow-action/10">Contact Me</a>
+                    <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-10 py-4 border border-primary/30 rounded-full text-primary hover:bg-primary hover:text-white text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300">Support My Work</a>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = btn.parentElement;
+                var answer = item.querySelector('.faq-answer');
+                var isOpen = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !isOpen);
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.classList.remove('open');
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
+        var firstQ = document.querySelector('.faq-question');
+        if (firstQ) { firstQ.click(); }
+    </script>
 
     <!-- Footer -->
     <footer class="bg-surface pt-16 md:pt-24 pb-12 border-t border-primary/10" aria-label="Site Footer">
@@ -436,7 +675,7 @@
                             <span class="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold leading-none mt-1">Veterinary</span>
                         </div>
                     </div>
-                    <p class="text-content/70 font-normal text-[14px] leading-relaxed max-w-[240px] mx-auto md:mx-0">
+                    <p class="text-content/90 font-normal text-[14px] leading-relaxed max-w-[240px] mx-auto md:mx-0">
                         Precision engineering for all life. Custom surgical solutions for the world's wildlife.
                     </p>
                 </div>
@@ -457,9 +696,9 @@
                 <div class="space-y-6">
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Explore</h4>
                     <ul class="space-y-4">
-                        <li><a href="about.html" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">About</a></li>
-                        <li><a href="projects.html" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">Projects</a></li>
-                        <li><a href="contact.html" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">Contact</a></li>
+                        <li><a href="about.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">About</a></li>
+                        <li><a href="projects.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">Projects</a></li>
+                        <li><a href="contact.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
@@ -468,17 +707,17 @@
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Contact</h4>
                     <ul class="space-y-4">
                         <li>
-                            <a href="mailto:info@gamedical.com.au" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors block">
+                            <a href="mailto:info@gamedical.com.au" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors block">
                                 info@gamedical.com.au
                             </a>
                         </li>
                         <li class="space-y-1">
-                            <span class="text-content/60 text-[11px] uppercase tracking-wider font-bold block">Australia</span>
-                            <a href="tel:+61421238399" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">+61 (0) 421 238 399</a>
+                            <span class="text-content/90 text-[11px] uppercase tracking-wider font-bold block">Australia</span>
+                            <a href="tel:+61421238399" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">+61 (0) 421 238 399</a>
                         </li>
                         <li class="space-y-1">
-                            <span class="text-content/60 text-[11px] uppercase tracking-wider font-bold block">International</span>
-                            <a href="tel:+37064184840" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">+370 641 84 840</a>
+                            <span class="text-content/90 text-[11px] uppercase tracking-wider font-bold block">International</span>
+                            <a href="tel:+37064184840" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">+370 641 84 840</a>
                         </li>
                     </ul>
                 </div>
@@ -500,7 +739,7 @@
                 </div>
             </div>
 
-            <div class="pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[12px] uppercase tracking-[0.2em] text-content/60 font-bold">
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[12px] uppercase tracking-[0.2em] text-content/90 font-bold">
                 <p>&copy; <span id="copyright-year">2024</span> <span class="text-primary">GA Medical Veterinary</span>. All rights reserved.</p>
             </div>
         </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FAFBF9">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://w.behold.so; connect-src 'self' https://api.web3forms.com https://w.behold.so; img-src 'self' data:; form-action 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://*.behold.so; connect-src 'self' https://api.web3forms.com https://*.behold.so; img-src 'self' data: https:; media-src https:; frame-src https://*.behold.so; worker-src https://*.behold.so; form-action 'none';">
     <title>Contact GA Medical Veterinary | Custom Surgical Devices</title>
     <meta name="description" content="Contact GA Medical Veterinary for custom surgical device inquiries. Reach Girius Antanaitis via email, phone, or our contact form for wildlife veterinary instruments.">
     <meta name="author" content="GA Medical Veterinary">
@@ -173,9 +173,9 @@
                 </button>
             </div>
             <nav class="flex-grow flex flex-col justify-center items-center space-y-10" aria-label="Mobile Navigation Menu">
-                <a href="about.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">About</a>
-                <a href="projects.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Projects</a>
-                <a href="contact.html" class="mobile-nav-link py-3 text-2xl font-light text-content tracking-[0.2em] uppercase">Contact</a>
+                <a href="about.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">About</a>
+                <a href="projects.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Projects</a>
+                <a href="contact.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Contact</a>
                 <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="mobile-nav-link py-3 text-2xl font-semibold text-primary tracking-[0.2em] uppercase">Donate</a>
             </nav>
             <div class="pt-20 text-center">
@@ -185,7 +185,7 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative min-h-[45vh] md:min-h-[55vh] -mt-[116px] flex items-center overflow-hidden">
+    <header class="relative min-h-[30vh] md:min-h-[36vh] -mt-[116px] flex items-center overflow-hidden">
         <!-- Background Image with Misty & Grain Effect (Same as Index) -->
         <div class="fixed inset-0 -z-10 pointer-events-none">
             <img src="./assets/images/hero/koala-header.jpg" fetchpriority="high" id="hero-bg" alt="Koala resting in a eucalyptus tree" width="6144" height="1872" class="w-full h-full object-cover object-[85%_20%] opacity-40 blur-[3px]">
@@ -196,37 +196,27 @@
             </div>
 
             <!-- Breath of Air Overlays -->
-            <div class="absolute inset-0 bg-gradient-to-r from-base via-base/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-base via-base/95 to-transparent/10"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-64 md:pt-52 text-center md:text-left">
             <div class="max-w-3xl">
-                <h1 class="text-3xl sm:text-5xl md:text-7xl font-medium text-content tracking-tight leading-tight mb-0">
-                    Get in <span class="italic text-action font-normal">Touch</span>
-                </h1>
+        
             </div>
         </div>
     </header>
 
-    <main id="main-content" class="max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-24 md:pt-16 md:pb-32">
+    <main id="main-content" class="max-w-7xl mx-auto px-6 md:px-12 pt-0 pb-24 md:pt-0 md:pb-32">
         
-        <!-- Breadcrumb -->
-        <nav aria-label="Breadcrumb" class="mb-12">
-            <ol class="flex items-center space-x-2 text-[13px] text-content/60 font-semibold uppercase tracking-[0.15em]">
-                <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
-                <li><span class="mx-2 text-primary/30">/</span></li>
-                <li><a href="contact.html" class="hover:text-primary transition-colors" aria-current="page">Contact</a></li>
-            </ol>
-        </nav>
-        
+
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-24 items-start">
             <!-- Left: Info -->
             <div class="lg:col-span-5 space-y-16">
                 <div class="space-y-12">
                     <div class="space-y-4">
                         <h2 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Direct Inquiry</h2>
-                        <a href="mailto:info@gamedical.com.au" class="text-2xl md:text-3xl font-light text-content hover:text-primary transition-colors block">
+                        <a href="mailto:info@gamedical.com.au" class="text-2xl md:text-3xl font-normal text-content hover:text-primary transition-colors block">
                             info@gamedical.com.au
                         </a>
                     </div>
@@ -235,11 +225,11 @@
                         <h2 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Global Reach</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             <div class="space-y-1">
-                                <span class="text-content/80 text-[10px] uppercase tracking-wider font-bold block">Australia</span>
+                                <span class="text-content/90 text-[10px] uppercase tracking-wider font-bold block">Australia</span>
                                 <a href="tel:+61421238399" class="text-lg font-medium text-content hover:text-primary transition-colors">+61 (0) 421 238 399</a>
                             </div>
                             <div class="space-y-1">
-                                <span class="text-content/80 text-[10px] uppercase tracking-wider font-bold block">International</span>
+                                <span class="text-content/90 text-[10px] uppercase tracking-wider font-bold block">International</span>
                                 <a href="tel:+37064184840" class="text-lg font-medium text-content hover:text-primary transition-colors">+370 641 84 840</a>
                             </div>
                         </div>
@@ -352,7 +342,7 @@
                             <span class="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold leading-none mt-1">Veterinary</span>
                         </div>
                     </div>
-                    <p class="text-content/80 font-normal text-[15px] leading-relaxed max-w-[240px] mx-auto md:mx-0">
+                    <p class="text-content/90 font-normal text-[15px] leading-relaxed max-w-[240px] mx-auto md:mx-0">
                         Precision engineering for all life. Custom surgical solutions for the world's wildlife.
                     </p>
                 </div>
@@ -373,10 +363,10 @@
                 <div class="space-y-6">
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Explore</h4>
                     <ul class="space-y-4">
-                        <li><a href="about.html" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">About</a></li>
-                        <li><a href="projects.html" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">Projects</a></li>
-                        <li><a href="contact.html" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">Contact</a></li>
-                        <li><a href="faq.html" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">FAQ</a></li>
+                        <li><a href="about.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">About</a></li>
+                        <li><a href="projects.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">Projects</a></li>
+                        <li><a href="contact.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">Contact</a></li>
+                        <li><a href="faq.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">FAQ</a></li>
                     </ul>
                 </div>
 
@@ -385,17 +375,17 @@
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Contact</h4>
                     <ul class="space-y-4">
                         <li>
-                            <a href="mailto:info@gamedical.com.au" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors block">
+                            <a href="mailto:info@gamedical.com.au" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors block">
                                 info@gamedical.com.au
                             </a>
                         </li>
                         <li class="space-y-1">
-                            <span class="text-content/60 text-[11px] uppercase tracking-wider font-bold block">Australia</span>
-                            <a href="tel:+61421238399" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">+61 (0) 421 238 399</a>
+                            <span class="text-content/90 text-[11px] uppercase tracking-wider font-bold block">Australia</span>
+                            <a href="tel:+61421238399" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">+61 (0) 421 238 399</a>
                         </li>
                         <li class="space-y-1">
-                            <span class="text-content/60 text-[11px] uppercase tracking-wider font-bold block">International</span>
-                            <a href="tel:+37064184840" class="text-content/80 hover:text-primary text-[15px] font-semibold transition-colors">+370 641 84 840</a>
+                            <span class="text-content/90 text-[11px] uppercase tracking-wider font-bold block">International</span>
+                            <a href="tel:+37064184840" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">+370 641 84 840</a>
                         </li>
                     </ul>
                 </div>
@@ -417,7 +407,7 @@
                 </div>
             </div>
 
-            <div class="pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[12px] uppercase tracking-[0.2em] text-content/60 font-bold">
+            <div class="pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[12px] uppercase tracking-[0.2em] text-content/90 font-bold">
                 <p>&copy; <span id="copyright-year">2024</span> <span class="text-primary">GA Medical Veterinary</span>. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="privacy.html" class="hover:text-primary transition-colors">Privacy Policy</a>
