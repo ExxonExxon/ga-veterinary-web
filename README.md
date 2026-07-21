@@ -89,7 +89,7 @@ The dev server starts at **`http://localhost:5173`** by default.
 | surfaceLight | `#1E221E` | Lighter surface for input fields |
 | primary | `#A8D5A8` | Soft sage green for accents and headings |
 | primaryDim | `#94BD94` | Dimmed accent variant |
-| action | `#80A47F` | Olive green for buttons and CTAs |
+| action | `#5D7D5D` | Dark olive green for buttons and CTAs |
 | content | `#E4E7E2` | Light gray primary text |
 | contentDim | `#AFB5AC` | Secondary and dimmer text |
 | contentMuted | `#7D847A` | Muted low-contrast text |
