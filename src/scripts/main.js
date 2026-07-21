@@ -147,36 +147,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Liquid Glass Header Scroll Effect
     const header = document.getElementById('main-header');
     const navContainer = document.getElementById('nav-container');
-    const heroBg = document.getElementById('hero-bg');
     
+    let ticking = false;
     const updateHeader = () => {
         const isMobile = window.innerWidth < 768;
         const scrollY = window.scrollY;
 
         if (scrollY > 20 || isMobile) {
-            header.classList.add('bg-base/90', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
+            header.classList.add('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5');
             header.classList.remove('border-transparent');
             navContainer.classList.remove('py-6', 'md:py-10');
             navContainer.classList.add('py-4');
         } else {
-            header.classList.remove('bg-base/90', 'backdrop-blur-xl', 'border-primary/10', 'shadow-lg', 'shadow-primary/5');
+            header.classList.remove('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5');
             header.classList.add('border-transparent');
             navContainer.classList.remove('py-4');
             navContainer.classList.add('py-6', 'md:py-10');
         }
+    };
 
-        // Dynamic Hero Blur Effect (Experiment)
-        if (heroBg) {
-            // Calculate blur: starts at 1px, reaches 4px after 400px of scrolling
-            const maxScroll = 400;
-            const startBlur = 2;
-            const extraBlur = 3;
-            const currentBlur = startBlur + Math.min(extraBlur, (scrollY / maxScroll) * extraBlur);
-            heroBg.style.filter = `blur(${currentBlur}px)`;
+    const onScroll = () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateHeader();
+                ticking = false;
+            });
+            ticking = true;
         }
     };
 
-    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', updateHeader, { passive: true });
     updateHeader(); // Run on init
 

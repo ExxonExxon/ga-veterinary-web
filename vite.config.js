@@ -14,7 +14,6 @@ export default defineConfig({
         about: path.resolve(__dirname, 'src/about.html'),
         contact: path.resolve(__dirname, 'src/contact.html'),
         projects: path.resolve(__dirname, 'src/projects.html'),
-        faq: path.resolve(__dirname, 'src/faq.html'),
         privacy: path.resolve(__dirname, 'src/privacy.html'),
         notFound: path.resolve(__dirname, 'src/404.html'),
       }

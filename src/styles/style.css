@@ -4,12 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-base text-content antialiased text-base md:text-lg;
+    @apply bg-page text-content antialiased text-base md:text-lg;
   }
 
   /* Professional Accessibility: Visible Focus States */
   :focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-base;
+    @apply outline-none ring-2 ring-content/30 ring-offset-2 ring-offset-page;
   }
 
   /* Professional Accessibility: Skip to Content Link */
@@ -23,14 +23,14 @@
 }
 
 
-html {
-  scroll-behavior: smooth;
+#main-header {
+  will-change: transform;
 }
 
 /* Custom Premium Scrollbar matching Organic Minimalism design system */
 @layer base {
   html {
-    scrollbar-color: #638263 #F5F7F5; /* thumb track */
+    scrollbar-color: #2A2D2A #171A17; /* thumb track */
     scrollbar-width: auto;
   }
 
@@ -41,16 +41,16 @@ html {
   }
 
   ::-webkit-scrollbar-track {
-    background: #F5F7F5;
+    background: #171A17;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #638263;
-    border: 3px solid #F5F7F5;
+    background: #2A2D2A;
+    border: 3px solid #171A17;
     border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #4A634A;
+    background: #3D413D;
   }
 }

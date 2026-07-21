@@ -228,17 +228,17 @@
     }
     </script>
 </head>
-<body class="bg-base selection:bg-primary/20">
+<body class="bg-page selection:bg-white/20">
 
     <!-- Skip to Content Link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navbar -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
-        <nav class="relative max-w-7xl mx-auto px-6 md:px-12 py-6 md:py-10 flex justify-between items-center transition-all duration-200" id="nav-container" aria-label="Main Navigation">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-colors duration-300 border-b border-transparent">
+        <nav class="relative max-w-7xl mx-auto px-6 md:px-12 py-6 md:py-10 flex justify-between items-center transition-[padding] duration-200" id="nav-container" aria-label="Main Navigation">
             <!-- Logo -->
             <a href="index.html" class="flex items-center space-x-3 group cursor-pointer" aria-label="GA Medical Veterinary Home">
-                <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105" width="85" height="90" loading="lazy">
+                <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-[60px] w-auto transition-transform duration-300 group-hover:scale-105" width="85" height="90" loading="lazy">
                 <div class="flex flex-col">
                     <span class="text-content font-bold tracking-tight leading-none uppercase text-sm">GA Medical</span>
                     <span class="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold leading-none mt-1">Veterinary</span>
@@ -247,11 +247,11 @@
 
             <!-- Desktop Links -->
             <ul class="hidden md:flex items-center space-x-12">
-                <li><a href="about.html" aria-current="page" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200 underline decoration-primary/30 underline-offset-8">About</a></li>
+                <li><a href="about.html" aria-current="page" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200 underline decoration-content/30 underline-offset-8">About</a></li>
                 <li><a href="projects.html" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Projects</a></li>
                 <li><a href="contact.html" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Contact</a></li>
                 <li>
-                    <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 border border-primary/30 rounded-full text-primary hover:bg-primary hover:text-white text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300">
+                    <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 border border-white/30 rounded-full text-primary hover:bg-white/20 text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300">
                         Donate
                     </a>
                 </li>
@@ -263,7 +263,7 @@
                         aria-label="Open Menu" 
                         aria-expanded="false" 
                         aria-controls="mobile-menu"
-                        class="text-content p-3 bg-white/50 backdrop-blur-sm rounded-full border border-primary/20 hover:border-primary/40 transition-colors">
+                        class="text-content p-3 bg-surfaceLight/50 backdrop-blur-sm rounded-full border border-white/20 hover:border-white/40 transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 8h16M4 16h16"></path>
                     </svg>
@@ -278,12 +278,12 @@
          aria-modal="true" 
          aria-hidden="true" 
          aria-label="Mobile Menu"
-         class="fixed inset-0 z-[100] bg-base/98 backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out">
+         class="fixed inset-0 z-[100] bg-page/98 backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out">
         <div class="flex flex-col h-full p-8">
             <div class="flex justify-end">
                 <button id="mobile-menu-close" 
                         aria-label="Close Menu"
-                        class="text-content p-3 bg-white/50 rounded-full border border-primary/20">
+                        class="text-content p-3 bg-surfaceLight/50 rounded-full border border-white/20">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -293,7 +293,7 @@
                 <a href="about.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">About</a>
                 <a href="projects.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Projects</a>
                 <a href="contact.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Contact</a>
-                <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="mobile-nav-link py-3 text-2xl font-semibold text-primary tracking-[0.2em] uppercase">Donate</a>
+                <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="mobile-nav-link py-3 text-2xl font-semibold text-primary tracking-[0.2em] uppercase">Donate</a>
             </nav>
             <div class="pt-20 text-center">
                 <p class="text-primary text-[12px] uppercase tracking-[0.3em] font-bold">GA Medical Veterinary</p>
@@ -305,7 +305,7 @@
     <header class="relative min-h-[30vh] md:min-h-[36vh] -mt-[116px] flex items-center overflow-hidden">
         <!-- Background Image with Misty & Grain Effect -->
         <div class="fixed inset-0 -z-10 pointer-events-none">
-            <img src="./assets/images/hero/koala-header.jpg" fetchpriority="high" id="hero-bg" alt="Koala resting in a eucalyptus tree" class="w-full h-full object-cover object-[85%_20%] opacity-40 blur-[3px]" width="6144" height="1872">
+            <img src="./assets/images/hero/koala-header.jpg" fetchpriority="high" id="hero-bg" alt="Koala resting in a eucalyptus tree" class="w-full h-full object-cover object-[85%_20%] opacity-25 blur-[3px]" width="6144" height="1872">
             
             <!-- Film Grain Overlay -->
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" 
@@ -313,7 +313,7 @@
             </div>
 
             <!-- Breath of Air Overlays -->
-            <div class="absolute inset-0 bg-gradient-to-r from-base via-base/95 to-transparent/10"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-page via-page/95 to-transparent/10"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base"></div>
         </div>
 
@@ -330,24 +330,24 @@
             <!-- Left Column: Text Content -->
             <div class="lg:col-span-9 space-y-12">
                 <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
-                    GA Medical Veterinary <span class="italic text-primary font-normal">& Me</span>
+                    GA Medical Veterinary <span class="text-primary font-normal">& Me</span>
                 </h2>
                 
                 <div class="space-y-8 text-content/90 font-normal leading-relaxed text-lg md:text-xl">
                     <p>
-                        GA Medical Veterinary is my self run micro business that develops custom veterinary instruments. I specialise in producing medical devices for wildlife, marine mammals, fish and avian patients. So generally, for animals that most companies do not and will not service because they are not commercially viable. I donate a lot of my time designing and developing devices for wildlife. Truth is, many of the devices I make never pay themselves off — the time, development, engineering and production costs add up. 
+                        GA Medical Veterinary is my self-run micro business that develops custom veterinary instruments. I specialise in producing medical devices for wildlife, marine mammals, fish and avian patients. So generally, for animals that most companies do not and will not service because they are not commercially viable. I donate a lot of my time designing and developing devices for wildlife. Truth is, many of the devices I make never pay themselves off. The time, development, engineering and production costs add up. 
                     </p>
                     <p>
-                        I do this because no one else does. I love the challenge — and seeing my devices help animals that would otherwise suffer, be half treated, or worst of all, die. 
+                        I do this because no one else does. I love the challenge, and seeing my devices help animals that would otherwise suffer, be half treated, or worst of all, die. 
                     </p>
-                    <p class="font-medium text-content">
+                    <p class="font-normal text-content">
                         So I am here to help.
                     </p>
                     <p>
-                        My journey started when I approached a few zoos in Australia and asked if there were any surgical instruments I could help develop. The answer? “Yes — there’s a heap of things that can be made to help wildlife.” What I learned is that most wildlife and avian patients are treated with instruments designed for humans. They don’t fit, they don’t work properly, and at best they do a fraction of what they should. Only a handful of devices are actually made for animals — and those are for pets and livestock that generate profits: cats, dogs, horses.
+                        My journey started when I approached a few zoos in Australia and asked if there were any surgical instruments I could help develop. The answer? “Yes, there’s a heap of things that can be made to help wildlife.” What I learned is that most wildlife and avian patients are treated with instruments designed for humans. They don’t fit, they don’t work properly, and at best they do a fraction of what they should. Only a handful of devices are actually made for animals, and those are for pets and livestock that generate profits: cats, dogs, horses.
                     </p>
                     <p>
-                        There are many design projects I am working on at the moment for wildlife healthcare. When I finish one, often two more pop up. Having the financial resources would allow me to make them all. But these projects are usually self funded developments. So I do what I can, and try to never to say no to a project that I know will help an animal.
+                        There are many design projects I am working on at the moment for wildlife healthcare. When I finish one, often two more pop up. Having the financial resources would allow me to make them all. But these projects are usually self-funded developments. So I do what I can, and try never to say no to a project that I know will help an animal.
                     </p>
                 </div>
             </div>
@@ -355,8 +355,7 @@
             <!-- Right Column: Image and Name (Even Smaller) -->
             <div class="lg:col-span-3 space-y-10 max-w-sm lg:ml-auto">
                 <div class="relative group">
-                    <div class="absolute -inset-4 bg-primary/5 rounded-[3rem] -z-10 group-hover:bg-primary/10 transition-colors duration-500"></div>
-                    <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/5">
+                    <div class="aspect-[4/5] rounded-[2.5rem] overflow-hidden">
                         <img src="./assets/images/girius-portrait.jpg" alt="Girius Antanaitis" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 hover:scale-105" width="495" height="698" loading="lazy">
                     </div>
                 </div>
@@ -364,28 +363,28 @@
                 <div class="space-y-6">
                     <div class="text-center lg:text-left space-y-2">
                         <p class="text-2xl font-medium text-content tracking-tight">Girius Antanaitis</p>
-                        <div class="w-12 h-[1px] bg-primary/30 mx-auto lg:mx-0"></div>
+                        <div class="w-12 h-[1px] bg-white/10 mx-auto lg:mx-0"></div>
                     </div>
 
                     <ul class="space-y-4 pt-2">
                         <li class="flex items-start space-x-3 text-content/90 text-[15px] font-normal leading-relaxed">
-                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></div>
+                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></div>
                             <span>Founder & Managing Director of GA Medical Pty Ltd</span>
                         </li>
                         <li class="flex items-start space-x-3 text-content/90 text-[15px] font-normal leading-relaxed">
-                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></div>
+                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></div>
                             <span>Industrial Designer</span>
                         </li>
                         <li class="flex items-start space-x-3 text-content/90 text-[15px] font-normal leading-relaxed">
-                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></div>
+                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></div>
                             <span>Passion for helping Wildlife & Avian patients</span>
                         </li>
                         <li class="flex items-start space-x-3 text-content/90 text-[15px] font-normal leading-relaxed">
-                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></div>
+                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></div>
                             <span>Woodworker/Metalworker</span>
                         </li>
                         <li class="flex items-start space-x-3 text-content/90 text-[15px] font-normal leading-relaxed">
-                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0"></div>
+                            <div class="mt-2 w-1.5 h-1.5 rounded-full bg-white/20 shrink-0"></div>
                             <a href="projects.html" class="hover:text-primary transition-colors underline decoration-primary/20 underline-offset-4">Project Website</a>
                         </li>
                     </ul>
@@ -393,19 +392,19 @@
                     <!-- Social and Donate Buttons -->
                     <div class="space-y-8 pt-6">
                         <div class="flex items-center justify-center lg:justify-start space-x-4">
-                            <a href="https://www.instagram.com/ga_veterinary/" target="_blank" aria-label="Girius Instagram" class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-primary/10 text-content/90 hover:text-primary hover:border-primary/30 transition-all">
+                            <a href="https://www.instagram.com/ga_veterinary/" target="_blank" aria-label="Girius Instagram" class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:text-primary hover:border-white/30 transition-all">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                             </a>
-                            <a href="https://www.facebook.com/GAMEDICAL.au/" target="_blank" aria-label="Girius Facebook" class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-primary/10 text-content/90 hover:text-primary hover:border-primary/30 transition-all">
+                            <a href="https://www.facebook.com/GAMEDICAL.au/" target="_blank" aria-label="Girius Facebook" class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:text-primary hover:border-white/30 transition-all">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
                             </a>
-                            <a href="https://au.linkedin.com/in/giriusantanaitis" target="_blank" aria-label="Girius LinkedIn" class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-primary/10 text-content/90 hover:text-primary hover:border-primary/30 transition-all">
+                            <a href="https://au.linkedin.com/in/giriusantanaitis" target="_blank" aria-label="Girius LinkedIn" class="w-10 h-10 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:text-primary hover:border-white/30 transition-all">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
                         </div>
                         
                         <div class="flex justify-center lg:justify-start">
-                            <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="w-full lg:w-auto inline-flex items-center justify-center px-10 py-4 bg-action text-white text-[13px] font-bold uppercase tracking-[0.15em] rounded-full hover:bg-content transition-all duration-300 shadow-lg shadow-action/10">
+                            <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="w-full lg:w-auto inline-flex items-center justify-center px-10 py-4 bg-action text-white text-[14px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-300 rounded-full hover:-translate-y-1">
                                 Donate
                             </a>
                         </div>
@@ -416,45 +415,45 @@
         </section>
 
         <!-- What I Do Section -->
-        <section id="what-i-do" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center md:text-left border-t border-primary/10 pt-24">
+        <section id="what-i-do" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center md:text-left border-t border-white/10 pt-24">
             <div class="max-w-3xl mx-auto md:mx-0">
                 <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
-                    What I <span class="italic text-primary font-normal">Do</span>
+                    What I <span class="text-primary font-normal">Do</span>
                 </h2>
                 <p class="mt-6 text-lg md:text-xl text-content/90 font-normal leading-relaxed">
-                    Custom-engineered surgical solutions for the unique needs of wildlife and marine species.
+                    Custom-engineered surgical instruments for wildlife and marine species.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
-                    <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Design & Development</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-lg">
+                <div class="group p-10 bg-surface rounded-[2.5rem] border border-white/20 hover:border-white/40 transition-all duration-300 text-center">
+                    <h3 class="text-xl font-medium text-content group-hover:text-primary mb-4 tracking-tight leading-snug transition-colors duration-300">Design & Development</h3>
+                    <p class="text-contentDim group-hover:text-content font-normal leading-relaxed text-lg transition-colors duration-300">
                         Design and manufacture custom medical devices, including adaptation and modification of existing equipment.
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
-                    <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Surgical Instruments</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-lg">
+                <div class="group p-10 bg-surface rounded-[2.5rem] border border-white/20 hover:border-white/40 transition-all duration-300 text-center">
+                    <h3 class="text-xl font-medium text-content group-hover:text-primary mb-4 tracking-tight leading-snug transition-colors duration-300">Surgical Instruments</h3>
+                    <p class="text-contentDim group-hover:text-content font-normal leading-relaxed text-lg transition-colors duration-300">
                         Develop animal-specific instruments, including implants, dental devices, and skeletal fixtures.
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
-                    <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Apparatus</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-lg">
+                <div class="group p-10 bg-surface rounded-[2.5rem] border border-white/20 hover:border-white/40 transition-all duration-300 text-center">
+                    <h3 class="text-xl font-medium text-content group-hover:text-primary mb-4 tracking-tight leading-snug transition-colors duration-300">Apparatus</h3>
+                    <p class="text-contentDim group-hover:text-content font-normal leading-relaxed text-lg transition-colors duration-300">
                         Design new apparatus for surgical and dental procedures, transportation, and general healthcare.
                     </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="group p-10 bg-surface/80 backdrop-blur-sm rounded-[2.5rem] border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 text-center">
-                    <h3 class="text-xl font-semibold text-content mb-4 tracking-tight leading-snug">Consumables</h3>
-                    <p class="text-content/90 font-normal leading-relaxed text-lg">
+                <div class="group p-10 bg-surface rounded-[2.5rem] border border-white/20 hover:border-white/40 transition-all duration-300 text-center">
+                    <h3 class="text-xl font-medium text-content group-hover:text-primary mb-4 tracking-tight leading-snug transition-colors duration-300">Consumables</h3>
+                    <p class="text-contentDim group-hover:text-content font-normal leading-relaxed text-lg transition-colors duration-300">
                         Create custom consumables for specific animals, including needles, suture kits, and single-use tools.
                     </p>
                 </div>
@@ -462,14 +461,12 @@
         </section>
 
         <!-- GA Veterinary in the News Section -->
-        <section id="news" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center md:text-left border-t border-primary/10 pt-24">
+        <section id="news" class="mt-24 md:mt-40 space-y-12 md:space-y-20 text-center md:text-left border-t border-white/10 pt-24">
             <div class="max-w-3xl mx-auto md:mx-0">
                 <h2 class="text-3xl md:text-5xl font-medium text-content tracking-tight leading-tight">
-                    GA Veterinary <span class="italic text-primary font-normal">in the news</span>
+                    GA Veterinary <span class="text-primary font-normal">in the news</span>
                 </h2>
                 <p class="mt-6 text-lg md:text-xl text-content/90 font-normal leading-relaxed">
-                    Sharing our mission and projects with the world.
-                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -478,13 +475,13 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="group block space-y-6">
-                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
                         <img src="./assets/images/news1.jpg" alt="Australian Geographic Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" width="900" height="600" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-page/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                     <div class="space-y-3 px-2">
                         <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Australian Geographic</h3>
-                        <p class="text-content/90 text-[15px] leading-relaxed">From wombat dental gags to massive whale needles, Australian Geographic explores how bespoke industrial design is saving our most vulnerable wildlife.</p>
+                        <p class="text-contentDim group-hover:text-content text-[15px] leading-relaxed transition-colors duration-500">From wombat dental gags to massive whale needles, Australian Geographic explores how bespoke industrial design is saving our most vulnerable wildlife.</p>
                         <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
                             <span>Read Article</span>
                             <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -499,13 +496,13 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="group block space-y-6">
-                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
                         <img src="./assets/images/news2.png" alt="Vet Practice Magazine Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" width="600" height="900" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-page/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                     <div class="space-y-3 px-2">
                         <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Vet Practice Magazine</h3>
-                        <p class="text-content/90 text-[15px] leading-relaxed">A profile on how industrial design expertise is being applied to solve the complex anatomical challenges of exotic animal surgery.</p>
+                        <p class="text-contentDim group-hover:text-content text-[15px] leading-relaxed transition-colors duration-500">A profile on how industrial design helps solve the anatomical challenges of exotic animal surgery.</p>
                         <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
                             <span>Read Article</span>
                             <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -520,13 +517,13 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="group block space-y-6">
-                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
                         <img src="./assets/images/news3.jpg" alt="Operation Sun Bear Borneo" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" width="640" height="459" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-page/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                     <div class="space-y-3 px-2">
                         <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Orangutan Foundation</h3>
-                        <p class="text-content/90 text-[15px] leading-relaxed">A world-first surgical mission featuring a custom pelvic implant to relieve the daily pain of a rescued sun bear.</p>
+                        <p class="text-contentDim group-hover:text-content text-[15px] leading-relaxed transition-colors duration-500">A world-first surgical mission featuring a custom pelvic implant to relieve the daily pain of a rescued sun bear.</p>
                         <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
                             <span>Read Article</span>
                             <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -541,13 +538,13 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="group block space-y-6">
-                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
                         <img src="./assets/images/news4.jpg" alt="LRT News Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" width="1113" height="836" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-page/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                     <div class="space-y-3 px-2">
                         <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">LRT</h3>
-                        <p class="text-content/90 text-[15px] leading-relaxed">Innovative work creating life-saving surgical instruments for wildlife, including specialized implants for rescued animals (Lithuanian).</p>
+                        <p class="text-contentDim group-hover:text-content text-[15px] leading-relaxed transition-colors duration-500">Life-saving surgical instruments for wildlife, including specialized implants for rescued animals (Lithuanian).</p>
                         <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
                             <span>Read Article</span>
                             <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -562,13 +559,13 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="group block space-y-6">
-                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
                         <img src="./assets/images/news5.jpg" alt="VDA News Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" width="4000" height="2685" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-page/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                     <div class="space-y-3 px-2">
                         <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">Vilnius Academy of Arts</h3>
-                        <p class="text-content/90 text-[15px] leading-relaxed">A lecture on the powerful intersection of industrial design and wildlife veterinary medicine (Lithuanian).</p>
+                        <p class="text-contentDim group-hover:text-content text-[15px] leading-relaxed transition-colors duration-500">A lecture on industrial design and wildlife veterinary medicine (Lithuanian).</p>
                         <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
                             <span>Read Article</span>
                             <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -583,13 +580,13 @@
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="group block space-y-6">
-                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-primary/5 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10 group-hover:-translate-y-2">
+                    <div class="relative aspect-video bg-surface rounded-[2.5rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
                         <img src="./assets/images/news6.jpg" alt="15min News Article" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" width="1620" height="1080" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-base/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-page/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                     <div class="space-y-3 px-2">
                         <h3 class="text-xl font-medium text-content group-hover:text-primary transition-colors">15min</h3>
-                        <p class="text-content/90 text-[15px] leading-relaxed">Exploring specialized inventions that enable humane treatment for wild animals across the globe (Lithuanian).</p>
+                        <p class="text-contentDim group-hover:text-content text-[15px] leading-relaxed transition-colors duration-500">Exploring inventions that bring humane treatment to wild animals worldwide (Lithuanian).</p>
                         <div class="inline-flex items-center space-x-2 text-action font-bold uppercase tracking-widest text-[11px] pt-2">
                             <span>Read Article</span>
                             <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -603,20 +600,20 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-surface pt-16 md:pt-24 pb-12 border-t border-primary/10" aria-label="Site Footer">
+    <footer class="bg-surface pt-16 md:pt-24 pb-12 border-t border-white/10" aria-label="Site Footer">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-12 pb-20 border-b border-primary/5 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-16 md:gap-12 pb-20 border-b border-white/5 text-center md:text-left">
                 
                 <!-- Column 1: Brand -->
                 <div class="space-y-6">
                     <div class="flex items-center justify-center md:justify-start space-x-3">
-                        <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-10 w-auto" width="85" height="90" loading="lazy">
+                        <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-[60px] w-auto" width="85" height="90" loading="lazy">
                         <div class="flex flex-col">
                             <span class="text-content font-bold tracking-tight leading-none uppercase text-sm">GA Medical</span>
                             <span class="text-primary text-[11px] uppercase tracking-[0.25em] font-semibold leading-none mt-1">Veterinary</span>
                         </div>
                     </div>
-                    <p class="text-content/90 font-normal text-[14px] leading-relaxed max-w-[240px] mx-auto md:mx-0">
+                    <p class="text-content/90 font-normal text-[14px] leading-relaxed max-w-[200px] mx-auto md:mx-0">
                         Precision engineering for all life. Custom surgical solutions for the world's wildlife.
                     </p>
                 </div>
@@ -626,7 +623,7 @@
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Support</h4>
                     <ul class="space-y-4">
                         <li>
-                            <a href="https://www.paypal.com/donate?token=v8vHzDYJpIfj76Zy0IXLr6y1xL7_28bpU9gJOEtBTx1E45RLobYWv0hKZDxfwxML0FCdxDEdzx6p4_uh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-2 bg-primary/10 text-primary text-[13px] font-bold uppercase tracking-widest rounded-full hover:bg-primary hover:text-white transition-all duration-300">
+                            <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">
                                 Donate
                             </a>
                         </li>
@@ -640,7 +637,6 @@
                         <li><a href="about.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">About</a></li>
                         <li><a href="projects.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">Projects</a></li>
                         <li><a href="contact.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">Contact</a></li>
-                        <li><a href="faq.html" class="text-content/90 hover:text-primary text-[15px] font-semibold transition-colors">FAQ</a></li>
                     </ul>
                 </div>
 
@@ -668,13 +664,13 @@
                 <div class="space-y-6">
                     <h4 class="text-primary text-[11px] uppercase tracking-[0.2em] font-bold">Connect</h4>
                     <div class="flex items-center justify-center md:justify-start space-x-5">
-                        <a href="https://www.instagram.com/ga_veterinary/" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-primary/10 text-content/90 hover:text-primary hover:border-primary/30 transition-all duration-200">
+                        <a href="https://www.instagram.com/ga_veterinary/" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:text-primary hover:border-white/30 transition-all duration-200">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                         </a>
-                        <a href="https://www.facebook.com/GAMEDICAL.au/" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-primary/10 text-content/90 hover:text-primary hover:border-primary/30 transition-all duration-200">
+                        <a href="https://www.facebook.com/GAMEDICAL.au/" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:text-primary hover:border-white/30 transition-all duration-200">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
                         </a>
-                        <a href="https://au.linkedin.com/in/giriusantanaitis" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-primary/10 text-content/90 hover:text-primary hover:border-primary/30 transition-all duration-200">
+                        <a href="https://au.linkedin.com/in/giriusantanaitis" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:text-primary hover:border-white/30 transition-all duration-200">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
                     </div>
