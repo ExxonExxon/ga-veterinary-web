@@ -1,18 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./*.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.html",
+    "./src/scripts/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        base: '#FAFBF9',
-        surface: '#F5F7F5', // Neutral soft grey-white, not minty
-        primary: '#638263', // Vibrant but sophisticated Sage
-        action: '#4A634A',  // Deep Forest accent
-        content: '#1A1C1A', // Richer contrast
-        black: '#0A0B0A',   // Deep "Charcoal Black" for the footer
+        page: '#0D0F0D',
+        surface: '#171A17',
+        surfaceLight: '#1E221E',
+        primary: '#A8D5A8',
+        primaryDim: '#94BD94',
+        action: '#80A47F',
+        content: '#E4E7E2',
+        contentDim: '#AFB5AC',
+        contentMuted: '#7D847A',
+        black: '#050605',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

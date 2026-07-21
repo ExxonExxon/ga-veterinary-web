@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-page text-content antialiased text-base md:text-lg;
+  }
+
+  /* Professional Accessibility: Visible Focus States */
+  :focus-visible {
+    @apply outline-none ring-2 ring-content/30 ring-offset-2 ring-offset-page;
+  }
+
+  /* Professional Accessibility: Skip to Content Link */
+  .skip-link {
+    @apply absolute left-[-9999px] top-auto w-1 h-1 overflow-hidden z-[999];
+  }
+
+  .skip-link:focus {
+    @apply left-6 top-6 w-auto h-auto px-6 py-3 bg-action text-white rounded-full shadow-xl font-bold uppercase tracking-widest text-xs;
+  }
+}
+
+
+#main-header {
+  will-change: transform;
+}
+
+/* Custom Premium Scrollbar matching Organic Minimalism design system */
+@layer base {
+  html {
+    scrollbar-color: #2A2D2A #171A17; /* thumb track */
+    scrollbar-width: auto;
+  }
+
+  /* WebKit styles */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #171A17;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A2D2A;
+    border: 3px solid #171A17;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3D413D;
+  }
+}
