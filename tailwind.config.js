@@ -12,7 +12,7 @@ module.exports = {
         surfaceLight: '#1E221E',
         primary: '#A8D5A8',
         primaryDim: '#94BD94',
-        action: '#80A47F',
+        action: '#5D7D5D',
         content: '#E4E7E2',
         contentDim: '#AFB5AC',
         contentMuted: '#7D847A',

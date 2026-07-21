@@ -11,18 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isOpen) {
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.setAttribute('aria-hidden', 'false');
+            mobileMenu.removeAttribute('inert');
             mobileMenuOpen.setAttribute('aria-expanded', 'true');
-            document.body.classList.add('overflow-hidden'); // Prevent scrolling
+            document.body.classList.add('overflow-hidden');
             
-            // Set focus to close button for keyboard users
             setTimeout(() => mobileMenuClose.focus(), 60);
         } else {
             mobileMenu.classList.add('translate-x-full');
             mobileMenu.setAttribute('aria-hidden', 'true');
+            mobileMenu.setAttribute('inert', '');
             mobileMenuOpen.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('overflow-hidden');
             
-            // Return focus to trigger button
             mobileMenuOpen.focus();
         }
     };
