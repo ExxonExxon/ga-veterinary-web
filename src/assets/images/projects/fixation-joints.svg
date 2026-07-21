@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#171A17" rx="0"/>
-  <text x="400" y="270" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E4E7E2" text-anchor="middle">Micro External Skeletal</text>
-  <text x="400" y="320" font-family="Inter, sans-serif" font-size="28" font-weight="600" fill="#E4E7E2" text-anchor="middle">Fixation Joints</text>
-  <line x1="280" y1="350" x2="520" y2="350" stroke="#7DA37D" stroke-width="1" opacity="0.5"/>
-  <text x="400" y="390" font-family="Inter, sans-serif" font-size="16" font-weight="400" fill="#9DA49A" text-anchor="middle">Image coming soon</text>
-</svg>
