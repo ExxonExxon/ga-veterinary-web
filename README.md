@@ -84,12 +84,16 @@ The dev server starts at **`http://localhost:5173`** by default.
 
 | Token | Value | Description |
 |---|---|---|
-| Base | `#FAFBF9` | "Paper White" main background |
-| Surface | `#F5F7F5` | Neutral soft grey-white for containers and footer |
-| Primary | `#638263` | Vibrant Sage for branding and accents |
-| Action | `#4A634A` | Deep Forest for buttons and CTAs |
-| Content | `#1A1C1A` | High-contrast charcoal for primary text |
-| Black | `#0A0B0A` | Deep charcoal for the footer |
+| page | `#0D0F0D` | Deep green-black body background |
+| surface | `#171A17` | Dark green card/footer backgrounds |
+| surfaceLight | `#1E221E` | Lighter surface for input fields |
+| primary | `#A8D5A8` | Soft sage green for accents and headings |
+| primaryDim | `#94BD94` | Dimmed accent variant |
+| action | `#80A47F` | Olive green for buttons and CTAs |
+| content | `#E4E7E2` | Light gray primary text |
+| contentDim | `#AFB5AC` | Secondary and dimmer text |
+| contentMuted | `#7D847A` | Muted low-contrast text |
+| black | `#050605` | Deepest black |
 
 ---
 
