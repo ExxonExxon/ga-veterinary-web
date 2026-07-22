@@ -47,9 +47,8 @@ The dev server starts at **`http://localhost:5173`** by default.
 ├── src/                        Vite root — all source code
 │   ├── index.html              Landing page
 │   ├── about.html              About page
-│   ├── contact.html            Contact page (Web3Forms)
+│   ├── contact.html            Contact page (Netlify Forms)
 │   ├── projects.html           Projects / case studies
-│   ├── faq.html                FAQ page
 │   ├── privacy.html            Privacy policy
 │   ├── 404.html                404 error page
 │   ├── page-template.html      Starter template for new pages
@@ -75,7 +74,7 @@ The dev server starts at **`http://localhost:5173`** by default.
 - **Vite** &mdash; Build tool and dev server
 - **Tailwind CSS** &mdash; Utility-first CSS framework
 - **Vanilla JavaScript** &mdash; ES modules
-- **Web3Forms** &mdash; Contact form backend
+- **Netlify Forms** &mdash; Contact form backend
 - **Behold** &mdash; Instagram feed widget
 
 ---

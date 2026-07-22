@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         page: '#0D0F0D',
+        base: '#0D0F0D',
         surface: '#171A17',
         surfaceLight: '#1E221E',
         primary: '#A8D5A8',
