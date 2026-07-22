@@ -20,11 +20,20 @@
   .skip-link:focus {
     @apply left-6 top-6 w-auto h-auto px-6 py-3 bg-action text-white rounded-full shadow-xl font-bold uppercase tracking-widest text-xs;
   }
+
+  /* Form Status Messages — WCAG AA compliant on dark surface (#171A17) */
+  .form-status  { @apply text-sm font-medium mt-4 text-center lg:text-left; }
+  .form-error   { @apply text-[#F87171]; }
+  .form-success { @apply text-[#86EFAC]; }
 }
 
 
 #main-header {
   will-change: transform;
+}
+
+#main-content:focus {
+  outline: none;
 }
 
 /* Custom Premium Scrollbar matching Organic Minimalism design system */
