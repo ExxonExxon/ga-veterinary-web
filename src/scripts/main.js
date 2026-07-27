@@ -158,10 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let ticking = false;
     const updateHeader = () => {
-        const isMobile = window.innerWidth < 768;
         const scrollY = window.scrollY;
 
-        if (scrollY > 20 || isMobile) {
+        if (scrollY > 20) {
             header.classList.add('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5');
             header.classList.remove('border-transparent');
             navContainer.classList.remove('py-6', 'md:py-10');
