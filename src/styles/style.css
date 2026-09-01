@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Active navigation styling for current page */
+@layer components {
+  .desktop-nav-link.active-nav,
+  .mobile-nav-link.active-nav {
+    @apply text-content;
+  }
+  .desktop-nav-link.active-nav {
+    @apply underline decoration-content/30 underline-offset-8;
+  }
+  a:has(> .nav-logo).active-nav {
+    @apply opacity-80;
+  }
+}
+
 @layer base {
   body {
     @apply bg-page text-content antialiased text-base md:text-lg;
@@ -30,6 +44,10 @@
 
 #main-header {
   will-change: transform;
+}
+
+#main-header.scrolled .nav-logo {
+  transform: scale(0.85);
 }
 
 #main-content:focus {
@@ -61,5 +79,91 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: #3D413D;
+  }
+}
+
+/* Lightbox — click-to-enlarge for project images */
+img[data-lightbox] {
+  cursor: zoom-in;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(9, 11, 9, 0.92);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-figure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(1200px, 92vw);
+  max-height: 90vh;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  background: #171A17;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #171A17;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: #2A2D2A;
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-overlay {
+    transition: none;
   }
 }

@@ -1,142 +1,99 @@
 # GA Medical Veterinary
 
-> **Organic Minimalism** — a high-end landing page for a business that designs and manufactures custom surgical devices for wildlife, marine mammals, fish, and birds.
+![License](https://img.shields.io/badge/License-ISC-blue.svg)
 
----
+> Custom surgical devices for wildlife, marine mammals, fish, and birds.
+
+## Description
+
+GA Medical Veterinary is the online presence for a specialist who designs and manufactures bespoke surgical instruments and implants for animals. Every device is custom-made for the species and procedure — from koala dental tools and whale needles to fixation pins and avian leg bands.
+
+This site is for three audiences: wildlife veterinarians seeking instruments, potential sponsors and donors supporting the work, and a portfolio of past projects for the general public. It differs from a typical clinic site by leading with the **craft and the catalogue of engineering**, not appointment booking.
 
 ## Prerequisites
 
-| Requirement | Version |
-|---|---|
-| Node.js | **18+** (20 LTS recommended) |
-| npm | **9+** |
+- **Runtime**: Node.js v18+ (v20 LTS recommended)
+- **Package manager**: npm v9+
 
----
-
-## Quick Start
+## Installation
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-org/ga-veterinary-web.git
+git clone git@github.com:ExxonExxon/ga-veterinary-web.git
 cd ga-veterinary-web
-
-# 2. Install dependencies
 npm install
+```
 
-# 3. Start the development server
+## Usage
+
+```bash
 npm run dev
 ```
 
-The dev server starts at **`http://localhost:5173`** by default.
+The dev server runs at `http://localhost:5173`.
 
----
+## Features
 
-## Available Scripts
+- **Multi-page site** — Home, About, Projects, Contact, Privacy, and 404, sharing one design system.
+- **Responsive by default** — tested across 6 viewports from 375px mobile to 1920px desktop.
+- **Organic Minimalist design** — a dark, earthy palette (`#0D0F0D` base, `#A8D5A8` primary) defined once in Tailwind tokens.
+- **Project lightbox** — click any project image to enlarge with keyboard + focus-trap support.
+- **Netlify Forms contact** — spam-honeypot and accessible success/error states built in.
+- **Accessible (WCAG AA)** — skip-link, visible focus rings, ARIA mobile menu, color-contrast-safe tokens.
+- **SEO & sharing** — per-page meta, Open Graph / Twitter cards, structured data, sitemap, responsive hero images.
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start the Vite development server with hot module replacement |
-| `npm run build` | Build the production site into the `dist/` directory |
-| `npm run preview` | Preview the production build locally |
+## Configuration
 
----
+| Variable | Status | Description |
+|----------|--------|-------------|
+| `VITE_WEB3FORMS_KEY` | Legacy | Leftover from an earlier Web3Forms backend. **Ignored** — the site uses Netlify Forms and needs no key. |
 
-## Project Structure
+No environment variables are required to build or run.
 
-```
-├── src/                        Vite root — all source code
-│   ├── index.html              Landing page
-│   ├── about.html              About page
-│   ├── contact.html            Contact page (Netlify Forms)
-│   ├── projects.html           Projects / case studies
-│   ├── privacy.html            Privacy policy
-│   ├── 404.html                404 error page
-│   ├── page-template.html      Starter template for new pages
-│   ├── scripts/
-│   │   └── main.js             JavaScript entry point
-│   ├── styles/
-│   │   └── style.css           Tailwind directives & overrides
-│   └── assets/
-│       └── images/             Site imagery (logo, hero, projects, sponsors)
-├── public/
-│   ├── robots.txt
-│   └── sitemap.xml
-├── tailwind.config.js          Tailwind CSS configuration
-├── vite.config.js              Vite build configuration
-├── postcss.config.js           PostCSS configuration
-└── .env.example                Environment variable template
-```
-
----
-
-## Tech Stack
-
-- **Vite** &mdash; Build tool and dev server
-- **Tailwind CSS** &mdash; Utility-first CSS framework
-- **Vanilla JavaScript** &mdash; ES modules
-- **Netlify Forms** &mdash; Contact form backend
-- **Behold** &mdash; Instagram feed widget
-
----
-
-## Design System
-
-| Token | Value | Description |
-|---|---|---|
-| page | `#0D0F0D` | Deep green-black body background |
-| surface | `#171A17` | Dark green card/footer backgrounds |
-| surfaceLight | `#1E221E` | Lighter surface for input fields |
-| primary | `#A8D5A8` | Soft sage green for accents and headings |
-| primaryDim | `#94BD94` | Dimmed accent variant |
-| action | `#5D7D5D` | Dark olive green for buttons and CTAs |
-| content | `#E4E7E2` | Light gray primary text |
-| contentDim | `#AFB5AC` | Secondary and dimmer text |
-| contentMuted | `#7D847A` | Muted low-contrast text |
-| black | `#050605` | Deepest black |
-
----
-
-## Adding a New Page
-
-1. Copy `page-template.html` as a starting point
-2. Update the `<title>` and meta tags
-3. Add your content inside `<main>`
-4. Link the page in the site navigation
-5. Register it in `vite.config.js` under the `input` object
-
----
-
-## Production Build
+## Development
 
 ```bash
-npm run build
+npm run dev       # start dev server (localhost:5173)
+npm run build     # production build → dist/
+npm run preview   # preview the production build locally
 ```
 
-Output is written to the `dist/` directory — deploy its contents to any static host.
+Add a page: copy `src/page-template.html`, register the file in `vite.config.js` (`rollupOptions.input`), and add nav links to every page. See `AGENTS.md` for the full conventions checklist.
 
-To preview the production build locally:
+## Tests
 
 ```bash
-npm run preview
+npx playwright test                                    # full suite (6 viewports × 2 specs)
+npx playwright test tests/hero-consistency.spec.js     # hero consistency only
 ```
+
+The suite runs against a real browser at 6 viewport sizes. It is intentionally slow (`workers: 1`) — run a targeted spec during development.
+
+## Contributing
+
+1. Fork the repo.
+2. Create a feature branch (`git checkout -b feature/my-thing`).
+3. Commit changes (`git commit -am 'Add my thing'`).
+4. Push (`git push origin feature/my-thing`).
+5. Open a Pull Request.
+
+## Changelog
+
+See [Commits](https://github.com/ExxonExxon/ga-veterinary-web/commits/main) and [Releases](https://github.com/ExxonExxon/ga-veterinary-web/releases).
+
+## Links
+
+- Live site: https://gamedical.com.au
+- Repository: https://github.com/ExxonExxon/ga-veterinary-web
+- Issue tracker: https://github.com/ExxonExxon/ga-veterinary-web/issues
+
+## License
+
+ISC — see the repository for licensing details.
 
 ---
 
-## Development Conventions
+## Verify
 
-### Visual Standards
-- **Minimalism:** Maintain a minimum of 48px padding between sections.
-- **"Liquid Glass" Navbar:** The sticky header uses `backdrop-blur-xl` and semi-transparency.
-- **Misty Imagery:** Use low opacity (e.g., 40%) and gradients on large background images to keep text the focal point.
-- **Snappy Animations:** Transitions should be responsive and fast (typically `200ms` – `300ms`).
-
-### Mobile-First Implementation
-- **Centering:** All content is centered (`text-center`, `justify-center`) on mobile, transitioning to left-aligned editorial layouts on desktop (`md:` or `lg:` breakpoints).
-- **Spacing:** Use responsive margins (e.g., `mt-24 md:mt-40`) to prevent excessive whitespace on small screens.
-
-### Accessibility (WCAG 2.1 AA)
-- **Contrast:** All text-to-background combinations meet the 4.5:1 ratio.
-- **ARIA:** All interactive elements have descriptive `aria-label` attributes.
-- **Semantic HTML:** Use landmarks like `<header>`, `<main>`, `<nav>`, and `<footer>`.
-- **Keyboard Navigation:** Maintain visible focus rings (`:focus-visible`).
-- **Skip Link:** A "Skip to main content" link is present at the top of every page.
+```bash
+test -f README.md && [ "$(grep -c '^## ' README.md)" -ge 7 ] && echo OK
+```

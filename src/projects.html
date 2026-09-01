@@ -59,7 +59,7 @@
  },
  "sameAs": [
  "https://www.instagram.com/ga_veterinary/",
- "https://www.facebook.com/GAMEDICAL.au/",
+ "https://www.facebook.com/gamedicalveterinary/",
  "https://au.linkedin.com/in/giriusantanaitis"
  ]
  }
@@ -108,7 +108,7 @@
  "@type": "ItemList",
  "@id": "https://gamedical.com.au/projects.html#itemlist",
  "name": "Veterinary Engineering Projects",
- "description": "Custom surgical device projects for wildlife, marine mammals, fish, and birds.",
+ "description": "Custom surgical device projects for wildlife, marine mammals, reptiles, fish, and birds.",
  "numberOfItems": 16,
  "itemListElement": [
  {
@@ -227,10 +227,10 @@
 
  <!-- Navbar -->
  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-colors duration-300 border-b border-transparent">
- <nav class="relative max-w-7xl mx-auto px-6 md:px-12 py-6 md:py-10 flex justify-between items-center transition-[padding] duration-200" id="nav-container" aria-label="Main Navigation">
- <!-- Logo -->
- <a href="/" class="flex items-center space-x-3 group cursor-pointer" aria-label="GA Medical Veterinary Home">
- <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" width="85" height="90" class="h-[60px] w-auto transition-transform duration-300 group-hover:scale-105">
+ <nav class="relative max-w-7xl mx-auto px-6 md:px-12 py-5 md:py-8 flex justify-between items-center transition-all duration-300 ease-in-out" id="nav-container" aria-label="Main Navigation">
+  <!-- Logo -->
+  <a href="/" class="flex items-center space-x-3 group cursor-pointer" aria-label="GA Medical Veterinary Home">
+  <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" width="85" height="90" class="nav-logo h-[60px] w-auto transition-all duration-300 ease-in-out group-hover:scale-105">
  <div class="flex flex-col">
  <span class="text-content font-bold tracking-tight leading-none uppercase text-sm">GA Medical</span>
  <span class="text-content text-[11px] uppercase tracking-[0.25em] font-semibold leading-none mt-1">Veterinary</span>
@@ -238,12 +238,13 @@
  </a>
 
  <!-- Desktop Links -->
- <ul class="hidden md:flex items-center space-x-12">
- <li><a href="about.html" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">About</a></li>
- <li><a href="projects.html" aria-current="page" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200 underline decoration-content/30 underline-offset-8">Projects</a></li>
- <li><a href="contact.html" class="text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Contact</a></li>
+<ul class="hidden md:flex items-center space-x-12">
+   <li><a href="index.html" class="desktop-nav-link text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Home</a></li>
+ <li><a href="about.html" class="desktop-nav-link text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">About</a></li>
+  <li><a href="projects.html" class="desktop-nav-link text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Projects</a></li>
+  <li><a href="contact.html" class="desktop-nav-link text-content/90 hover:text-content text-[14px] font-semibold uppercase tracking-[0.15em] transition-all duration-200">Contact</a></li>
  <li>
- <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 border border-white/30 rounded-full text-content hover:bg-white/20 text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300">
+ <a href="https://www.paypal.com/donate/?hosted_button_id=N9DG984GYBSJE" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 border border-white/30 rounded-full text-content hover:bg-white/20 text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300">
  Donate
  </a>
  </li>
@@ -273,19 +274,20 @@
  class="fixed inset-0 z-[100] bg-page/98 backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out">
  <div class="flex flex-col h-full p-8">
  <div class="flex justify-end">
- <button id="mobile-menu-close" 
- aria-label="Close Menu"
- class="text-content p-3 bg-surfaceLight/50 rounded-full border border-white/20">
+<button id="mobile-menu-close" 
+  aria-label="Close Menu"
+  class="text-content p-4 bg-surfaceLight/50 rounded-full border border-white/20">
  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M6 18L18 6M6 6l12 12"></path>
  </svg>
  </button>
  </div>
  <nav class="flex-grow flex flex-col justify-center items-center space-y-10" aria-label="Mobile Navigation Menu">
+  <a href="index.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Home</a>
  <a href="about.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">About</a>
  <a href="projects.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Projects</a>
  <a href="contact.html" class="mobile-nav-link py-3 text-2xl font-normal text-content tracking-[0.2em] uppercase">Contact</a>
- <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="mobile-nav-link py-3 text-2xl font-semibold text-content tracking-[0.2em] uppercase">Donate</a>
+ <a href="https://www.paypal.com/donate/?hosted_button_id=N9DG984GYBSJE" target="_blank" rel="noopener noreferrer" class="mobile-nav-link py-3 text-2xl font-semibold text-content tracking-[0.2em] uppercase">Donate</a>
  </nav>
  <div class="pt-20 text-center">
  <p class="text-content text-[12px] uppercase tracking-[0.3em] font-bold">GA Medical Veterinary</p>
@@ -294,10 +296,10 @@
  </div>
 
  <!-- Hero Section -->
- <header class="relative min-h-[45vh] md:min-h-[55vh] -mt-[96px] flex items-center overflow-hidden">
+ <header class="relative min-h-[45vh] md:min-h-[65vh] flex items-center overflow-hidden">
  <!-- Background Image with Misty & Grain Effect (Same as Index) -->
- <div class="absolute inset-0 -z-10 pointer-events-none">
- <img src="./assets/images/hero/koala-header.jpg" srcset="./assets/images/hero/koala-header-600.jpg 600w, ./assets/images/hero/koala-header-1200.jpg 1200w, ./assets/images/hero/koala-header-2400.jpg 2400w" sizes="100vw" fetchpriority="high" id="hero-bg" alt="Koala resting in a eucalyptus tree" width="6144" height="1872" class="w-full h-full object-cover object-[50%_25%] sm:object-[60%_25%] md:object-[75%_25%] lg:object-[80%_20%] xl:object-[85%_20%] opacity-30 blur-[3px] transition-[object-position] duration-700">
+ <div class="absolute top-24 left-0 right-0 bottom-0 -z-10 pointer-events-none overflow-hidden">
+ <img src="./assets/images/hero/koala-header.jpg" srcset="./assets/images/hero/koala-header-600.jpg 600w, ./assets/images/hero/koala-header-1200.jpg 1200w, ./assets/images/hero/koala-header-2400.jpg 2400w" sizes="100vw" fetchpriority="high" id="hero-bg" alt="Koala resting in a eucalyptus tree" width="6144" height="1872" class="w-full h-full object-cover object-[82%_top] opacity-50 blur-[1px] transition-all duration-700 ease-out">
  
  <!-- Nature Tint -->
  <div class="absolute inset-0 bg-white/5 pointer-events-none"></div>
@@ -308,14 +310,14 @@
  </div>
 
  <!-- Breath of Air Overlays -->
- <div class="absolute inset-0 bg-gradient-to-r from-page via-page/95 to-transparent/10"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-page via-page/70 to-transparent"></div>
  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base"></div>
  </div>
 
- <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-52 md:pt-36 text-center md:text-left">
+ <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-60 md:pt-56 text-center md:text-left">
   <div class="max-w-3xl">
    <h1 class="text-4xl md:text-6xl font-medium text-content tracking-tight leading-tight">Projects</h1>
-   <p class="mt-4 text-lg md:text-xl text-content/90 font-normal leading-relaxed">Custom surgical devices for wildlife, marine mammals, fish, and birds.</p>
+   <p class="mt-4 text-lg md:text-xl text-content/90 font-normal leading-relaxed">Surgical instruments, orthopaedic devices, consumables and apparatus for wildlife, marine mammals, reptiles, fish, and birds.</p>
   </div>
  </div>
  </header>
@@ -337,15 +339,11 @@
  </p>
  
  <p class="text-content/90 text-lg leading-relaxed">
- The design, engineering and development is mostly self-funded. I'm often limited in what I can take on. The process is time consuming and expensive. I wish I could do more.
+ The design, engineering and development is mostly self-funded. I'm often limited in what I can take on. The process is time consuming and expensive. I wish I could do more. You can help too. With more financial support, I could provide my veterinarians with the devices they need to make their animals' lives better.
  </p>
-
- <div class="pt-8 border-t border-white/10">
- <p class="text-content text-lg leading-relaxed font-normal">
- YOU can help too. With more financial support, I could provide my veterinarians with the devices they need to make their animals' lives better.
- </p>
+ <div>
  <div class="pt-10 flex justify-center md:justify-start">
- <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-10 py-4 bg-action text-white text-[14px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-300 rounded-full hover:-translate-y-1">
+ <a href="https://www.paypal.com/donate/?hosted_button_id=N9DG984GYBSJE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-10 py-4 bg-action text-white text-[14px] uppercase tracking-[0.2em] font-bold hover:bg-primary transition-all duration-300 rounded-full hover:-translate-y-1">
  Provide Assistance
  </a>
  </div>
@@ -372,7 +370,7 @@
  <!-- Catalogue Cover Image -->
  <div class="w-3/4 md:w-2/5 shrink-0 md:order-1">
  <div class="rounded-2xl overflow-hidden border border-white/10 bg-surfaceLight">
- <img src="./assets/images/products/catalogue-cover.jpg" alt="GA Medical Veterinary Catalogue Cover" width="1024" height="892" class="w-full h-full object-cover" loading="lazy">
+ <img src="./assets/images/products/catalogue-cover.jpg" alt="GA Medical Veterinary Catalogue Cover" width="1024" height="892" class="w-full h-full object-cover cursor-zoom-in" data-lightbox loading="lazy">
  </div>
  </div>
  </div>
@@ -385,12 +383,12 @@
  </div>
 
  <!-- 16 Project Cards -->
- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12">
  
  <!-- Project 1 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/fixation-pins.jpg" alt="Micro Skeletal Fixation Pins" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/fixation-pins.jpg" alt="Micro Skeletal Fixation Pins" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox fetchpriority="high">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Micro Skeletal Fixation Pins</h3>
@@ -401,7 +399,7 @@
  <!-- Project 2 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/sun-bear-implant.jpg" alt="Custom Made Pelvic Implant" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/sun-bear-implant.jpg" alt="Custom Made Pelvic Implant" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox fetchpriority="high">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Custom Made Pelvic Implant</h3>
@@ -412,7 +410,7 @@
  <!-- Project 3 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/forceps.jpg" alt="Fragment Grasping Kocher Forceps" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/forceps.jpg" alt="Fragment Grasping Kocher Forceps" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox fetchpriority="high">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Fragment Grasping Kocher Forceps</h3>
@@ -423,7 +421,7 @@
  <!-- Project 4 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/laryngoscope-blades.jpg" alt="Micro Laryngoscope Blades" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/laryngoscope-blades.jpg" alt="Micro Laryngoscope Blades" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Micro Laryngoscope Blades</h3>
@@ -434,7 +432,7 @@
  <!-- Project 5 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/pin-vice.jpg" alt="Micro Orthopaedic Pin Chuck" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/pin-vice.jpg" alt="Micro Orthopaedic Pin Chuck" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Micro Orthopaedic Pin Chuck</h3>
@@ -445,7 +443,7 @@
  <!-- Project 6 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/hand-chuck.jpg" alt="Mini Orthopaedic Hand Chuck" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/hand-chuck.jpg" alt="Mini Orthopaedic Hand Chuck" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Mini Orthopaedic Hand Chuck</h3>
@@ -456,7 +454,7 @@
  <!-- Project 7 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/gag.jpg" alt="Table Mounted Veterinary Gag" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/gag.jpg" alt="Table Mounted Veterinary Gag" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Table Mounted Veterinary Gag</h3>
@@ -467,7 +465,7 @@
  <!-- Project 8 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/fixation-joints.jpg" alt="Micro External Skeletal Fixation Joints" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/fixation-joints.jpg" alt="Micro External Skeletal Fixation Joints" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Micro External Skeletal Fixation Joints</h3>
@@ -478,7 +476,7 @@
  <!-- Project 9 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/whale-needles.jpg" alt="Extra Long Hypodermic Needles" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/whale-needles.jpg" alt="Extra Long Hypodermic Needles" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Extra Long Hypodermic Needles</h3>
@@ -489,7 +487,7 @@
  <!-- Project 10 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/connecting-rod.jpg" alt="High Friction ESF Connecting Rods" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/connecting-rod.jpg" alt="High Friction ESF Connecting Rods" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">High Friction ESF Connecting Rods</h3>
@@ -500,7 +498,7 @@
  <!-- Project 11 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/suture-kit.jpg" alt="Extra Large Needle & PGA Suture Kits" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/suture-kit.jpg" alt="Extra Large Needle & PGA Suture Kits" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Extra Large Needle & PGA Suture Kits</h3>
@@ -511,7 +509,7 @@
  <!-- Project 12 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/laryngoscope-full.jpg" alt="Custom Made Laryngoscope" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/laryngoscope-full.jpg" alt="Custom Made Laryngoscope" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Custom Made Laryngoscope</h3>
@@ -522,7 +520,7 @@
  <!-- Project 13 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/hook-retractor.jpg" alt="Titanium Surgical Hook Retractors" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/hook-retractor.jpg" alt="Titanium Surgical Hook Retractors" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Titanium Surgical Hook Retractors</h3>
@@ -533,7 +531,7 @@
  <!-- Project 14 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/dolphin-corer.jpg" alt="Dolphin Dorsal Fin Corer" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/dolphin-corer.jpg" alt="Dolphin Dorsal Fin Corer" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Dolphin Dorsal Fin Corer</h3>
@@ -544,7 +542,7 @@
  <!-- Project 15 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/avian-leg-bands.jpg" alt="Avian Leg Bands" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/avian-leg-bands.jpg" alt="Avian Leg Bands" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">Avian Leg Bands</h3>
@@ -555,7 +553,7 @@
  <!-- Project 16 -->
  <div class="group space-y-6">
  <div class="aspect-video bg-surface rounded-[2rem] overflow-hidden border border-white/10 transition-all duration-500 group-hover:-translate-y-1">
- <img src="./assets/images/projects/k-wire-kit.jpg" alt="K-Wire Kit &amp; Wire Gauge" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" loading="lazy">
+ <img src="./assets/images/projects/k-wire-kit.jpg" alt="K-Wire Kit &amp; Wire Gauge" width="800" height="450" class="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" data-lightbox loading="lazy">
  </div>
  <div class="space-y-2 px-2">
  <h3 class="text-xl font-medium text-content transition-colors">K-Wire Kit &amp; Wire Gauge</h3>
@@ -585,65 +583,65 @@
   <p class="text-content/90 font-normal text-[14px] leading-relaxed max-w-[200px] mx-auto md:mx-0">
   Precision engineering for all life. Custom surgical solutions for the world's wildlife.
   </p>
-  <p class="text-content/70 text-[11px] uppercase tracking-wider font-bold pt-3">
-   Made by <a href="https://tomas.gorjux.net" target="_blank" rel="noopener noreferrer" class="text-content hover:underline">Tomas Gorjux</a>
+<p class="text-content/70 text-[12px] uppercase tracking-wider font-bold pt-3">
+    Made by <a href="https://tomas.gorjux.net" target="_blank" rel="noopener noreferrer" class="text-content hover:underline">Tomas Gorjux</a>
   </p>
  </div>
 
  <!-- Column 2: Support -->
  <div class="space-y-6">
- <h4 class="text-content text-[11px] uppercase tracking-[0.2em] font-bold">Support</h4>
- <ul class="space-y-4">
- <li>
- <a href="https://www.paypal.com/donate?token=P4owcT4gmUJFg-bWuAgka6Xkgb44P5dtMTQs08XNsYD52BnPjcm_BXimDaAbNKFc4oyTEbxmbCngvecL" target="_blank" rel="noopener noreferrer" class="text-content/90 text-[15px] font-semibold transition-colors">
- Donate
- </a>
- </li>
- </ul>
- </div>
+<h4 class="text-content text-[12px] uppercase tracking-[0.2em] font-bold">Support</h4>
+  <ul class="space-y-4">
+  <li>
+  <a href="https://www.paypal.com/donate/?hosted_button_id=N9DG984GYBSJE" target="_blank" rel="noopener noreferrer" class="text-content/90 text-[15px] font-semibold transition-colors">
+  Donate
+  </a>
+  </li>
+  </ul>
+  </div>
 
- <!-- Column 3: Navigation -->
- <div class="space-y-6">
- <h4 class="text-content text-[11px] uppercase tracking-[0.2em] font-bold">Explore</h4>
- <ul class="space-y-4">
- <li><a href="about.html" class="text-content/90 text-[15px] font-semibold transition-colors">About</a></li>
- <li><a href="projects.html" class="text-content/90 text-[15px] font-semibold transition-colors">Projects</a></li>
- <li><a href="contact.html" class="text-content/90 text-[15px] font-semibold transition-colors">Contact</a></li>
- </ul>
- </div>
+  <!-- Column 3: Navigation -->
+  <div class="space-y-6">
+  <h4 class="text-content text-[12px] uppercase tracking-[0.2em] font-bold">Explore</h4>
+  <ul class="space-y-4">
+  <li><a href="about.html" class="text-content/90 text-[15px] font-semibold transition-colors">About</a></li>
+  <li><a href="projects.html" class="text-content/90 text-[15px] font-semibold transition-colors">Projects</a></li>
+  <li><a href="contact.html" class="text-content/90 text-[15px] font-semibold transition-colors">Contact</a></li>
+  </ul>
+  </div>
 
- <!-- Column 3: Contact -->
- <div class="space-y-6">
- <h4 class="text-content text-[11px] uppercase tracking-[0.2em] font-bold">Contact</h4>
- <ul class="space-y-4">
- <li>
- <a href="mailto:info@gamedical.com.au" class="text-content/90 text-[15px] font-semibold transition-colors block">
- info@gamedical.com.au
- </a>
- </li>
- <li class="space-y-1">
- <span class="text-content/90 text-[11px] uppercase tracking-wider font-bold block">Australia</span>
- <a href="tel:+61421238399" class="text-content/90 text-[15px] font-semibold transition-colors">
- +61 (0) 421 238 399
- </a>
- </li>
- <li class="space-y-1">
- <span class="text-content/90 text-[11px] uppercase tracking-wider font-bold block">International</span>
- <a href="tel:+37069544701" class="text-content/90 text-[15px] font-semibold transition-colors">
- +370 695 44 701
- </a>
- </li>
- </ul>
- </div>
+  <!-- Column 3: Contact -->
+  <div class="space-y-6">
+  <h4 class="text-content text-[12px] uppercase tracking-[0.2em] font-bold">Contact</h4>
+  <ul class="space-y-4">
+  <li>
+  <a href="mailto:info@gamedical.com.au" class="text-content/90 text-[15px] font-semibold transition-colors block">
+  info@gamedical.com.au
+  </a>
+  </li>
+  <li class="space-y-1">
+  <span class="text-content/90 text-[12px] uppercase tracking-wider font-bold block">Australia</span>
+  <a href="tel:+61421238399" class="text-content/90 text-[15px] font-semibold transition-colors">
+  +61 (0) 421 238 399
+  </a>
+  </li>
+  <li class="space-y-1">
+  <span class="text-content/90 text-[12px] uppercase tracking-wider font-bold block">International</span>
+  <a href="tel:+37069544701" class="text-content/90 text-[15px] font-semibold transition-colors">
+  +370 695 44 701
+  </a>
+  </li>
+  </ul>
+  </div>
 
- <!-- Column 4: Socials -->
- <div class="space-y-6">
- <h4 class="text-content text-[11px] uppercase tracking-[0.2em] font-bold">Connect</h4>
+  <!-- Column 4: Socials -->
+  <div class="space-y-6">
+  <h4 class="text-content text-[12px] uppercase tracking-[0.2em] font-bold">Connect</h4>
  <div class="flex items-center justify-center md:justify-start space-x-5">
  <a href="https://www.instagram.com/ga_veterinary/" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:border-white/30 transition-all duration-200">
  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
  </a>
- <a href="https://www.facebook.com/GAMEDICAL.au/" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:border-white/30 transition-all duration-200">
+ <a href="https://www.facebook.com/gamedicalveterinary/" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:border-white/30 transition-all duration-200">
  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
  </a>
  <a href="https://au.linkedin.com/in/giriusantanaitis" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface flex items-center justify-center border border-white/10 text-content/90 hover:border-white/30 transition-all duration-200">
@@ -653,7 +651,7 @@
  </div>
  </div>
 
- <div class="pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[12px] uppercase tracking-[0.2em] text-content/90 font-bold text-center md:text-left">
+ <div class="pt-10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[13px] uppercase tracking-[0.2em] text-content/90 font-bold text-center md:text-left">
  <p>&copy; <span id="copyright-year">2024</span> <span class="text-content">GA Medical Veterinary</span>. All rights reserved.</p>
  <div class="flex space-x-6">
  <a href="privacy.html" class=" transition-colors">Privacy Policy</a>

@@ -146,6 +146,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const setActiveNav = () => {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.desktop-nav-link, .mobile-nav-link');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPage) {
+                link.classList.add('active-nav');
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+        if (currentPage === 'index.html' || currentPage === '' || currentPage === '/') {
+            const homeLink = document.querySelector('.nav-logo')?.closest('a');
+            if (homeLink) {
+                homeLink.classList.add('active-nav');
+            }
+        }
+    };
+    setActiveNav();
+
     // Update Copyright Year
     const yearElement = document.getElementById('copyright-year');
     if (yearElement) {
@@ -160,16 +179,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateHeader = () => {
         const scrollY = window.scrollY;
 
-        if (scrollY > 20) {
-            header.classList.add('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5');
+        if (scrollY > 80) {
+            header.classList.add('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5', 'scrolled');
             header.classList.remove('border-transparent');
-            navContainer.classList.remove('py-6', 'md:py-10');
+            navContainer.classList.remove('py-5', 'md:py-8');
             navContainer.classList.add('py-4');
         } else {
-            header.classList.remove('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5');
+            header.classList.remove('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5', 'scrolled');
             header.classList.add('border-transparent');
             navContainer.classList.remove('py-4');
-            navContainer.classList.add('py-6', 'md:py-10');
+            navContainer.classList.add('py-5', 'md:py-8');
         }
     };
 
@@ -188,3 +207,69 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHeader(); // Run on init
 
 });
+
+    // Lightbox: click any project image to enlarge it
+    const lightboxImages = document.querySelectorAll('img[data-lightbox]');
+    if (lightboxImages.length > 0) {
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-label', 'Image viewer');
+        overlay.innerHTML = `
+            <div class="lightbox-figure">
+                <img class="lightbox-img" src="" alt="">
+                <button class="lightbox-close" aria-label="Close image viewer">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <p class="lightbox-caption"></p>
+            </div>`;
+        document.body.appendChild(overlay);
+
+        const overlayImg = overlay.querySelector('.lightbox-img');
+        const caption = overlay.querySelector('.lightbox-caption');
+        const closeBtn = overlay.querySelector('.lightbox-close');
+        let lastFocused = null;
+
+        const openLightbox = (imgEl) => {
+            lastFocused = document.activeElement;
+            overlayImg.src = imgEl.currentSrc || imgEl.src;
+            overlayImg.alt = imgEl.alt;
+            caption.textContent = imgEl.alt;
+            overlay.classList.add('open');
+            document.body.classList.add('overflow-hidden');
+            closeBtn.focus();
+        };
+
+        const closeLightbox = () => {
+            overlay.classList.remove('open');
+            document.body.classList.remove('overflow-hidden');
+            overlayImg.removeAttribute('src');
+            if (lastFocused) lastFocused.focus();
+        };
+
+        lightboxImages.forEach((imgEl) => {
+            imgEl.setAttribute('tabindex', '0');
+            imgEl.setAttribute('role', 'button');
+            imgEl.setAttribute('aria-haspopup', 'dialog');
+            imgEl.addEventListener('click', () => openLightbox(imgEl));
+            imgEl.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox(imgEl);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
+    }
