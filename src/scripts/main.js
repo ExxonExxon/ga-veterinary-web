@@ -118,8 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     contactForm.reset();
-                    submitBtn.classList.add('bg-content');
-                    submitBtn.classList.remove('bg-action', 'hover:bg-primary');
+                    submitBtn.style.background = 'var(--ink)';
                     submitBtn.innerHTML = 'Message Sent';
 
                     if (formStatus) {
@@ -131,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = originalBtnHTML;
                         submitBtn.className = originalBtnClasses;
+                        submitBtn.style.background = '';
                     }, 4000);
                 } else {
                     throw new Error('Bad response');
@@ -171,24 +171,15 @@ document.addEventListener('DOMContentLoaded', () => {
         yearElement.textContent = new Date().getFullYear();
     }
 
-    // Liquid Glass Header Scroll Effect
+    // Header: transparent over hero -> frosted paper after scroll (CSS-driven)
     const header = document.getElementById('main-header');
-    const navContainer = document.getElementById('nav-container');
-    
+
     let ticking = false;
     const updateHeader = () => {
-        const scrollY = window.scrollY;
-
-        if (scrollY > 80) {
-            header.classList.add('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5', 'scrolled');
-            header.classList.remove('border-transparent');
-            navContainer.classList.remove('py-5', 'md:py-8');
-            navContainer.classList.add('py-4');
+        if (window.scrollY > 80) {
+            header.classList.add('scrolled');
         } else {
-            header.classList.remove('bg-page/90', 'border-white/10', 'shadow-lg', 'shadow-black/5', 'scrolled');
-            header.classList.add('border-transparent');
-            navContainer.classList.remove('py-4');
-            navContainer.classList.add('py-5', 'md:py-8');
+            header.classList.remove('scrolled');
         }
     };
 
@@ -205,8 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', updateHeader, { passive: true });
     updateHeader(); // Run on init
-
-});
 
     // Lightbox: click any project image to enlarge it
     const lightboxImages = document.querySelectorAll('img[data-lightbox]');
@@ -273,3 +262,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});

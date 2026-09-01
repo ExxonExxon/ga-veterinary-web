@@ -1,6 +1,11 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 
+// Redesigned hero rule (see REDESIGN-NOTES.md §5):
+//  - #hero-bg: crisp image (no opacity/blur on the img itself), legibility from scrim overlays
+//  - identical classes on every page; Home additionally gets scale-100 + hover:scale-[1.02]
+//  - container: min-h-[45vh] md:min-h-[62vh], no -mt-
+//  - content container: max-w-6xl mx-auto pt-56 md:pt-64
 const PAGES = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about.html' },
@@ -14,8 +19,6 @@ const STANDARD_IMAGE_CLASSES = [
   'h-full',
   'object-cover',
   'object-[82%_top]',
-  'opacity-50',
-  'blur-[1px]',
   'transition-all',
   'duration-700',
   'ease-out',
@@ -27,9 +30,9 @@ const STANDARD_HEADER_CLASSES = [
 ];
 
 const STANDARD_HERO_CONTENT_CLASSES = [
-  'max-w-7xl',
+  'max-w-6xl',
   'mx-auto',
-  'pt-60',
+  'pt-56',
 ];
 
 /**
@@ -48,20 +51,26 @@ async function gotoAndWaitForHero(page, url) {
 test.describe('Hero Image Consistency', () => {
 
   for (const { name, path } of PAGES) {
-    test(`${name} page — hero image has standard object-position`, async ({ page }) => {
+    test(`${name} page — hero image matches the standard rule`, async ({ page }) => {
       await gotoAndWaitForHero(page, path);
 
       const heroImg = page.locator('#hero-bg');
       await expect(heroImg).toBeVisible();
 
-      // Get the full class string
       const classStr = await heroImg.getAttribute('class');
       expect(classStr).toBeTruthy();
 
-      // Verify fixed object-position (no responsive variants)
-      expect(classStr).toContain('object-[82%_top]');
+      // Every standard class must be present
+      for (const cls of STANDARD_IMAGE_CLASSES) {
+        expect(classStr, `${name}: missing ${cls}`).toContain(cls);
+      }
 
-      // Verify no responsive object-position breakpoints remain
+      // Legibility comes from scrim overlays, not from dimming/blurring the image
+      expect(classStr, `${name}: hero image must not be dimmed via opacity-`).not.toContain('opacity-');
+      expect(classStr, `${name}: hero image must not be blurred via blur-`).not.toContain('blur-');
+
+      // Fixed object-position (no responsive variants)
+      expect(classStr).toContain('object-[82%_top]');
       expect(classStr).not.toContain('sm:object-');
       expect(classStr).not.toContain('md:object-');
       expect(classStr).not.toContain('lg:object-');
@@ -71,12 +80,23 @@ test.describe('Hero Image Consistency', () => {
     test(`${name} page — hero container has standard min-height`, async ({ page }) => {
       await gotoAndWaitForHero(page, path);
 
-      // Hero section is the second <header> (first is navbar with id="main-header")
       const heroHeader = page.locator('header.relative');
       const heroHeaderClass = await heroHeader.getAttribute('class');
-      expect(heroHeaderClass).toContain('min-h-[45vh]');
+      for (const cls of STANDARD_HEADER_CLASSES) {
+        expect(heroHeaderClass, `${name}: missing ${cls}`).toContain(cls);
+      }
       // Verify no negative margin pulling hero behind navbar
       expect(heroHeaderClass, `${name}: hero should not have -mt- class`).not.toContain('-mt-');
+    });
+
+    test(`${name} page — hero uses the standard content container`, async ({ page }) => {
+      await gotoAndWaitForHero(page, path);
+      const heroContent = page.locator('header.relative div.z-10');
+      await expect(heroContent).toHaveCount(1);
+      const classStr = await heroContent.getAttribute('class');
+      for (const cls of STANDARD_HERO_CONTENT_CLASSES) {
+        expect(classStr, `${name}: missing ${cls}`).toContain(cls);
+      }
     });
   }
 

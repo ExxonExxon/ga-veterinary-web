@@ -2,92 +2,266 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Active navigation styling for current page */
-@layer components {
-  .desktop-nav-link.active-nav,
-  .mobile-nav-link.active-nav {
-    @apply text-content;
-  }
-  .desktop-nav-link.active-nav {
-    @apply underline decoration-content/30 underline-offset-8;
-  }
-  a:has(> .nav-logo).active-nav {
-    @apply opacity-80;
-  }
+/* ==========================================================================
+   IVORY & INK — WARM CLINICAL
+   Design tokens are CSS mirrors of tailwind.config.js (see REDESIGN-NOTES.md)
+   ========================================================================== */
+:root {
+  --ink: #2B2822;
+  --paper: #FAF7F1;
+  --accent: #8A2F52;
+  --accent-deep: #6E2340;
+  --accent-tint: #F7E9EE;
+  --line: #E6DFD3;
+  --success: #18794E;
+  --error: #A61B1B;
+  --ring: var(--accent);
+  --nav-c: var(--ink); /* nav/link color — flips to paper over dark hero */
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-color: color-mix(in srgb, var(--ink) 25%, transparent) var(--paper);
+  }
+
   body {
-    @apply bg-page text-content antialiased text-base md:text-lg;
+    @apply bg-paper text-ink antialiased text-base md:text-lg;
   }
 
-  /* Professional Accessibility: Visible Focus States */
+  /* Visible, theme-aware focus ring (accent on light, paper inside dark areas) */
   :focus-visible {
-    @apply outline-none ring-2 ring-content/30 ring-offset-2 ring-offset-page;
+    @apply outline-none;
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
   }
 
-  /* Professional Accessibility: Skip to Content Link */
+  #main-content:focus {
+    outline: none;
+  }
+
+  /* Skip to content */
   .skip-link {
     @apply absolute left-[-9999px] top-auto w-1 h-1 overflow-hidden z-[999];
   }
-
   .skip-link:focus {
-    @apply left-6 top-6 w-auto h-auto px-6 py-3 bg-action text-white rounded-full shadow-xl font-bold uppercase tracking-widest text-xs;
+    @apply left-6 top-6 w-auto h-auto px-6 py-3 rounded-full shadow-card font-bold uppercase tracking-widest text-xs;
+    background: var(--accent);
+    color: #FFFFFF;
   }
-
-  /* Form Status Messages — WCAG AA compliant on dark surface (#171A17) */
-  .form-status  { @apply text-sm font-medium mt-4 text-center lg:text-left; }
-  .form-error   { @apply text-[#F87171]; }
-  .form-success { @apply text-[#86EFAC]; }
 }
 
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@layer components {
+  /* ---------- Buttons ---------- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.12em] text-white transition-colors duration-200 select-none;
+    background: var(--accent);
+  }
+  .btn-primary:hover {
+    background: var(--accent-deep);
+  }
 
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.12em] transition-all duration-200 select-none;
+    color: var(--ink);
+    border: 1px solid color-mix(in srgb, var(--ink) 28%, transparent);
+  }
+  .btn-ghost:hover {
+    border-color: color-mix(in srgb, var(--ink) 55%, transparent);
+    background: color-mix(in srgb, var(--ink) 5%, transparent);
+  }
+
+  /* Ghost button for dark photographic areas */
+  .btn-paper {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.12em] transition-all duration-200 select-none;
+    color: var(--paper);
+    border: 1px solid color-mix(in srgb, var(--paper) 40%, transparent);
+  }
+  .btn-paper:hover {
+    border-color: color-mix(in srgb, var(--paper) 70%, transparent);
+    background: color-mix(in srgb, var(--paper) 12%, transparent);
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav-link {
+    @apply text-[13px] font-bold uppercase tracking-[0.12em] transition-opacity duration-200;
+    color: var(--nav-c);
+    opacity: 0.75;
+  }
+  .nav-link:hover {
+    opacity: 1;
+  }
+  .desktop-nav-link.active-nav {
+    opacity: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+    text-decoration-color: color-mix(in srgb, var(--nav-c) 55%, transparent);
+  }
+  .mobile-nav-link {
+    @apply text-lg font-medium uppercase tracking-[0.14em] transition-colors duration-200;
+    color: var(--ink);
+    opacity: 0.8;
+  }
+  .mobile-nav-link:hover {
+    color: var(--accent);
+    opacity: 1;
+  }
+  .mobile-nav-link.active-nav {
+    color: var(--accent);
+    opacity: 1;
+  }
+
+  .nav-donate {
+    @apply text-[13px] font-bold uppercase tracking-[0.12em] rounded-full border px-5 py-2.5 transition-all duration-200;
+    color: var(--nav-c);
+    border-color: color-mix(in srgb, var(--nav-c) 38%, transparent);
+    opacity: 0.9;
+  }
+  .nav-donate:hover {
+    opacity: 1;
+    background: color-mix(in srgb, var(--nav-c) 10%, transparent);
+  }
+
+  /* ---------- Typography helpers ---------- */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent;
+  }
+  .micro-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-inkFaint;
+  }
+  .section-head {
+    @apply max-w-3xl space-y-5;
+  }
+
+  /* ---------- Card & media language ---------- */
+  .card {
+    @apply bg-surface border border-line rounded-2xl shadow-card;
+  }
+  .card-media {
+    @apply relative overflow-hidden rounded-xl bg-surfaceAlt;
+  }
+  .media-img {
+    filter: grayscale(0.15);
+    transition: transform 1.2s cubic-bezier(0.2, 0.6, 0.2, 1), filter 0.5s ease;
+  }
+  .group:hover .media-img {
+    filter: grayscale(0);
+    transform: scale(1.04);
+  }
+
+  /* White logos (provided for dark backgrounds) — flip to ink for light cards */
+  .logo-invert {
+    filter: invert(1);
+  }
+
+  /* ---------- Forms ---------- */
+  .form-label {
+    @apply block text-xs font-semibold uppercase tracking-[0.14em] text-inkDim mb-2;
+  }
+  .form-input {
+    @apply w-full rounded-xl border border-line bg-paper px-5 py-3.5 text-base text-ink placeholder:text-inkFaint transition-colors duration-200 outline-none;
+  }
+  .form-input:focus {
+    border-color: var(--accent);
+  }
+  .form-input::placeholder {
+    opacity: 1;
+    color: color-mix(in srgb, var(--ink) 38%, transparent);
+  }
+
+  /* Form status messages — AA on white card:
+     success #18794E (5.41:1) / error #A61B1B (7.52:1) */
+  .form-status {
+    @apply text-sm font-medium mt-4;
+  }
+  .form-error {
+    color: var(--error);
+  }
+  .form-success {
+    color: var(--success);
+  }
+}
+
+/* ==========================================================================
+   Header — transparent over dark hero, frosted paper after scroll
+   ========================================================================== */
 #main-header {
-  will-change: transform;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(0px);
 }
 
-#main-header.scrolled .nav-logo {
-  transform: scale(0.85);
+/* On pages whose first viewport is a dark hero, nav is light text */
+body.on-dark-hero #main-header {
+  --nav-c: var(--paper);
+  --ring: var(--paper);
+}
+body.on-dark-hero #main-header.scrolled,
+#main-header.scrolled {
+  --nav-c: var(--ink);
+  --ring: var(--accent);
+  background-color: color-mix(in srgb, var(--paper) 86%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--ink) 10%, transparent);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--ink) 8%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-#main-content:focus {
-  outline: none;
+#main-header #nav-container {
+  transition: padding 0.3s ease;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
-
-/* Custom Premium Scrollbar matching Organic Minimalism design system */
-@layer base {
-  html {
-    scrollbar-color: #2A2D2A #171A17; /* thumb track */
-    scrollbar-width: auto;
-  }
-
-  /* WebKit styles */
-  ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #171A17;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #2A2D2A;
-    border: 3px solid #171A17;
-    border-radius: 9999px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #3D413D;
+@media (min-width: 768px) {
+  #main-header #nav-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
+#main-header.scrolled #nav-container {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
 
-/* Lightbox — click-to-enlarge for project images */
+/* Mobile menu toggle — adapts to header surface via --nav-c */
+#mobile-menu-open {
+  color: var(--nav-c);
+  background: color-mix(in srgb, var(--nav-c) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--nav-c) 24%, transparent);
+  transition: background-color 0.2s ease;
+}
+#mobile-menu-open:hover {
+  background: color-mix(in srgb, var(--nav-c) 16%, transparent);
+}
+
+/* Close button lives inside the light overlay — fixed ink styling */
+#mobile-menu-close {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  transition: background-color 0.2s ease;
+}
+#mobile-menu-close:hover {
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+/* ==========================================================================
+   Lightbox — click-to-enlarge for project images
+   ========================================================================== */
 img[data-lightbox] {
   cursor: zoom-in;
 }
 
 .lightbox-overlay {
+  --ring: var(--paper);
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -95,14 +269,13 @@ img[data-lightbox] {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(9, 11, 9, 0.92);
+  background: rgba(23, 20, 15, 0.93);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
 }
-
 .lightbox-overlay.open {
   opacity: 1;
   pointer-events: auto;
@@ -122,18 +295,18 @@ img[data-lightbox] {
   max-height: 80vh;
   width: auto;
   height: auto;
-  border-radius: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
-  background: #171A17;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(250, 247, 241, 0.18);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  background: var(--dark, #17140F);
   object-fit: contain;
 }
 
 .lightbox-caption {
   margin-top: 16px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(250, 247, 241, 0.82);
   font-size: 12px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;
@@ -149,21 +322,52 @@ img[data-lightbox] {
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
-  background: #171A17;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #fff;
+  background: #26221C;
+  border: 1px solid rgba(250, 247, 241, 0.3);
+  color: #FAF7F1;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
 .lightbox-close:hover {
-  background: #2A2D2A;
-  border-color: rgba(255, 255, 255, 0.45);
+  background: #3A352D;
   transform: scale(1.05);
 }
 
+/* ==========================================================================
+   Scrollbar — light theme
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--ink) 22%, transparent);
+  border: 3px solid var(--paper);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--ink) 35%, transparent);
+}
+
+/* ==========================================================================
+   Reduced motion — calm by default, stiller on request
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .lightbox-overlay {
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .group:hover .media-img {
+    transform: none;
   }
 }

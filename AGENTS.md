@@ -22,7 +22,7 @@ Static marketing site for GA Medical Veterinary — custom surgical devices for 
 - `tests/*.spec.js` — Playwright.
 
 ## Conventions (keep these)
-- **Design system** (dark "Organic Minimalism") lives in `tailwind.config.js`: `page #0D0F0D`, `surface #171A17`, `primary #A8D5A8`, `content #E4E7E2`, etc. Use these tokens — no hardcoded hex unless in CSS comments (form status colors).
+- **Design system** ("Ivory & Ink — Warm Clinical", see `REDESIGN-NOTES.md`) lives in `tailwind.config.js`: `paper #FAF7F1`, `surface #FFFFFF`, `surfaceAlt #F1EDE3`, `ink #2B2822`, `inkDim #5C564C`, `inkFaint #716B5F`, `accent #8A2F52` (+ `accentDeep`), `line #E6DFD3`, `success`, `error`. Typography: **Source Serif 4 for headings (serif)**, Inter for body/UI (sans). Use these tokens — no hardcoded hex unless in CSS comments (form status colors). Shared shell lives in `scripts/build-pages.mjs` — regenerate all pages with `node scripts/build-pages.mjs` after changing the shell.
 - **Multi-page wiring**: adding a page requires (1) new HTML in `src/`, (2) entry in `vite.config.js` `rollupOptions.input`, (3) nav link in **every** page's desktop + mobile nav, (4) add to test `PAGES` arrays.
 - **Hero consistency is test-enforced.** All non-home pages must share identical hero image classes (`#hero-bg`, `object-[82%_top]`, `min-h-[45vh]`, no responsive `sm:/md:/lg:` object-position, no `-mt-`). Home page additionally uses `scale-100` + `hover:scale-[1.02]`. Run `tests/hero-consistency.spec.js` after touching any hero.
 - **Accessibility is a hard requirement** (prior A0 work): visible focus ring, skip-link, mobile menu ARIA + focus trap + `inert`, AA color contrast, form error/success states. Don't regress it.
