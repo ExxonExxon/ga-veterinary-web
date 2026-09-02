@@ -118,7 +118,6 @@ function heroSmall(eyebrowText, titleHtml, subtitleHtml = '') {
     </div>
     <div class="${HERO_CONTAINER_CLASSES}">
       <div class="max-w-3xl space-y-6">
-        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-paper/75">${eyebrowText}</p>
         <h1 class="font-serif font-medium text-5xl md:text-6xl tracking-tight leading-[1.05] text-paper">${titleHtml}</h1>
         ${subtitleHtml ? '<p class="text-lg md:text-xl text-paper/85 leading-relaxed max-w-2xl">' + subtitleHtml + '</p>' : ''}
       </div>
@@ -127,7 +126,8 @@ function heroSmall(eyebrowText, titleHtml, subtitleHtml = '') {
 }
 
 const SPEC = '<svg class="w-4 h-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="6.5" stroke-width="1.5"/><path d="M10 1v4M10 15v4M1 10h4M15 10h4" stroke-width="1.5"/><circle cx="10" cy="10" r="1.25" fill="currentColor" stroke="none"/></svg>';
-const eyebrow = (label) => `<p class="eyebrow">${SPEC}<span>${label}</span></p>`;
+// Section eyebrow labels were removed by design — helper emits nothing.
+const eyebrow = () => '';
 const arrowSvg = (cls = 'w-4 h-4') => `<svg class="${cls} transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>`;
 const frame = (srcAttr, alt, w, h) => `
       <figure class="card-media">
@@ -226,7 +226,6 @@ ${NAV}
     </div>
     <div class="${HERO_CONTAINER_CLASSES}">
       <div class="max-w-3xl">
-        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-paper/75 mb-6">Custom surgical device design &amp; manufacture</p>
         <h1 class="font-serif font-medium text-5xl md:text-6xl xl:text-7xl tracking-tight leading-[1.04] text-paper">
           Precision engineering <span class="italic font-normal">for all life.</span>
         </h1>
