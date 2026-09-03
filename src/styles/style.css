@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   IVORY & INK — WARM CLINICAL
+   IVORY & INK WARM CLINICAL
    Design tokens are CSS mirrors of tailwind.config.js (see REDESIGN-NOTES.md)
    ========================================================================== */
 :root {
@@ -16,7 +16,7 @@
   --success: #18794E;
   --error: #A61B1B;
   --ring: var(--accent);
-  --nav-c: var(--ink); /* nav/link color — flips to paper over dark hero */
+  --nav-c: var(--ink); /* nav/link color flips to paper over dark hero */
 }
 
 ::selection {
@@ -30,7 +30,7 @@
   }
 
   body {
-    @apply bg-paper text-ink antialiased text-base md:text-lg;
+    @apply bg-paper text-ink antialiased font-sans text-base md:text-lg;
   }
 
   /* Visible, theme-aware focus ring (accent on light, paper inside dark areas) */
@@ -157,7 +157,7 @@
     transform: scale(1.04);
   }
 
-  /* White logos (provided for dark backgrounds) — flip to ink for light cards */
+  /* White logos (provided for dark backgrounds) flip to ink for light cards */
   .logo-invert {
     filter: invert(1);
   }
@@ -177,7 +177,7 @@
     color: color-mix(in srgb, var(--ink) 38%, transparent);
   }
 
-  /* Form status messages — AA on white card:
+  /* Form status messages AA on white card:
      success #18794E (5.41:1) / error #A61B1B (7.52:1) */
   .form-status {
     @apply text-sm font-medium mt-4;
@@ -191,7 +191,7 @@
 }
 
 /* ==========================================================================
-   Header — transparent over dark hero, frosted paper after scroll
+   Header transparent over dark hero, frosted paper after scroll
    ========================================================================== */
 #main-header {
   transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -231,7 +231,7 @@ body.on-dark-hero #main-header.scrolled,
   padding-bottom: 0.875rem;
 }
 
-/* Mobile menu toggle — adapts to header surface via --nav-c */
+/* Mobile menu toggle adapts to header surface via --nav-c */
 #mobile-menu-open {
   color: var(--nav-c);
   background: color-mix(in srgb, var(--nav-c) 8%, transparent);
@@ -242,7 +242,7 @@ body.on-dark-hero #main-header.scrolled,
   background: color-mix(in srgb, var(--nav-c) 16%, transparent);
 }
 
-/* Close button lives inside the light overlay — fixed ink styling */
+/* Close button lives inside the light overlay fixed ink styling */
 #mobile-menu-close {
   color: var(--ink);
   background: color-mix(in srgb, var(--ink) 6%, transparent);
@@ -254,7 +254,7 @@ body.on-dark-hero #main-header.scrolled,
 }
 
 /* ==========================================================================
-   Lightbox — click-to-enlarge for project images
+   Lightbox click-to-enlarge for project images
    ========================================================================== */
 img[data-lightbox] {
   cursor: zoom-in;
@@ -308,7 +308,7 @@ img[data-lightbox] {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-weight: 600;
+  @apply font-semibold;
   text-align: center;
 }
 
@@ -334,7 +334,7 @@ img[data-lightbox] {
 }
 
 /* ==========================================================================
-   Scrollbar — light theme
+   Scrollbar light theme
    ========================================================================== */
 ::-webkit-scrollbar {
   width: 12px;
@@ -353,7 +353,7 @@ img[data-lightbox] {
 }
 
 /* ==========================================================================
-   Reduced motion — calm by default, stiller on request
+   Reduced motion calm by default, stiller on request
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   *,

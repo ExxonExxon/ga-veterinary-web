@@ -1,10 +1,10 @@
-# AGENTS.md — ga-veterinary-web
+# AGENTS.md ga-veterinary-web
 
-Static marketing site for GA Medical Veterinary — custom surgical devices for wildlife, marine mammals, fish, and birds. Deployed at gamedical.com.au (Netlify).
+Static marketing site for GA Medical Veterinary custom surgical devices for wildlife, marine mammals, fish, and birds. Deployed at gamedical.com.au (Netlify).
 
 ## Stack
 - **Vite 8** multi-page build (root = `src/`), **Tailwind CSS 3**, **vanilla ES-module JS**.
-- **No framework.** React deps exist in `package.json` but are unused — do not introduce React.
+- **No framework.** React deps exist in `package.json` but are unused do not introduce React.
 - Contact form uses **Netlify Forms** (posts to `/`). `.env` `VITE_WEB3FORMS_KEY` is stale; ignore it.
 
 ## Commands
@@ -14,15 +14,15 @@ Static marketing site for GA Medical Veterinary — custom surgical devices for 
 - `npx playwright test` → full suite (slow: 2 spec files × **6 viewports**, `workers:1`). Run a subset: `npx playwright test tests/hero-consistency.spec.js`
 
 ## Structure
-- `src/*.html` — pages: `index`, `about`, `contact`, `projects`, `privacy`, `404`. Copy `page-template.html` for a new page.
-- `src/scripts/main.js` — single JS entry (mobile menu + focus trap, Netlify form submit, lightbox, scroll header, active nav, copyright year).
-- `src/styles/style.css` — Tailwind directives + component/base layer overrides.
-- `tailwind.config.js` — design tokens (single source of truth for colors/fonts).
-- `public/` — `robots.txt`, `sitemap.xml`.
-- `tests/*.spec.js` — Playwright.
+- `src/*.html` pages: `index`, `about`, `contact`, `projects`, `privacy`, `404`. Copy `page-template.html` for a new page.
+- `src/scripts/main.js` single JS entry (mobile menu + focus trap, Netlify form submit, lightbox, scroll header, active nav, copyright year).
+- `src/styles/style.css` Tailwind directives + component/base layer overrides.
+- `tailwind.config.js` design tokens (single source of truth for colors/fonts).
+- `public/` `robots.txt`, `sitemap.xml`.
+- `tests/*.spec.js` Playwright.
 
 ## Conventions (keep these)
-- **Design system** ("Ivory & Ink — Warm Clinical", see `REDESIGN-NOTES.md`) lives in `tailwind.config.js`: `paper #FAF7F1`, `surface #FFFFFF`, `surfaceAlt #F1EDE3`, `ink #2B2822`, `inkDim #5C564C`, `inkFaint #716B5F`, `accent #8A2F52` (+ `accentDeep`), `line #E6DFD3`, `success`, `error`. Typography: **Source Serif 4 for headings (serif)**, Inter for body/UI (sans). Use these tokens — no hardcoded hex unless in CSS comments (form status colors). Shared shell lives in `scripts/build-pages.mjs` — regenerate all pages with `node scripts/build-pages.mjs` after changing the shell.
+- **Design system** ("Ivory & Ink Warm Clinical", see `REDESIGN-NOTES.md`) lives in `tailwind.config.js`: `paper #FAF7F1`, `surface #FFFFFF`, `surfaceAlt #F1EDE3`, `ink #2B2822`, `inkDim #5C564C`, `inkFaint #716B5F`, `accent #8A2F52` (+ `accentDeep`), `line #E6DFD3`, `success`, `error`. Typography: **Source Serif 4 for headings (serif)**, Inter for body/UI (sans). Use these tokens no hardcoded hex unless in CSS comments (form status colors). Shared shell lives in `scripts/build-pages.mjs` regenerate all pages with `node scripts/build-pages.mjs` after changing the shell.
 - **Multi-page wiring**: adding a page requires (1) new HTML in `src/`, (2) entry in `vite.config.js` `rollupOptions.input`, (3) nav link in **every** page's desktop + mobile nav, (4) add to test `PAGES` arrays.
 - **Hero consistency is test-enforced.** All non-home pages must share identical hero image classes (`#hero-bg`, `object-[82%_top]`, `min-h-[45vh]`, no responsive `sm:/md:/lg:` object-position, no `-mt-`). Home page additionally uses `scale-100` + `hover:scale-[1.02]`. Run `tests/hero-consistency.spec.js` after touching any hero.
 - **Accessibility is a hard requirement** (prior A0 work): visible focus ring, skip-link, mobile menu ARIA + focus trap + `inert`, AA color contrast, form error/success states. Don't regress it.

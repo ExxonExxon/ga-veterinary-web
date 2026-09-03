@@ -6,7 +6,7 @@
 
 ## Description
 
-GA Medical Veterinary is the online presence for a specialist who designs and manufactures bespoke surgical instruments and implants for animals. Every device is custom-made for the species and procedure — from koala dental tools and whale needles to fixation pins and avian leg bands.
+GA Medical Veterinary is the online presence for a specialist who designs and manufactures bespoke surgical instruments and implants for animals. Every device is custom-made for the species and procedure from koala dental tools and whale needles to fixation pins and avian leg bands.
 
 This site is for three audiences: wildlife veterinarians seeking instruments, potential sponsors and donors supporting the work, and a portfolio of past projects for the general public. It differs from a typical clinic site by leading with the **craft and the catalogue of engineering**, not appointment booking.
 
@@ -33,19 +33,19 @@ The dev server runs at `http://localhost:5173`.
 
 ## Features
 
-- **Multi-page site** — Home, About, Projects, Contact, Privacy, and 404, sharing one design system.
-- **Responsive by default** — tested across 6 viewports from 375px mobile to 1920px desktop.
-- **Organic Minimalist design** — a dark, earthy palette (`#0D0F0D` base, `#A8D5A8` primary) defined once in Tailwind tokens.
-- **Project lightbox** — click any project image to enlarge with keyboard + focus-trap support.
-- **Netlify Forms contact** — spam-honeypot and accessible success/error states built in.
-- **Accessible (WCAG AA)** — skip-link, visible focus rings, ARIA mobile menu, color-contrast-safe tokens.
-- **SEO & sharing** — per-page meta, Open Graph / Twitter cards, structured data, sitemap, responsive hero images.
+- **Multi-page site** Home, About, Projects, Contact, Privacy, and 404, sharing one design system.
+- **Responsive by default** tested across 6 viewports from 375px mobile to 1920px desktop.
+- **Organic Minimalist design** a dark, earthy palette (`#0D0F0D` base, `#A8D5A8` primary) defined once in Tailwind tokens.
+- **Project lightbox** click any project image to enlarge with keyboard + focus-trap support.
+- **Netlify Forms contact** spam-honeypot and accessible success/error states built in.
+- **Accessible (WCAG AA)** skip-link, visible focus rings, ARIA mobile menu, color-contrast-safe tokens.
+- **SEO & sharing** per-page meta, Open Graph / Twitter cards, structured data, sitemap, responsive hero images.
 
 ## Configuration
 
 | Variable | Status | Description |
 |----------|--------|-------------|
-| `VITE_WEB3FORMS_KEY` | Legacy | Leftover from an earlier Web3Forms backend. **Ignored** — the site uses Netlify Forms and needs no key. |
+| `VITE_WEB3FORMS_KEY` | Legacy | Leftover from an earlier Web3Forms backend. **Ignored** the site uses Netlify Forms and needs no key. |
 
 No environment variables are required to build or run.
 
@@ -66,7 +66,7 @@ npx playwright test                                    # full suite (6 viewports
 npx playwright test tests/hero-consistency.spec.js     # hero consistency only
 ```
 
-The suite runs against a real browser at 6 viewport sizes. It is intentionally slow (`workers: 1`) — run a targeted spec during development.
+The suite runs against a real browser at 6 viewport sizes. It is intentionally slow (`workers: 1`) run a targeted spec during development.
 
 ## Contributing
 
@@ -88,7 +88,7 @@ See [Commits](https://github.com/ExxonExxon/ga-veterinary-web/commits/main) and 
 
 ## License
 
-ISC — see the repository for licensing details.
+ISC see the repository for licensing details.
 
 ---
 

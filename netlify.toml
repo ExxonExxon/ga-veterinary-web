@@ -1,3 +1,17 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# --- Security headers (SEO fix agent, audit 07) ---
+# CSP is already delivered as a <meta> in each page's <head>; it is intentionally
+# NOT duplicated as a header here to avoid breaking the Behold widget / Google Fonts
+# (see seo-audit/FIX-LOG.md H9). HSTS is served without 'preload' — the owner must
+# confirm the entire domain is HTTPS-only before adding preload.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=()"

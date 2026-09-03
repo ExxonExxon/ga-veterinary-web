@@ -51,7 +51,7 @@ async function gotoAndWaitForHero(page, url) {
 test.describe('Hero Image Consistency', () => {
 
   for (const { name, path } of PAGES) {
-    test(`${name} page — hero image matches the standard rule`, async ({ page }) => {
+    test(`${name} page hero image matches the standard rule`, async ({ page }) => {
       await gotoAndWaitForHero(page, path);
 
       const heroImg = page.locator('#hero-bg');
@@ -77,7 +77,7 @@ test.describe('Hero Image Consistency', () => {
       expect(classStr).not.toContain('xl:object-');
     });
 
-    test(`${name} page — hero container has standard min-height`, async ({ page }) => {
+    test(`${name} page hero container has standard min-height`, async ({ page }) => {
       await gotoAndWaitForHero(page, path);
 
       const heroHeader = page.locator('header.relative');
@@ -89,7 +89,7 @@ test.describe('Hero Image Consistency', () => {
       expect(heroHeaderClass, `${name}: hero should not have -mt- class`).not.toContain('-mt-');
     });
 
-    test(`${name} page — hero uses the standard content container`, async ({ page }) => {
+    test(`${name} page hero uses the standard content container`, async ({ page }) => {
       await gotoAndWaitForHero(page, path);
       const heroContent = page.locator('header.relative div.z-10');
       await expect(heroContent).toHaveCount(1);
@@ -119,7 +119,7 @@ test.describe('Hero Image Consistency', () => {
     }
   });
 
-  test('Hero image is visible at viewport — koala not cutoff', async ({ page }) => {
+  test('Hero image is visible at viewport koala not cutoff', async ({ page }) => {
     // Visit each page and verify the hero image renders in the viewport
     for (const { name, path } of PAGES) {
       await gotoAndWaitForHero(page, path);

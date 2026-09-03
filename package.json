@@ -1,7 +1,7 @@
 {
   "name": "ga-veterinary-web",
   "version": "1.0.0",
-  "description": "Custom surgical device manufacturing — wildlife, marine, and veterinary instruments",
+  "description": "Custom surgical device manufacturing wildlife, marine, and veterinary instruments",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

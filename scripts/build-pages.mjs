@@ -1,4 +1,4 @@
-// Build script — regenerates all src/*.html pages from the shared design shell.
+// Build script regenerates all src/*.html pages from the shared design shell.
 // Heads are preserved from the originals (only theme-color + fonts updated).
 // Usage: node scripts/build-pages.mjs
 import fs from 'node:fs';
@@ -15,7 +15,7 @@ const FB = 'https://www.facebook.com/gamedicalveterinary/';
 const LI = 'https://au.linkedin.com/in/giriusantanaitis';
 
 /* ------------------------------------------------------------------ *
- *  Head helpers — keep original <head> byte-identical except the two
+ *  Head helpers keep original <head> byte-identical except the two
  *  intended edits (theme-color, font families). Idempotent.
  * ------------------------------------------------------------------ */
 function transformHead(page) {
@@ -101,6 +101,7 @@ const NAV = `
 
 const HERO_IMG_CLASSES = 'w-full h-full object-cover object-[82%_top] transition-all duration-700 ease-out';
 const HERO_CONTAINER_CLASSES = 'relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 pt-56 md:pt-64 pb-14 md:pb-20';
+const MAIN_CLASSES = 'max-w-6xl mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-32 md:pb-48';
 
 function heroSmall(eyebrowText, titleHtml, subtitleHtml = '') {
   return `
@@ -126,7 +127,7 @@ function heroSmall(eyebrowText, titleHtml, subtitleHtml = '') {
 }
 
 const SPEC = '<svg class="w-4 h-4 shrink-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="10" cy="10" r="6.5" stroke-width="1.5"/><path d="M10 1v4M10 15v4M1 10h4M15 10h4" stroke-width="1.5"/><circle cx="10" cy="10" r="1.25" fill="currentColor" stroke="none"/></svg>';
-// Section eyebrow labels were removed by design — helper emits nothing.
+// Section eyebrow labels were removed by design helper emits nothing.
 const eyebrow = () => '';
 const arrowSvg = (cls = 'w-4 h-4') => `<svg class="${cls} transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>`;
 const frame = (srcAttr, alt, w, h) => `
@@ -240,7 +241,7 @@ ${NAV}
     </div>
   </header>
 
-  <main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24 md:pb-32">
+  <main id="main-content" tabindex="-1" class="${MAIN_CLASSES}">
     <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
       <div class="lg:col-span-6 space-y-10 lg:pt-4">
         <div class="space-y-6">
@@ -256,19 +257,19 @@ ${NAV}
         </div>
         <div class="pt-8 border-t border-line space-y-6">
           <h3 class="font-serif text-2xl md:text-3xl font-medium tracking-tight">Got an animal I can help with?</h3>
-          <a href="contact.html" aria-label="Let me know — contact me about an animal that needs help" class="btn-primary">Let me know</a>
+          <a href="contact.html" aria-label="Let me know contact me about an animal that needs help" class="btn-primary">Let me know</a>
         </div>
       </div>
       <div class="lg:col-span-6 space-y-6">
-        ${frame('./assets/images/general/kookaburra.jpg', 'Kookaburra', 1200, 756)}
+        ${frame('./assets/images/general/kookaburra.webp', 'Kookaburra', 1200, 756)}
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          ${frame('./assets/images/general/turtle.jpg', 'Sea Turtle', 1200, 756)}
-          ${frame('./assets/images/general/koala-dental.jpg', 'Koala Healthcare', 1200, 757)}
+          ${frame('./assets/images/general/turtle.webp', 'Sea Turtle', 1200, 756)}
+          ${frame('./assets/images/general/koala-dental.webp', 'Koala Healthcare', 1200, 757)}
         </div>
       </div>
     </section>
 
-    <section id="services" class="mt-24 md:mt-32 space-y-12 md:space-y-16">
+    <section id="services" class="mt-36 md:mt-56 space-y-12 md:space-y-16">
       <div class="section-head">
         ${eyebrow('What I do')}
         <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">How I <span class="italic font-normal">can help</span></h2>
@@ -284,7 +285,7 @@ ${NAV}
       </div>
     </section>
 
-    <section id="projects" class="mt-24 md:mt-32 space-y-12 md:space-y-16">
+    <section id="projects" class="mt-36 md:mt-56 space-y-12 md:space-y-16">
       <div class="section-head">
         ${eyebrow('Case study')}
         <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">My <span class="italic font-normal">projects &amp; news</span></h2>
@@ -293,11 +294,11 @@ ${NAV}
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <div class="lg:col-span-6 order-2 lg:order-1">
           <figure class="card-media shadow-card">
-            <img src="./assets/images/projects/sun-bear.jpg" alt="Hitam the Sun Bear during Operation Sun Bear Borneo" class="media-img w-full h-full object-cover" width="540" height="304" loading="lazy">
+            <img src="./assets/images/projects/sun-bear.webp" alt="Hitam the Sun Bear during Operation Sun Bear Borneo" class="media-img w-full h-full object-cover" width="540" height="304" loading="lazy">
           </figure>
         </div>
         <div class="lg:col-span-6 space-y-8 order-1 lg:order-2">
-          <h3 class="font-serif text-3xl md:text-4xl font-medium tracking-tight leading-tight">Hitam — Operation Sun Bear</h3>
+          <h3 class="font-serif text-3xl md:text-4xl font-medium tracking-tight leading-tight">Hitam Operation Sun Bear</h3>
           <div class="space-y-6 text-ink/90 leading-relaxed">
             <p>The <span class="font-semibold italic">Operation Sun Bear Borneo</span> project tells the story of a sun bear taken from the forest as a cub and sold as a caged &ldquo;pet&rdquo;.</p>
             <p>Fed an incorrect diet that led to poor bone development, Hitam was in constant pain and discomfort for almost all of her six years of life.</p>
@@ -313,12 +314,12 @@ ${NAV}
       </div>
     </section>
 
-    <section id="donate" class="mt-24 md:mt-32">
+    <section id="donate" class="mt-36 md:mt-56">
       <div class="bg-surfaceAlt border border-line rounded-3xl p-10 md:p-16">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div class="lg:col-span-5 space-y-5">
             ${eyebrow('Support the work')}
-            <h2 class="font-serif text-3xl md:text-5xl font-medium tracking-tight leading-[1.12]">You can help too — <span class="italic font-normal">by sponsoring me</span></h2>
+            <h2 class="font-serif text-3xl md:text-5xl font-medium tracking-tight leading-[1.12]">You can help too <span class="italic font-normal">by sponsoring me</span></h2>
           </div>
           <div class="lg:col-span-7 space-y-8">
             <p class="text-lg md:text-xl text-inkDim leading-relaxed">Most of what I do is self-funded. Every bit helps. Click below to support my work developing medical devices for wildlife.</p>
@@ -328,7 +329,7 @@ ${NAV}
       </div>
     </section>
 
-    <section id="instagram" class="mt-24 md:mt-32">
+    <section id="instagram" class="mt-36 md:mt-56">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-10">
         <div class="section-head">
           ${eyebrow('Behind the scenes')}
@@ -352,7 +353,7 @@ ${NAV}
       </div>
     </section>
 
-    <section id="sponsors" class="mt-24 md:mt-32">
+    <section id="sponsors" class="mt-36 md:mt-56">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
         <div class="lg:col-span-5 space-y-6">
           ${eyebrow('Grateful')}
@@ -397,11 +398,11 @@ function pageAbout() {
           </li>`).join('');
   const news = [
     ['https://www.australiangeographic.com.au/topics/wildlife/2021/12/wombat-dental-gags-and-monster-whale-needles-meet-the-designer-developing-life-saving-tools-for-our-wildlife/', 'Australian Geographic', './assets/images/news1.jpg', 'Australian Geographic Article', 900, 600, 'From wombat dental gags to massive whale needles, Australian Geographic explores how bespoke industrial design is saving our most vulnerable wildlife.'],
-    ['https://www.vetpracticemag.com.au/girius-antanaitis-likes-tooling-around/', 'Vet Practice Magazine', './assets/images/news2.png', 'Vet Practice Magazine Article', 600, 900, 'A profile on how industrial design helps solve the anatomical challenges of exotic animal surgery.'],
+    ['https://www.vetpracticemag.com.au/girius-antanaitis-likes-tooling-around/', 'Vet Practice Magazine', './assets/images/news2.webp', 'Vet Practice Magazine Article', 600, 900, 'A profile on how industrial design helps solve the anatomical challenges of exotic animal surgery.'],
     ['https://orangutanfoundation.org.au/operation-sun-bear-borneo/', 'Orangutan Foundation', './assets/images/news3.jpg', 'Operation Sun Bear Borneo', 640, 459, 'A world-first surgical mission featuring a custom pelvic implant to relieve the daily pain of a rescued sun bear.'],
-    ['https://www.lrt.lt/naujienos/laisvalaikis/13/1109158/lokiukes-gyvybe-isgelbejes-girius-antanaitis-kaunieciams-papasakos-apie-tai-kaip-gydo-banginius-ir-vombatus', 'LRT', './assets/images/news4.jpg', 'LRT News Article', 1113, 836, 'Life-saving surgical instruments for wildlife, including specialized implants for rescued animals (Lithuanian).'],
-    ['https://www.vda.lt/lt/dizaino-inovaciju-centras/naujienos/naujienos/po-itin-sekmingos-diagnoze-dizaino-veterinarija-premjeros-paskaitos-pakartojimas-kaune', 'Vilnius Academy of Arts', './assets/images/news5.jpg', 'VDA News Article', 4000, 2685, 'A lecture on industrial design and wildlife veterinary medicine (Lithuanian).'],
-    ['https://www.15min.lt/gyvenimas/naujiena/pokalbiai/australijos-lietuvio-israsti-medicininiai-instrumentai-gelbsti-gyvunus-sukure-ir-adata-banginiui-1040-1108520#_', '15min', './assets/images/news6.jpg', '15min News Article', 1620, 1080, 'Exploring inventions that bring humane treatment to wild animals worldwide (Lithuanian).'],
+    ['https://www.lrt.lt/naujienos/laisvalaikis/13/1109158/lokiukes-gyvybe-isgelbejes-girius-antanaitis-kaunieciams-papasakos-apie-tai-kaip-gydo-banginius-ir-vombatus', 'LRT', './assets/images/news4.webp', 'LRT News Article', 1113, 836, 'Life-saving surgical instruments for wildlife, including specialized implants for rescued animals (Lithuanian).'],
+    ['https://www.vda.lt/lt/dizaino-inovaciju-centras/naujienos/naujienos/po-itin-sekmingos-diagnoze-dizaino-veterinarija-premjeros-paskaitos-pakartojimas-kaune', 'Vilnius Academy of Arts', './assets/images/news5.webp', 'VDA News Article', 4000, 2685, 'A lecture on industrial design and wildlife veterinary medicine (Lithuanian).'],
+    ['https://www.15min.lt/gyvenimas/naujiena/pokalbiai/australijos-lietuvio-israsti-medicininiai-instrumentai-gelbsti-gyvunus-sukure-ir-adata-banginiui-1040-1108520#_', '15min', './assets/images/news6.webp', '15min News Article', 1620, 1080, 'Exploring inventions that bring humane treatment to wild animals worldwide (Lithuanian).'],
   ];
   const newsCards = news.map(([url, pub, img, alt, w, h, blurb]) => `
           <a href="${url}" target="_blank" rel="noopener noreferrer" class="group block space-y-5">
@@ -418,7 +419,7 @@ function pageAbout() {
 <body class="bg-paper on-dark-hero">
 ${NAV}
 ${heroSmall('The designer behind the devices', 'About <span class="italic font-normal">me</span>')}
-  <main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24 md:pb-32">
+  <main id="main-content" tabindex="-1" class="${MAIN_CLASSES}">
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
       <div class="lg:col-span-9 space-y-12">
         <div class="space-y-6">
@@ -432,7 +433,7 @@ ${heroSmall('The designer behind the devices', 'About <span class="italic font-n
           <p>
             I do this because no one else does. I love the challenge, and seeing my devices help animals that would otherwise suffer, be half treated, or worst of all, die.
           </p>
-          <p class="font-serif text-xl md:text-2xl text-ink">
+          <p class="text-xl md:text-2xl text-ink">
             So I am here to help.
           </p>
           <p>
@@ -472,7 +473,7 @@ ${heroSmall('The designer behind the devices', 'About <span class="italic font-n
       </div>
     </section>
 
-    <section id="what-i-do" class="mt-24 md:mt-32 space-y-12 md:space-y-16">
+    <section id="what-i-do" class="mt-36 md:mt-56 space-y-12 md:space-y-16">
       <div class="section-head">
         ${eyebrow('The practice')}
         <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">What I <span class="italic font-normal">do</span></h2>
@@ -486,7 +487,7 @@ ${heroSmall('The designer behind the devices', 'About <span class="italic font-n
       </div>
     </section>
 
-    <section id="news" class="mt-24 md:mt-32 space-y-12 md:space-y-16">
+    <section id="news" class="mt-36 md:mt-56 space-y-12 md:space-y-16">
       <div class="section-head">
         ${eyebrow('Press &amp; recognition')}
         <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">GA Veterinary <span class="italic font-normal">in the news</span></h2>
@@ -506,20 +507,20 @@ function pageProjects() {
   const items = [
     ['./assets/images/projects/fixation-pins.jpg', 'Micro Skeletal Fixation Pins', 'Engineered for broken bones of the smallest birds and animals. Has unique antibacterial and strength properties.'],
     ['./assets/images/projects/sun-bear-implant.jpg', 'Custom Made Pelvic Implant', 'TPO pelvic implant designed to expand the pelvic cavity of a Sun Bear to reduce daily pain. <a href="https://orangutanfoundation.org.au/operation-sun-bear-borneo/" target="_blank" rel="noopener noreferrer" class="text-ink font-semibold underline decoration-accent/30 underline-offset-2 hover:decoration-accent transition-all">Read more at orangutanfoundation.org.au</a>'],
-    ['./assets/images/projects/forceps.jpg', 'Fragment Grasping Kocher Forceps', 'Re-engineered forceps for manipulating small fragments and implants without deforming the tool.'],
-    ['./assets/images/projects/laryngoscope-blades.jpg', 'Micro Laryngoscope Blades', 'Developed for small bird and animal endotracheal tubing and oral examination.'],
+    ['./assets/images/projects/forceps.webp', 'Fragment Grasping Kocher Forceps', 'Re-engineered forceps for manipulating small fragments and implants without deforming the tool.'],
+    ['./assets/images/projects/laryngoscope-blades.webp', 'Micro Laryngoscope Blades', 'Developed for small bird and animal endotracheal tubing and oral examination.'],
     ['./assets/images/projects/pin-vice.jpg', 'Micro Orthopaedic Pin Chuck', 'Pin chuck for controlled insertion of micro pins during orthopaedic procedures on small animals.'],
     ['./assets/images/projects/hand-chuck.jpg', 'Mini Orthopaedic Hand Chuck', 'Hand-operated chuck providing fine manual control over micro pins and wires during placement.'],
-    ['./assets/images/projects/gag.jpg', 'Table Mounted Veterinary Gag', 'Unique gag with cheek dilators for oral procedures on tight-gaped Australian mammals.'],
-    ['./assets/images/projects/fixation-joints.jpg', 'Micro External Skeletal Fixation Joints', 'Extra small, lightweight joints for bird wing fractures to reduce strain and improve healing.'],
-    ['./assets/images/projects/whale-needles.jpg', 'Extra Long Hypodermic Needles', 'Designed for the humane euthanasia of beached whales that cannot be returned to sea.'],
-    ['./assets/images/projects/connecting-rod.jpg', 'High Friction ESF Connecting Rods', 'Developed to minimize bone malunion by reducing fixation device slippage.'],
+    ['./assets/images/projects/gag.webp', 'Table Mounted Veterinary Gag', 'Unique gag with cheek dilators for oral procedures on tight-gaped Australian mammals.'],
+    ['./assets/images/projects/fixation-joints.webp', 'Micro External Skeletal Fixation Joints', 'Extra small, lightweight joints for bird wing fractures to reduce strain and improve healing.'],
+    ['./assets/images/projects/whale-needles.webp', 'Extra Long Hypodermic Needles', 'Designed for the humane euthanasia of beached whales that cannot be returned to sea.'],
+    ['./assets/images/projects/connecting-rod.webp', 'High Friction ESF Connecting Rods', 'Developed to minimize bone malunion by reducing fixation device slippage.'],
     ['./assets/images/projects/suture-kit.jpg', 'Extra Large Needle &amp; PGA Suture Kits', 'Extra strong kits for Grey Nurse Shark surgery, featuring large needles and dissolvable sutures.'],
     ['./assets/images/projects/laryngoscope-full.jpg', 'Custom Made Laryngoscope', 'Specifically developed and fabricated for tight-gaped Australian mammals.'],
     ['./assets/images/projects/hook-retractor.jpg', 'Titanium Surgical Hook Retractors', 'Hand-made, rust-proof retractors for marine animal surgery in high-salt environments.'],
     ['./assets/images/projects/dolphin-corer.jpg', 'Dolphin Dorsal Fin Corer', 'For biopsies and GPS attachment; includes a drilling guide and sharpening file.'],
-    ['./assets/images/projects/avian-leg-bands.jpg', 'Avian Leg Bands', 'Custom identification bands for avian patients, designed for tracking and monitoring wild bird populations.'],
-    ['./assets/images/projects/k-wire-kit.jpg', 'K-Wire Kit &amp; Wire Gauge', 'Kirschner wire kit for orthopaedic fixation in small animals, including a wire gauge for precise measurement and size selection.'],
+    ['./assets/images/projects/avian-leg-bands.webp', 'Avian Leg Bands', 'Custom identification bands for avian patients, designed for tracking and monitoring wild bird populations.'],
+    ['./assets/images/projects/k-wire-kit.webp', 'K-Wire Kit &amp; Wire Gauge', 'Kirschner wire kit for orthopaedic fixation in small animals, including a wire gauge for precise measurement and size selection.'],
   ];
   const cards = items.map(([img, title, blurb]) => `
           <article class="card group overflow-hidden transition-all duration-300 hover:border-ink/20 hover:shadow-cardHover">
@@ -535,7 +536,7 @@ function pageProjects() {
 <body class="bg-paper on-dark-hero">
 ${NAV}
 ${heroSmall('Selected work', 'Projects', 'Surgical instruments, orthopaedic devices, consumables and apparatus for wildlife, marine mammals, reptiles, fish, and birds.')}
-  <main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24 md:pb-32">
+  <main id="main-content" tabindex="-1" class="${MAIN_CLASSES}">
     <section class="space-y-12">
       <div class="section-head">
         ${eyebrow('The mission')}
@@ -554,7 +555,7 @@ ${heroSmall('Selected work', 'Projects', 'Surgical instruments, orthopaedic devi
       </div>
     </section>
 
-    <section class="mt-24 md:mt-32 space-y-12 md:space-y-16">
+    <section class="mt-36 md:mt-56 space-y-12 md:space-y-16">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         <div class="section-head">
           ${eyebrow('Made by hand, made to measure')}
@@ -567,7 +568,7 @@ ${heroSmall('Selected work', 'Projects', 'Surgical instruments, orthopaedic devi
       </div>
     </section>
 
-    <section class="mt-24 md:mt-32">
+    <section class="mt-36 md:mt-56">
       <div class="card p-8 md:p-14">
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div class="space-y-8 lg:w-3/5 lg:order-2">
@@ -583,7 +584,7 @@ ${heroSmall('Selected work', 'Projects', 'Surgical instruments, orthopaedic devi
           </div>
           <div class="w-3/4 md:w-2/5 shrink-0 lg:order-1">
             <figure class="card-media shadow-card">
-              <img src="./assets/images/products/catalogue-cover.jpg" alt="GA Medical Veterinary Catalogue Cover" class="media-img w-full h-full object-cover" width="1024" height="892" loading="lazy" data-lightbox>
+              <img src="./assets/images/products/catalogue-cover.webp" alt="GA Medical Veterinary Catalogue Cover" class="media-img w-full h-full object-cover" width="1024" height="892" loading="lazy" data-lightbox>
             </figure>
           </div>
         </div>
@@ -601,7 +602,7 @@ function pageContact() {
 <body class="bg-paper on-dark-hero">
 ${NAV}
 ${heroSmall('Inquiries &amp; collaborations', 'Contact <span class="italic font-normal">me</span>')}
-  <main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24 md:pb-32">
+  <main id="main-content" tabindex="-1" class="${MAIN_CLASSES}">
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
       <div class="lg:col-span-5 space-y-12">
         <div class="space-y-4">
@@ -742,14 +743,14 @@ function pagePrivacy() {
   ];
   const blocks = sections.map(([id, title, html]) => `
     <section id="${id}" class="scroll-mt-32">
-      <h3 class="font-serif text-2xl md:text-3xl font-medium tracking-tight mb-6">${title}</h3>
+      <h2 class="font-serif text-2xl md:text-3xl font-medium tracking-tight mb-6">${title}</h2>
       <div class="space-y-5 text-ink/90 leading-relaxed">${html}</div>
     </section>`).join('');
   return `
 <body class="bg-paper on-dark-hero">
 ${NAV}
 ${heroSmall('Legal', 'Privacy <span class="italic font-normal">policy</span>')}
-  <main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24 md:pb-32">
+  <main id="main-content" tabindex="-1" class="${MAIN_CLASSES}">
     <div class="max-w-3xl mx-auto">
       <header class="pb-12 mb-16 border-b border-line space-y-6">
         <p class="text-lg md:text-xl text-inkDim leading-relaxed max-w-2xl">
@@ -798,8 +799,8 @@ function pageTemplate() {
   return `
 <body class="bg-paper on-dark-hero">
 ${NAV}
-${heroSmall('Eyebrow — page context', 'Page Title')}
-  <main id="main-content" tabindex="-1" class="max-w-6xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24 md:pb-32">
+${heroSmall('Eyebrow page context', 'Page Title')}
+  <main id="main-content" tabindex="-1" class="${MAIN_CLASSES}">
 
     <!-- START BUILDING HERE -->
     <section class="max-w-3xl space-y-8">
@@ -813,7 +814,7 @@ ${heroSmall('Eyebrow — page context', 'Page Title')}
       <p class="text-ink/90 leading-relaxed">
         Card language: <code class="text-accent">.card</code> (white surface, hairline border,
         soft shadow). Serif for headings, Inter for body. Max width "max-w-6xl", section rhythm
-        "mt-24 md:mt-32".
+        "mt-36 md:mt-56".
       </p>
     </section>
     <!-- END BUILDING HERE -->

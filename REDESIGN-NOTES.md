@@ -1,6 +1,6 @@
-# GA Medical Veterinary — Visual Redesign Notes
+# GA Medical Veterinary Visual Redesign Notes
 
-Branch: `feature/redesign` (off `development`). Replaces the dark "Organic Minimalism" system with **"Ivory & Ink — Warm Clinical"**.
+Branch: `feature/redesign` (off `development`). Replaces the dark "Organic Minimalism" system with **"Ivory & Ink Warm Clinical"**.
 
 ## 1. Design direction
 
@@ -20,12 +20,12 @@ The old dark-green palette never related to the brand mark (raspberry/black swoo
 medical-device category. The new system derives its accent from the logo and its canvas from
 clinical paper. Concrete moves:
 
-- **Light, warm canvas** (`#FAF7F1`) — calmer than old near-black, reads "clinical + crafted".
-- **Raspberry accent** (`#8A2F52`) taken directly from the brand mark's raspberry tone — the only
+- **Light, warm canvas** (`#FAF7F1`) calmer than old near-black, reads "clinical + crafted".
+- **Raspberry accent** (`#8A2F52`) taken directly from the brand mark's raspberry tone the only
   non-neutral hue, used sparingly (links, primary buttons, focus, active states).
-- **Serif display type** (Source Serif 4) for headings — editorial, human, precise. Inter for body
+- **Serif display type** (Source Serif 4) for headings editorial, human, precise. Inter for body
   and UI. Clear serif-vs-sans rule (Section 3).
-- **Dark photographic bands for heroes only** — photography keeps authority; the rest of the page
+- **Dark photographic bands for heroes only** photography keeps authority; the rest of the page
   breathes on paper.
 - **One card language** everywhere (white surface, hairline border, soft shadow, 16-20px radius):
   trust through consistency; nothing glows.
@@ -36,7 +36,7 @@ All ratios are WCAG 2.1 relative-luminance calculations (verified by script, not
 
 | Token        | Hex       | Role                                          | Psychology                                                     | Contrast vs `paper` |
 |--------------|-----------|-----------------------------------------------|----------------------------------------------------------------|---------------------|
-| `paper`      | `#FAF7F1` | Page canvas                                   | Warm bone-white; calm, paper-like, less sterile than `#fff`    | —                   |
+| `paper`      | `#FAF7F1` | Page canvas                                   | Warm bone-white; calm, paper-like, less sterile than `#fff`    | |
 | `surface`    | `#FFFFFF` | Cards, panels, form                          | Crisp "clean-room" contrast; clarity                          | 1.04 (decorative)   |
 | `surfaceAlt` | `#F1EDE3` | Tinted panels, footer                         | Quiet depth without grey gloom                                 | 1.24 (decorative)   |
 | `ink`       | `#2B2822` | Primary text, headings                       | Warm near-black; authority without harshness                   | **13.74:1** ✅ AA   |
@@ -46,7 +46,7 @@ All ratios are WCAG 2.1 relative-luminance calculations (verified by script, not
 | `accentDeep`| `#6E2340` | Hover/pressed of accent                      | Darker = feedback without noise                                | **9.93:1** ✅       |
 | `accentTint`| `#F7E9EE` | Soft accent washes (hints)                    | Whispered emphasis                                             | 1.07 (decorative)   |
 | `line`      | `#E6DFD3` | Hairlines, dividers, card borders             | Structural quietness                                           | 1.24 (decorative)   |
-| `dark`      | `#17140F` | Hero scrim base, lightbox                     | Frames photography, keeps focus inward                         | —                   |
+| `dark`      | `#17140F` | Hero scrim base, lightbox                     | Frames photography, keeps focus inward                         | |
 | `success`   | `#18794E` | Form success text (on white card)             | Calm green confirmation                                        | **5.41:1** ✅ AA    |
 | `error`     | `#A61B1B` | Form error text (on white card)               | Unmistakable but composed red                                  | **7.52:1** ✅ AA    |
 
@@ -70,12 +70,12 @@ keeps >= 13:1. Hero is treated as art (not a text-on-photo gamble).
 
 ## 3. Typography
 
-- **Sans: Inter 300/400/500/600** — body, navigation, labels, buttons, form controls. Neutral,
+- **Sans: Inter 300/400/500/600** body, navigation, labels, buttons, form controls. Neutral,
   superb numerals, calm. (Kept, with stricter weight discipline.)
-- **Serif: Source Serif 4 400/500/600 (+ italic 400)** — display and feature headings. Warm,
+- **Serif: Source Serif 4 400/500/600 (+ italic 400)** display and feature headings. Warm,
   editorial, reads "designed by hand, made precisely".
 - Loading: both families via the **existing** Google Fonts `<link>` (same `fonts.googleapis.com`
-  / `fonts.gstatic.com` origins already allowed by CSP — **no CSP change**), with the existing
+  / `fonts.gstatic.com` origins already allowed by CSP **no CSP change**), with the existing
   `media="print" onload` + `<noscript>` pattern.
 
 **Serif vs sans rule:** serif = headline or featured title (h1, h2, card/feature titles, large
@@ -90,8 +90,8 @@ no sans headlines above `text-2xl`.
 | Card title      | `text-xl` serif medium               | 1.3 / -0.01em |
 | Body large      | `text-lg` sans normal                | 1.7 / 0 |
 | Body            | `text-base` sans normal              | 1.7 / 0 |
-| Eyebrow/label   | `text-xs` sans semibold uppercase    | — / +0.14em |
-| Button/nav      | `text-[13px]` sans bold uppercase    | — / +0.12em |
+| Eyebrow/label   | `text-xs` sans semibold uppercase    | / +0.14em |
+| Button/nav      | `text-[13px]` sans bold uppercase    | / +0.12em |
 
 Fallbacks: `Georgia` (serif), system-ui stack (sans).
 
@@ -100,19 +100,21 @@ Fallbacks: `Georgia` (serif), system-ui stack (sans).
 - **One max content width:** `max-w-6xl` (72rem) for every frame (nav, main, footer); gutters
   `px-6 md:px-10`. Prose `max-w-3xl`; hero copy `max-w-2xl/3xl`.
 - **One spacing scale (8pt):** 4 . 8 . 12 . 16 . 24 . 32 . 40 . 48 . 64 . 80 . 96 . 128.
-- **Section rhythm (one pattern site-wide):** main top `pt-16 md:pt-24`, sections separated by
-  `mt-24 md:mt-32`, internal spacing `space-y-12 md:space-y-16`, grids `gap-6 md:gap-8`.
+- **Section rhythm (one pattern site-wide):** main `pt-24 md:pt-32 pb-32 md:pb-48`, sections separated by
+  `mt-36 md:mt-56`, internal spacing `space-y-12 md:space-y-16`, grids `gap-6 md:gap-8`.
+  (Bumped from `mt-24 md:mt-32` / `pt-16 md:pt-24` to open up vertical rhythm site-wide 
+  whitespace is the "welcoming" signal; apply the same values on mobile and desktop.)
 - **Card language:** `bg-surface border border-line rounded-2xl` + hairline shadow; media frames
   `rounded-xl overflow-hidden` with `aspect-video` (or `aspect-[3/2]`).
 - Whitespace is a trust signal: nothing crams; every section gets full rhythm.
 
-## 5. Hero rule (NEW — test-enforced)
+## 5. Hero rule (NEW test-enforced)
 
 Every page with a hero uses **identical** markup/classes:
 
 - `<header class="relative min-h-[45vh] md:min-h-[62vh] flex items-center overflow-hidden">`
 - `#hero-bg` classes: `w-full h-full object-cover object-[82%_top] transition-all duration-700 ease-out`
-  (Home adds exactly `scale-100 hover:scale-[1.02]` — the only allowed difference)
+  (Home adds exactly `scale-100 hover:scale-[1.02]` the only allowed difference)
 - **No** `opacity-*`/`blur-*` on the image itself; legibility comes from two scrim overlays:
   `bg-gradient-to-r from-black/85 via-black/60 to-black/20` + `bg-gradient-to-t from-black/70 via-transparent to-black/30`.
 - Crisp bottom edge: dark band ends hard; content continues on paper.
@@ -123,20 +125,22 @@ Every page with a hero uses **identical** markup/classes:
 ## 6. Art direction (photography brief)
 
 - **Lighting:** soft, diffused daylight (no harsh studio lights). Instruments on clean neutral
-  backgrounds (bone/grey) with gentle shadow — catalogue-photography discipline.
-- **Color:** neutral/desaturated background; let the subject carry color. No green/blue grading —
+  backgrounds (bone/grey) with gentle shadow catalogue-photography discipline.
+- **Color:** neutral/desaturated background; let the subject carry color. No green/blue grading 
   the page carries the palette.
 - **Framing:** straight-on or 3/4 detail shots, generous negative space; devices as precise
   artifacts, never floating glamour. Animals: calm, in-care, clinical-warm (like the hero koala).
-- **Grading rule:** every photo gets the same neutral treatment — very slight desaturation
+- **Grading rule:** every photo gets the same neutral treatment very slight desaturation
   (`grayscale(0.15)` at rest) resolving to full colour on hover. Consistency > vividness.
-- **New images needed (flagged — binaries cannot be generated here):** none required; existing set
-  covers every slot. If photography is refreshed later, produce at >=1600px wide in the neutral
-  treatment above; hero variants `koala-header-600/1200/2400.jpg` are the established set.
+- **New images needed (flagged binaries cannot be generated here):** none required; existing
+  set covers every slot. If photography is refreshed later, produce at >=1600px wide in the neutral
+  treatment above; hero variants `koala-header-600/1200/2400/3200/4800.jpg` plus the full
+  `koala-header.jpg` (6144w) form the responsive set, served with `sizes="100vw"` so large/retina
+  displays pull a source >= their device-width and stay sharp (not upscaled).
 
 ## 7. Icon / SVG system
 
-Small inline icon set only — 24px grid, `stroke-width 1.5`, round caps/joins, `currentColor`,
+Small inline icon set only 24px grid, `stroke-width 1.5`, round caps/joins, `currentColor`,
 `aria-hidden="true"`. Icons: scalpel/instruments, implant/pin, laryngoscope, suture needle,
 pulse (support), species. Used for service cards only; one shared "spec mark" (crosshair circle)
 accompanies section eyebrows. No decorative flourishes elsewhere. Consistent stroke/radius/palette.
