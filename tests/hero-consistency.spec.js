@@ -5,7 +5,8 @@ const { test, expect } = require('@playwright/test');
 //  - #hero-bg: crisp image (no opacity/blur on the img itself), legibility from scrim overlays
 //  - identical classes on every page; Home additionally gets scale-100 + hover:scale-[1.02]
 //  - container: min-h-[45vh] md:min-h-[62vh], no -mt-
-//  - content container: max-w-6xl mx-auto pt-56 md:pt-64
+//  - content container: max-w-6xl mx-auto pt-56 md:pt-64 (Home trims mobile top
+//    padding to pt-32 so its taller content doesn't over-zoom the koala crop)
 const PAGES = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about.html' },
@@ -32,7 +33,7 @@ const STANDARD_HEADER_CLASSES = [
 const STANDARD_HERO_CONTENT_CLASSES = [
   'max-w-6xl',
   'mx-auto',
-  'pt-56',
+  'md:pt-64',
 ];
 
 /**
@@ -69,10 +70,12 @@ test.describe('Hero Image Consistency', () => {
       expect(classStr, `${name}: hero image must not be dimmed via opacity-`).not.toContain('opacity-');
       expect(classStr, `${name}: hero image must not be blurred via blur-`).not.toContain('blur-');
 
-      // Fixed object-position (no responsive variants)
-      expect(classStr).toContain('object-[82%_top]');
+      // Responsive object-position: mobile crop frames the koala's face
+      // (object-[92%_top]); md+ restores the tuned desktop crop via md:object-[82%_top].
+      expect(classStr).toContain('object-[92%_top]');
+      expect(classStr).toContain('md:object-[82%_top]');
+      // Only the base + md breakpoint are used for the crop (no sm/lg/xl variants).
       expect(classStr).not.toContain('sm:object-');
-      expect(classStr).not.toContain('md:object-');
       expect(classStr).not.toContain('lg:object-');
       expect(classStr).not.toContain('xl:object-');
     });

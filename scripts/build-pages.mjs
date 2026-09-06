@@ -99,7 +99,9 @@ const NAV = `
   </div>
 `;
 
-const HERO_IMG_CLASSES = 'w-full h-full object-cover object-[82%_top] transition-all duration-700 ease-out';
+// Mobile (base) crop shifts right toward the koala's face so it stays visible in
+// the narrower phone hero; md+ restores the tuned desktop crop (koala framing).
+const HERO_IMG_CLASSES = 'w-full h-full object-cover object-[92%_top] md:object-[82%_top] transition-all duration-700 ease-out';
 const HERO_CONTAINER_CLASSES = 'relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 pt-56 md:pt-64 pb-14 md:pb-20';
 const MAIN_CLASSES = 'max-w-6xl mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-32 md:pb-48';
 
@@ -118,7 +120,7 @@ function heroSmall(eyebrowText, titleHtml, subtitleHtml = '') {
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30"></div>
     </div>
     <div class="${HERO_CONTAINER_CLASSES}">
-      <div class="max-w-3xl space-y-6">
+      <div class="max-w-3xl space-y-6 text-center md:text-left">
         <h1 class="font-serif font-medium text-5xl md:text-6xl tracking-tight leading-[1.05] text-paper">${titleHtml}</h1>
         ${subtitleHtml ? '<p class="text-lg md:text-xl text-paper/85 leading-relaxed max-w-2xl">' + subtitleHtml + '</p>' : ''}
       </div>
@@ -145,61 +147,100 @@ function card(num, title, body) {
         </div>`;
 }
 
+/* ------------------------------------------------------------------ *
+ *  "How I can help" cards (home #services) — richer, still on-token.
+ *  Uses the same card/eyebrow/micro-label language as the rest of the
+ *  site but adds a top accent rule, a faint "precision" watermark, a
+ *  hover lift and baseline-aligned content so the grid reads as made,
+ *  not empty.
+ * ------------------------------------------------------------------ */
+// Faint concentric "precision" ring watermark, low-opacity accent.
+const precisionMark = (size = 'w-40 h-40', pos = '-bottom-10 -right-10') => `
+      <svg class="absolute ${pos} ${size} text-accent/10 pointer-events-none z-0" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+        <circle cx="60" cy="60" r="52"></circle>
+        <circle cx="60" cy="60" r="38"></circle>
+        <circle cx="60" cy="60" r="24"></circle>
+        <circle cx="60" cy="60" r="10"></circle>
+      </svg>`;
+
+// Standard service card: accent top rule, eyebrow number, tonal watermark,
+// flex column so the description grows and the trailing affordance sits on a
+// common baseline across the row. `self-start` keeps the CTA compact (it does
+// not stretch to the full card width under the flex-column default).
+function serviceCard(num, title, body, span = '') {
+  return `
+        <article class="card group relative overflow-hidden flex flex-col p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover ${span}">
+          <span class="absolute inset-x-0 top-0 h-[3px] bg-accent/75" aria-hidden="true"></span>
+          ${precisionMark()}
+          <div class="relative z-10 flex flex-col flex-grow">
+            <span class="micro-label text-accent">${String(num).padStart(2, '0')}</span>
+            <h3 class="mt-3 font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug">${title}</h3>
+            <p class="mt-3 text-inkDim leading-relaxed text-[15px] md:text-base flex-grow">${body}</p>
+            <a href="contact.html" class="mt-7 self-start group inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.14em] text-accent transition-colors duration-300 hover:text-accentDeep" aria-label="Let me know about ${title}">
+              <span>Let me know</span>
+              ${arrowSvg('w-4 h-4')}
+            </a>
+          </div>
+        </article>`;
+}
+
 const FOOTER = `
   <!-- Footer -->
   <footer class="bg-surfaceAlt border-t border-line" aria-label="Site Footer">
     <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-20">
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-10 pb-14 border-b border-line">
-        <div class="space-y-5">
-          <div class="flex items-center gap-3">
-            <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-12 w-auto" loading="lazy" width="85" height="90">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 items-start gap-y-8 md:gap-y-10 lg:gap-y-12 gap-x-6 md:gap-x-8 pb-14 border-b border-line">
+        <!-- Brand -->
+        <div class="lg:col-span-4 space-y-5">
+          <a href="/" aria-label="GA Medical Veterinary Home" class="flex items-center gap-3 group cursor-pointer">
+            <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-12 w-auto transition-transform duration-300 ease-in-out group-hover:scale-105" loading="lazy" width="85" height="90">
             <span class="flex flex-col justify-center">
               <span class="text-[13px] font-bold tracking-tight uppercase leading-none">GA Medical</span>
               <span class="text-[10px] uppercase tracking-[0.22em] font-semibold leading-none mt-1 opacity-70">Veterinary</span>
             </span>
-          </div>
-          <p class="text-sm text-inkDim leading-relaxed max-w-[220px]">Precision engineering for all life. Custom surgical solutions for the world's wildlife.</p>
+          </a>
+          <p class="text-[15px] text-inkDim leading-relaxed max-w-xs">Precision engineering for all life. Custom surgical solutions for the world's wildlife.</p>
           <p class="micro-label pt-1">Made by <a href="https://tomas.gorjux.net" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent transition-colors underline underline-offset-2 decoration-ink/30 hover:decoration-accent">Tomas Gorjux</a></p>
         </div>
-        <div class="space-y-5">
-          <h4 class="micro-label">Support</h4>
-          <ul class="space-y-3">
-            <li><a href="${DONATE}" target="_blank" rel="noopener noreferrer" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">Donate</a></li>
-          </ul>
-        </div>
-        <div class="space-y-5">
+        <!-- Explore -->
+        <div class="lg:col-span-3 space-y-5">
           <h4 class="micro-label">Explore</h4>
           <ul class="space-y-3">
-            <li><a href="about.html" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">About</a></li>
-            <li><a href="projects.html" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">Projects</a></li>
-            <li><a href="contact.html" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">Contact</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="projects.html" class="footer-link">Projects</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li class="pt-1">
+              <a href="${DONATE}" target="_blank" rel="noopener noreferrer" aria-label="Donate to GA Medical Veterinary (opens in new tab)" class="group inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.14em] text-accent transition-colors hover:text-accentDeep">
+                <span>Donate</span>
+                ${arrowSvg('w-4 h-4')}
+              </a>
+            </li>
           </ul>
         </div>
-        <div class="space-y-5">
+        <!-- Contact -->
+        <div class="lg:col-span-3 space-y-5">
           <h4 class="micro-label">Contact</h4>
           <ul class="space-y-3 text-[15px]">
-            <li><a href="mailto:info@gamedical.com.au" class="font-medium text-ink/85 hover:text-accent transition-colors break-all">info@gamedical.com.au</a></li>
-            <li class="space-y-1">
-              <span class="micro-label block">Australia</span>
-              <a href="tel:+61421238399" class="font-medium text-ink/85 hover:text-accent transition-colors">+61 (0) 421 238 399</a>
-            </li>
-            <li class="space-y-1">
-              <span class="micro-label block">International</span>
-              <a href="tel:+37069544701" class="font-medium text-ink/85 hover:text-accent transition-colors">+370 695 44 701</a>
-            </li>
+            <li><a href="mailto:info@gamedical.com.au" class="footer-link break-all">info@gamedical.com.au</a></li>
+            <li class="space-y-1"><span class="micro-label block">Australia</span><a href="tel:+61421238399" class="footer-link">+61 (0) 421 238 399</a></li>
+            <li class="space-y-1"><span class="micro-label block">International</span><a href="tel:+37069544701" class="footer-link">+370 695 44 701</a></li>
           </ul>
         </div>
-        <div class="space-y-5">
+        <!-- Connect -->
+        <div class="lg:col-span-2 space-y-5">
           <h4 class="micro-label">Connect</h4>
           <div class="flex items-center gap-3">
-            <a href="${IG}" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${IGSVG}</a>
-            <a href="${FB}" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${FBSVG}</a>
-            <a href="${LI}" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${LISVG}</a>
+            <a href="${IG}" target="_blank" rel="noopener noreferrer" aria-label="GA Medical Veterinary Instagram (opens in new tab)" class="w-10 h-10 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${IGSVG}</a>
+            <a href="${FB}" target="_blank" rel="noopener noreferrer" aria-label="GA Medical Facebook (opens in new tab)" class="w-10 h-10 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${FBSVG}</a>
+            <a href="${LI}" target="_blank" rel="noopener noreferrer" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-10 h-10 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${LISVG}</a>
           </div>
         </div>
       </div>
-      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] uppercase tracking-[0.14em] font-semibold text-inkFaint">
-        <p>&copy; <span id="copyright-year">2024</span> <span class="text-ink">GA Medical Veterinary</span>. All rights reserved.</p>
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] uppercase tracking-[0.12em] font-medium text-inkFaint">
+        <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+          <span>&copy; <span id="copyright-year">2024</span> <span class="text-ink font-semibold">GA Medical Veterinary</span>. All rights reserved.</span>
+          <span aria-hidden="true" class="text-ink/35">&middot;</span>
+          <span>ABN <span class="text-ink font-semibold">51 026 319 033</span></span>
+        </p>
         <a href="privacy.html" class="hover:text-accent transition-colors">Privacy Policy</a>
       </div>
     </div>
@@ -225,15 +266,18 @@ ${NAV}
       <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30"></div>
     </div>
-    <div class="${HERO_CONTAINER_CLASSES}">
-      <div class="max-w-3xl">
+    <!-- Home hero keeps a shorter mobile crop (pt-32) than the shared secondary
+         hero (pt-56): its content runs taller, so the narrower crop otherwise
+         zooms the koala's face in too far. md+ matches the standard container. -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 pt-32 md:pt-64 pb-10 md:pb-20">
+      <div class="max-w-3xl text-center md:text-left">
         <h1 class="font-serif font-medium text-5xl md:text-6xl xl:text-7xl tracking-tight leading-[1.04] text-paper">
           Precision engineering <span class="italic font-normal">for all life.</span>
         </h1>
         <p class="mt-6 text-lg md:text-xl text-paper/85 leading-relaxed max-w-xl">
           I design and build custom surgical devices for wildlife, marine mammals, fish, and birds. Nothing off the shelf, everything made for the animal in front of me.
         </p>
-        <div class="mt-10 flex flex-wrap items-center gap-4">
+        <div class="mt-10 flex flex-wrap items-center justify-center md:justify-start gap-4">
           <a href="projects.html" class="btn-primary">See my work</a>
           <a href="#services" class="btn-paper">How I can help</a>
         </div>
@@ -257,7 +301,10 @@ ${NAV}
         </div>
         <div class="pt-8 border-t border-line space-y-6">
           <h3 class="font-serif text-2xl md:text-3xl font-medium tracking-tight">Got an animal I can help with?</h3>
-          <a href="contact.html" aria-label="Let me know contact me about an animal that needs help" class="btn-primary">Let me know</a>
+          <a href="contact.html" class="btn-ghost group" aria-label="Let me know contact me about an animal that needs help">
+            <span>Let me know</span>
+            ${arrowSvg('w-4 h-4')}
+          </a>
         </div>
       </div>
       <div class="lg:col-span-6 space-y-6">
@@ -276,12 +323,12 @@ ${NAV}
         <p class="text-lg md:text-xl text-inkDim leading-relaxed">I bring precision engineering and creative problem-solving to the hardest challenges in wildlife surgery.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        ${card('01', 'Instruments for a specific animal', 'Made for the individual needs of a particular animal or procedure.')}
-        ${card('02', 'Orthopaedic implants &amp; fixation', 'Designed and manufactured for the smallest birds and other animals that need unique fixation devices.')}
-        ${card('03', 'Custom laryngoscopes', 'These can be created to assist tubing patients with various gapes.')}
-        ${card('04', 'Consumable kits &amp; instruments', 'I can provide options and manufacture various single use devices, such as sterile custom-made suture kits.')}
-        ${card('05', 'On-the-ground support for vets', 'I sit in on procedures, assist where I can, and develop new instruments and apparatus on the spot.')}
-        ${card('06', 'Sharks to hairy-nosed wombats', 'Specialised instruments for avian, marine mammal, fish and wildlife patients worldwide.')}
+        ${serviceCard('01', 'Instruments for a specific animal', 'Made for the individual needs of a particular animal or procedure. No two animals are alike, so no two instruments are either.')}
+        ${serviceCard('02', 'Orthopaedic implants &amp; fixation', 'Designed and manufactured for the smallest birds and other animals that need unique fixation devices.')}
+        ${serviceCard('03', 'Custom laryngoscopes', 'These can be created to assist tubing patients with various gapes.')}
+        ${serviceCard('04', 'Consumable kits &amp; instruments', 'I can provide options and manufacture various single use devices, such as sterile custom-made suture kits.')}
+        ${serviceCard('05', 'On-the-ground support for vets', 'I sit in on procedures, assist where I can, and develop new instruments and apparatus on the spot.')}
+        ${serviceCard('06', 'Sharks to hairy-nosed wombats', 'Specialised instruments for avian, marine mammal, fish and wildlife patients worldwide.')}
       </div>
     </section>
 
@@ -412,7 +459,7 @@ function pageAbout() {
             <div class="space-y-3 px-1">
               <h3 class="font-serif text-xl font-medium tracking-tight transition-colors duration-300 group-hover:text-accent">${pub}</h3>
               <p class="text-inkDim text-[15px] leading-relaxed">${blurb}</p>
-              <span class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-accent pt-1">Read article ${arrowSvg('w-3.5 h-3.5')}</span>
+              <span class="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.14em] text-accent pt-1">Read article ${arrowSvg('w-4 h-4')}</span>
             </div>
           </a>`).join('');
   return `
@@ -604,7 +651,7 @@ ${NAV}
 ${heroSmall('Inquiries &amp; collaborations', 'Contact <span class="italic font-normal">me</span>')}
   <main id="main-content" tabindex="-1" class="${MAIN_CLASSES}">
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-      <div class="lg:col-span-5 space-y-12">
+      <div class="lg:col-span-5 space-y-12 order-2 md:order-1 text-center md:text-left">
         <div class="space-y-4">
           <h2 class="micro-label">Direct inquiry</h2>
           <a href="mailto:info@gamedical.com.au" class="font-serif text-2xl md:text-3xl font-medium tracking-tight break-all underline decoration-accent/30 underline-offset-4 hover:decoration-accent transition-all">info@gamedical.com.au</a>
@@ -633,14 +680,14 @@ ${heroSmall('Inquiries &amp; collaborations', 'Contact <span class="italic font-
         </div>
         <div class="space-y-4">
           <h2 class="micro-label">Connect</h2>
-          <div class="flex gap-4">
+          <div class="flex gap-4 justify-center md:justify-start">
             <a href="${IG}" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-12 h-12 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${IGSVG}</a>
             <a href="${FB}" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-12 h-12 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${FBSVG}</a>
             <a href="${LI}" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-12 h-12 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200">${LISVG}</a>
           </div>
         </div>
       </div>
-      <div class="lg:col-span-7">
+      <div class="lg:col-span-7 order-1 md:order-2">
         <div class="card p-6 md:p-12">
           <div class="mb-10 space-y-4">
             <h2 class="font-serif text-3xl md:text-4xl font-medium tracking-tight">Message me</h2>

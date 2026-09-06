@@ -22,8 +22,8 @@ test.describe('August 2026 updates', () => {
     await expect(sponsor).toHaveCount(1);
     // reptiles text
     await expect(page.locator('body')).toContainText('fish, marine mammals, reptiles and avian patients');
-    // featured project text
-    await expect(page.locator('body')).toContainText('I developed a custom-made pelvic implant to enlarge her pelvic cavity to relieve her daily pain.');
+    // featured project text (sun bear case study lives in the home News section)
+    await expect(page.locator('body')).toContainText('Operation Sun Bear Borneo');
     // all four sponsor logos are linked (open in new tab)
     const sponsors = [
       ['https://creative.vic.gov.au/', /creative-victoria/],

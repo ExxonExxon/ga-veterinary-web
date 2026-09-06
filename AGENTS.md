@@ -1,39 +1,77 @@
-# AGENTS.md ga-veterinary-web
+# AGENTS.md
 
-Static marketing site for GA Medical Veterinary custom surgical devices for wildlife, marine mammals, fish, and birds. Deployed at gamedical.com.au (Netlify).
+## Project
 
-## Stack
-- **Vite 8** multi-page build (root = `src/`), **Tailwind CSS 3**, **vanilla ES-module JS**.
-- **No framework.** React deps exist in `package.json` but are unused do not introduce React.
-- Contact form uses **Netlify Forms** (posts to `/`). `.env` `VITE_WEB3FORMS_KEY` is stale; ignore it.
+**GA Medical Veterinary** (`ga-veterinary-web`) is the marketing site for Girius Antanaitis' micro business: bespoke surgical instruments and implants designed and manufactured for wildlife, marine mammals, fish, and avian patients (koala dental tools, whale needles, fixation pins, avian leg bands, sun-bear pelvic implant). Live at https://gamedical.com.au, deployed via Netlify from `main` (`netlify.toml`: `npm run build` → `dist/`).
+
+Audiences: wildlife vets seeking instruments, sponsors/donors, and the general public browsing the portfolio. The site leads with craft and engineering — there is no booking or storefront.
+
+**Stack (no framework runtime):** a Vite 8 multi-page build (`root: 'src'`, output `dist/`) of hand-authored static HTML pages styled with Tailwind CSS v3 + vanilla CSS, plus one vanilla JS module per page for behavior. There is no backend and no database; the contact form posts to Netlify Forms. React/TypeScript packages in `package.json` are legacy residue — do not introduce React components or JSX.
+
+## Repo map
+
+| Path | Purpose |
+|------|---------|
+| `src/*.html` | One page per route: `index`, `about`, `projects`, `contact`, `privacy`, `404`. `page-template.html` is the copy source for adding new pages. |
+| `src/scripts/main.js` | All shared client behavior (mobile menu + focus trap, lightbox, nav/hero scroll states, copyright year). Entry point for every page. |
+| `src/styles/style.css` | Tailwind layers + custom component classes; CSS custom props mirror the tokens in `tailwind.config.js`. |
+| `src/assets/images/` | Site images by role: `hero/`, `general/`, `projects/`, `products/`, `sponsors/`, news/portrait at root. |
+| `scripts/build-pages.mjs` | Regenerates the shared site shell (nav, footer, hero variants, card/section markup) across `src/*.html`. |
+| `public/` | Copied verbatim to `dist/`: `sitemap.xml`, `robots.txt`, `logo.png`, `koala-header.jpg`. |
+| `tests/*.spec.js` | Playwright end-to-end tests (6 viewport projects, see below). |
+| Docs | `README.md` (overview), `REDESIGN-NOTES.md` (design system rationale + contrast math), `seo-audit/FIX-LOG.md` (SEO/security history). |
+
+Read the relevant files above before making changes, and keep consistent with the conventions below.
 
 ## Commands
-- `npm run dev` → dev server at http://localhost:5173 (Playwright expects this URL)
-- `npm run build` → outputs to `dist/`
-- `npm run preview` → preview production build
-- `npx playwright test` → full suite (slow: 2 spec files × **6 viewports**, `workers:1`). Run a subset: `npx playwright test tests/hero-consistency.spec.js`
 
-## Structure
-- `src/*.html` pages: `index`, `about`, `contact`, `projects`, `privacy`, `404`. Copy `page-template.html` for a new page.
-- `src/scripts/main.js` single JS entry (mobile menu + focus trap, Netlify form submit, lightbox, scroll header, active nav, copyright year).
-- `src/styles/style.css` Tailwind directives + component/base layer overrides.
-- `tailwind.config.js` design tokens (single source of truth for colors/fonts).
-- `public/` `robots.txt`, `sitemap.xml`.
-- `tests/*.spec.js` Playwright.
+```bash
+npm run dev                          # dev server → http://localhost:5173
+npm run build                        # production build → dist/
+npm run preview                      # preview the production build
+node scripts/build-pages.mjs         # regenerate the shared HTML shell (see Pages)
+npx playwright test                  # full suite: 6 viewports, workers:1 — slow
+npx playwright test tests/<file>.spec.js  # run one spec during development
+```
 
-## Conventions (keep these)
-- **Design system** ("Ivory & Ink Warm Clinical", see `REDESIGN-NOTES.md`) lives in `tailwind.config.js`: `paper #FAF7F1`, `surface #FFFFFF`, `surfaceAlt #F1EDE3`, `ink #2B2822`, `inkDim #5C564C`, `inkFaint #716B5F`, `accent #8A2F52` (+ `accentDeep`), `line #E6DFD3`, `success`, `error`. Typography: **Source Serif 4 for headings (serif)**, Inter for body/UI (sans). Use these tokens no hardcoded hex unless in CSS comments (form status colors). Shared shell lives in `scripts/build-pages.mjs` regenerate all pages with `node scripts/build-pages.mjs` after changing the shell.
-- **Multi-page wiring**: adding a page requires (1) new HTML in `src/`, (2) entry in `vite.config.js` `rollupOptions.input`, (3) nav link in **every** page's desktop + mobile nav, (4) add to test `PAGES` arrays.
-- **Hero consistency is test-enforced.** All non-home pages must share identical hero image classes (`#hero-bg`, `object-[82%_top]`, `min-h-[45vh]`, no responsive `sm:/md:/lg:` object-position, no `-mt-`). Home page additionally uses `scale-100` + `hover:scale-[1.02]`. Run `tests/hero-consistency.spec.js` after touching any hero.
-- **Accessibility is a hard requirement** (prior A0 work): visible focus ring, skip-link, mobile menu ARIA + focus trap + `inert`, AA color contrast, form error/success states. Don't regress it.
-- **Security**: `<head>` has a strict CSP `<meta>`. Adding external scripts/fonts requires updating it. Honeypot field `#website` on the contact form must stay.
-- **Images**: include `width`/`height` and `loading="lazy"` where appropriate; hero uses responsive variants (`koala-header-600/1200/2400.jpg`).
+## Conventions
 
-## Branches & Deploy
-- `main` = production (Netlify auto-deploys), `development` = working branch, `feature/*` for isolated work.
-- Deploy config in `netlify.toml` (`npm run build`, publish `dist`).
-- Commit style: descriptive, `fix:`/`feat:` prefix for fixes/features; merges as `Merge development: <desc>`.
+### Pages & the shared shell
+- One HTML file per route; every page is registered as an input in `vite.config.js` (`rollupOptions.input`) and linked from the nav.
+- Adding a page: copy `src/page-template.html`, then register it in `vite.config.js` and add nav/footer links.
+- The nav bar, footer, hero sections, cards, and buttons are **generated by `scripts/build-pages.mjs`** from JS templates and constants (donate URL, social links, contact details, ABN). Never hand-edit that shared markup in the HTML files — edit `build-pages.mjs`, run `node scripts/build-pages.mjs`, and review the diff. Page `<head>`s are preserved byte-identical on regeneration (only `theme-color` and the font URL are intentionally updated; the script is idempotent).
+- Per-page body content authored directly in HTML (news/catalogue sections) is safe to edit in place; just don't regress against the generated shell classes.
 
-## Gotchas
-- Full Playwright suite is slow (6 viewports, workers 1). Prefer targeted spec runs in dev.
-- `.env` is gitignored; no `.env.example` exists. Site must work without env vars (Netlify forms need no key).
+### Design tokens & styling
+- Colors and fonts are defined **once** in `tailwind.config.js` ("Ivory & Ink — Warm Clinical" system: `paper` `#FAF7F1`, `ink` `#2B2822`, `accent` `#8A2F52`, `accentDeep`, `accentTint`, `surfaceAlt`, `line`, `success`, `error`, etc.) and mirrored as CSS custom props (`--paper`, `--ink`, `--accent`, …) at the top of `src/styles/style.css`. Do not hardcode new hex/rgb values in markup or CSS — reuse tokens; extend `tailwind.config.js` + `:root` together if a new token is truly needed. Contrast ratios are documented per token — keep them WCAG AA.
+- Fonts: Inter (sans, `font-sans`) and Source Serif 4 (display serif, `font-serif`, used for headings). Google Fonts are loaded async with a `<noscript>` fallback in every head.
+- Shared components live in `style.css` `@layer components`: `.card`, `.btn-primary`, `.btn-paper`, `.btn-ghost`, `.micro-label`, `.section-head`, `.card-media`/`.media-img`, `.skip-link`, `.footer-link`, `.nav-link`, `.desktop-nav-link`/`.mobile-nav-link`. Reuse them rather than restyling ad hoc.
+- Layout is utility-first Tailwind (`max-w-6xl mx-auto px-6 md:px-10` container rhythm; generous `mt-36 md:mt-56` section spacing). Mobile-first: base styles target small screens, `md:`/`lg:`/`2xl:` vary up.
+- See `REDESIGN-NOTES.md` before changing the visual design; it documents why the system looks the way it does.
+
+### Accessibility (hard requirements)
+- WCAG AA at every viewport. Keep: visible focus rings (`--ring`), skip link to `#main-content` (`tabindex="-1"` target), one `h1` per page in correct heading order, ARIA + `inert` + focus trap on the mobile menu, keyboard-operable lightbox (elements with `data-lightbox`), meaningful `alt` text on all images.
+- Color must never be the only signal; interactive states need visible (non-color-only) changes where possible.
+
+### Images & performance
+- Content images ship as WebP when a `.webp` pair exists (e.g. `projects/sun-bear.webp`); keep the original `.jpg`/`.png` alongside.
+- Every `<img>` declares `width`/`height` and `loading="lazy"` except the hero (`fetchpriority="high"`, `srcset` 600–4800w variants in `assets/images/hero/`). Match those patterns to avoid CLS and layout shifts.
+- Raw/unoptimized photos live in the `GA Veterinray Webiste  Photos/` folder — never reference them from the site or commit them into `src/assets`.
+
+### Head, SEO & sharing
+- Per-page unique `<title>` and meta description (140–155 chars); canonical + `hreflang="en-AU"`, Open Graph and Twitter card tags with absolute `https://gamedical.com.au/…` URLs.
+- JSON-LD structured data per page: `Organization` + `WebSite` (shared `@id`), `WebPage`, and a page-specific `BreadcrumbList`. Keep `@id`s consistent.
+- A `<meta http-equiv="Content-Security-Policy">` is in every head — it must keep allowing `behold.so` (Instagram widget) and Google Fonts; headers in `netlify.toml` intentionally do not duplicate it. Add pages to `public/sitemap.xml` and keep `robots.txt` accurate.
+
+### Forms & external links
+- Contact form uses **Netlify Forms** (no key; `VITE_WEB3FORMS_KEY` in `.env` is legacy and ignored). Keep the `data-netlify="true"` attributes and honeypot field intact, and accessible success/error status text.
+- Donate (PayPal button id `N9DG984GYBSJE`), Instagram/Facebook/LinkedIn, emails, phones, PO Box and ABN are single-sourced as constants in `scripts/build-pages.mjs` — change them there, then regenerate.
+
+### Instagram / Behold feed — do not modify
+- The "Latest from Instagram" section (the `<div data-behold-id="bpAkzjfww0B7SFakeeEc">` plus the Behold widget loader script) is **intentional and working correctly**. It is a third-party embed; its rendering — including empty or placeholder-looking tiles in static screenshots and headless/automated environments — is expected and is **not** a bug.
+- **Do not** redesign, replace, remove, restructure, restyle, or add fallbacks/gratuitous placeholders to the Instagram/Behold section unless the site owner explicitly requests it. Leave its markup, its loader script, and the CSP allowance for `behold.so` (and Google Fonts) intact.
+
+### Testing & finishing
+- Full Playwright suite (tests in `tests/`, specs run at 6 viewports 375→1920, `workers: 1`, dev server auto-started on `localhost:5173`) is intentionally slow — run a targeted spec during iteration and the full suite before finishing.
+- Before claiming a change works: run `npm run build` and the relevant tests, and confirm the visual result in the browser at mobile and desktop widths.
+- Commit style is conventional commits (`feat:`, `fix(scope):`, `chore:`); follow the contributing flow in `README.md`. `dist/`, `node_modules/`, `.env`, screenshot/audit output and other artifacts are git-ignored — don't commit them.

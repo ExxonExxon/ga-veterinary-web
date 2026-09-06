@@ -118,20 +118,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     contactForm.reset();
-                    submitBtn.style.background = 'var(--ink)';
-                    submitBtn.innerHTML = 'Message Sent';
+                    // Reset the button to its resting state; success is communicated
+                    // by the aria-live status (green `form-success`), not by mutating
+                    // the button colour outside the design system.
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHTML;
+                    submitBtn.className = originalBtnClasses;
 
                     if (formStatus) {
                         formStatus.textContent = 'Thank you! Your inquiry has been sent successfully.';
                         formStatus.className = 'form-status form-success';
                     }
-
-                    setTimeout(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnHTML;
-                        submitBtn.className = originalBtnClasses;
-                        submitBtn.style.background = '';
-                    }, 4000);
                 } else {
                     throw new Error('Bad response');
                 }

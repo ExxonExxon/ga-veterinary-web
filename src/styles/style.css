@@ -67,6 +67,22 @@
   .btn-primary:hover {
     background: var(--accent-deep);
   }
+  .btn-primary:active {
+    background: var(--accent-deep);
+    transform: translateY(1px);
+  }
+  /* Pending / disabled: visibly dimmed and non-interactive, no hover darken. */
+  .btn-primary:disabled,
+  .btn-primary[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    background: var(--accent);
+    transform: none;
+  }
+  .btn-primary:disabled:hover,
+  .btn-primary[aria-disabled="true"]:hover {
+    background: var(--accent);
+  }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.12em] transition-all duration-200 select-none;
@@ -76,6 +92,17 @@
   .btn-ghost:hover {
     border-color: color-mix(in srgb, var(--ink) 55%, transparent);
     background: color-mix(in srgb, var(--ink) 5%, transparent);
+  }
+  .btn-ghost:active {
+    transform: translateY(1px);
+  }
+  .btn-ghost:disabled,
+  .btn-ghost[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    border-color: color-mix(in srgb, var(--ink) 28%, transparent);
+    background: transparent;
+    transform: none;
   }
 
   /* Ghost button for dark photographic areas */
@@ -87,6 +114,17 @@
   .btn-paper:hover {
     border-color: color-mix(in srgb, var(--paper) 70%, transparent);
     background: color-mix(in srgb, var(--paper) 12%, transparent);
+  }
+  .btn-paper:active {
+    transform: translateY(1px);
+  }
+  .btn-paper:disabled,
+  .btn-paper[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    border-color: color-mix(in srgb, var(--paper) 40%, transparent);
+    background: transparent;
+    transform: none;
   }
 
   /* ---------- Navigation ---------- */
@@ -160,6 +198,29 @@
   /* White logos (provided for dark backgrounds) flip to ink for light cards */
   .logo-invert {
     filter: invert(1);
+  }
+
+  /* ---------- Footer links ---------- */
+  .footer-link {
+    @apply text-[15px] font-medium text-ink/85 transition-colors duration-200;
+  }
+  .footer-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    text-underline-offset: 3px;
+  }
+
+  /* Mobile footer: center the stacked columns so the telephoned layout reads
+     as intentionally composed rather than the desktop grid squashed narrow.
+     md+ keeps the left-aligned multi-column grid for tablet/desktop. */
+  @media (max-width: 767px) {
+    footer > div > .grid {
+      text-align: center;
+    }
+    footer > div > .grid .flex.items-center {
+      justify-content: center;
+    }
   }
 
   /* ---------- Forms ---------- */
@@ -251,6 +312,18 @@ body.on-dark-hero #main-header.scrolled,
 }
 #mobile-menu-close:hover {
   background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+/* Mobile menu: elevate the Donate link into a pill button so it reads as the
+   primary menu action alongside the plain text links. */
+#mobile-menu nav a.text-accent {
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  opacity: 1;
+}
+#mobile-menu nav a.text-accent:hover {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 /* ==========================================================================
@@ -370,4 +443,13 @@ img[data-lightbox] {
   .group:hover .media-img {
     transform: none;
   }
+}
+
+/* ==========================================================================
+   Behold / Instagram feed — soften third-party tiles toward the ivory & ink
+   palette (best-effort filter on the widget host; refine if the widget
+   renders shadow DOM)
+   ========================================================================== */
+behold-widget {
+  filter: saturate(0.8) contrast(0.98);
 }

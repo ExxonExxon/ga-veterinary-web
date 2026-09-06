@@ -155,6 +155,14 @@
 
 
 
+
+
+
+
+
+
+
+
 <body class="bg-paper on-dark-hero">
 
   <!-- Skip to Content Link -->
@@ -221,20 +229,20 @@
         srcset="./assets/images/hero/koala-header-600.jpg 600w, ./assets/images/hero/koala-header-1200.jpg 1200w, ./assets/images/hero/koala-header-2400.jpg 2400w"
         sizes="100vw" fetchpriority="high" id="hero-bg"
         alt="Koala resting in a eucalyptus tree"
-        class="w-full h-full object-cover object-[82%_top] transition-all duration-700 ease-out scale-100 hover:scale-[1.02]"
+        class="w-full h-full object-cover object-[92%_top] md:object-[82%_top] transition-all duration-700 ease-out scale-100 hover:scale-[1.02]"
         width="6144" height="1872">
       <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30"></div>
     </div>
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 pt-56 md:pt-64 pb-14 md:pb-20">
-      <div class="max-w-3xl">
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10 pt-32 md:pt-64 pb-10 md:pb-20">
+      <div class="max-w-3xl text-center md:text-left">
         <h1 class="font-serif font-medium text-5xl md:text-6xl xl:text-7xl tracking-tight leading-[1.04] text-paper">
           Precision engineering <span class="italic font-normal">for all life.</span>
         </h1>
         <p class="mt-6 text-lg md:text-xl text-paper/85 leading-relaxed max-w-xl">
           I design and build custom surgical devices for wildlife, marine mammals, fish, and birds. Nothing off the shelf, everything made for the animal in front of me.
         </p>
-        <div class="mt-10 flex flex-wrap items-center gap-4">
+        <div class="mt-10 flex flex-wrap items-center justify-center md:justify-start gap-4">
           <a href="projects.html" class="btn-primary">See my work</a>
           <a href="#services" class="btn-paper">How I can help</a>
         </div>
@@ -252,13 +260,16 @@
             GA Medical Veterinary helps wildlife, Australian marsupials, fish, marine mammals, reptiles and avian patients get the care they need.
           </p>
         </div>
-        <div class="space-y-6 text-ink/90 leading-relaxed">
+        <div class="space-y-6 text-inkDim leading-relaxed">
           <p>This is a labour of love. I help when and where I can, doing what most medical device companies find cost prohibitive, or simply not profitable.</p>
-          <p>I work with zoos and wildlife organisations worldwide, developing instruments that actually fit the animals they're made for. From the largest whales to the smallest birds, I'm here to make their lives pain free and enjoyable.</p>
+          <p>I work with zoos and wildlife organisations worldwide, developing instruments that actually fit the animal they're made for. I've made needles for whales and pins for birds, and the aim is always less pain and quicker recovery.</p>
         </div>
         <div class="pt-8 border-t border-line space-y-6">
           <h3 class="font-serif text-2xl md:text-3xl font-medium tracking-tight">Got an animal I can help with?</h3>
-          <a href="contact.html" aria-label="Let me know contact me about an animal that needs help" class="btn-primary">Let me know</a>
+          <a href="contact.html" class="btn-ghost group" aria-label="Let me know contact me about an animal that needs help">
+            <span>Let me know</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
         </div>
       </div>
       <div class="lg:col-span-6 space-y-6">
@@ -283,70 +294,134 @@
       <div class="section-head">
         
         <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">How I <span class="italic font-normal">can help</span></h2>
-        <p class="text-lg md:text-xl text-inkDim leading-relaxed">I bring precision engineering and creative problem-solving to the hardest challenges in wildlife surgery.</p>
+        <p class="text-lg md:text-xl text-inkDim leading-relaxed">Most wildlife surgery starts with an instrument built for a human. I make the one the animal actually needs.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         
-        <div class="card group p-8 md:p-9 transition-all duration-300 hover:border-ink/20 hover:shadow-cardHover">
-          <div class="w-12 h-12 rounded-xl bg-accentTint text-accent font-serif text-lg font-medium flex items-center justify-center mb-6">01</div>
-          <h3 class="font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug mb-3">Instruments for a specific animal</h3>
-          <p class="text-inkDim leading-relaxed text-[15px] md:text-base">Made for the individual needs of a particular animal or procedure.</p>
-        </div>
+        <article class="card group relative overflow-hidden flex flex-col p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover">
+          <span class="absolute inset-x-0 top-0 h-[3px] bg-accent/75" aria-hidden="true"></span>
+          <svg class="absolute -bottom-10 -right-10 w-40 h-40 text-accent/10 pointer-events-none z-0" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+            <circle cx="60" cy="60" r="52"></circle>
+            <circle cx="60" cy="60" r="38"></circle>
+            <circle cx="60" cy="60" r="24"></circle>
+            <circle cx="60" cy="60" r="10"></circle>
+          </svg>
+          <div class="relative z-10 flex flex-col flex-grow">
+            <span class="micro-label text-accent">01</span>
+            <h3 class="mt-3 font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug">Instruments for a specific animal</h3>
+            <p class="mt-3 text-inkDim leading-relaxed text-[15px] md:text-base flex-grow">Made for the individual needs of a particular animal or procedure. No two animals are alike, so no two instruments are either.</p>
+          </div>
+        </article>
         
-        <div class="card group p-8 md:p-9 transition-all duration-300 hover:border-ink/20 hover:shadow-cardHover">
-          <div class="w-12 h-12 rounded-xl bg-accentTint text-accent font-serif text-lg font-medium flex items-center justify-center mb-6">02</div>
-          <h3 class="font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug mb-3">Orthopaedic implants &amp; fixation</h3>
-          <p class="text-inkDim leading-relaxed text-[15px] md:text-base">Designed and manufactured for the smallest birds and other animals that need unique fixation devices.</p>
-        </div>
+        <article class="card group relative overflow-hidden flex flex-col p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover ">
+          <span class="absolute inset-x-0 top-0 h-[3px] bg-accent/75" aria-hidden="true"></span>
+          
+      <svg class="absolute -bottom-10 -right-10 w-40 h-40 text-accent/10 pointer-events-none z-0" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+        <circle cx="60" cy="60" r="52"></circle>
+        <circle cx="60" cy="60" r="38"></circle>
+        <circle cx="60" cy="60" r="24"></circle>
+        <circle cx="60" cy="60" r="10"></circle>
+      </svg>
+          <div class="relative z-10 flex flex-col flex-grow">
+            <span class="micro-label text-accent">02</span>
+            <h3 class="mt-3 font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug">Orthopaedic implants &amp; fixation</h3>
+            <p class="mt-3 text-inkDim leading-relaxed text-[15px] md:text-base flex-grow">Designed and manufactured for the smallest birds and other animals that need unique fixation devices.</p>
+          </div>
+        </article>
         
-        <div class="card group p-8 md:p-9 transition-all duration-300 hover:border-ink/20 hover:shadow-cardHover">
-          <div class="w-12 h-12 rounded-xl bg-accentTint text-accent font-serif text-lg font-medium flex items-center justify-center mb-6">03</div>
-          <h3 class="font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug mb-3">Custom laryngoscopes</h3>
-          <p class="text-inkDim leading-relaxed text-[15px] md:text-base">These can be created to assist tubing patients with various gapes.</p>
-        </div>
+        <article class="card group relative overflow-hidden flex flex-col p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover ">
+          <span class="absolute inset-x-0 top-0 h-[3px] bg-accent/75" aria-hidden="true"></span>
+          
+      <svg class="absolute -bottom-10 -right-10 w-40 h-40 text-accent/10 pointer-events-none z-0" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+        <circle cx="60" cy="60" r="52"></circle>
+        <circle cx="60" cy="60" r="38"></circle>
+        <circle cx="60" cy="60" r="24"></circle>
+        <circle cx="60" cy="60" r="10"></circle>
+      </svg>
+          <div class="relative z-10 flex flex-col flex-grow">
+            <span class="micro-label text-accent">03</span>
+            <h3 class="mt-3 font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug">Custom laryngoscopes</h3>
+            <p class="mt-3 text-inkDim leading-relaxed text-[15px] md:text-base flex-grow">Built to tube patients with all kinds of gapes.</p>
+          </div>
+        </article>
         
-        <div class="card group p-8 md:p-9 transition-all duration-300 hover:border-ink/20 hover:shadow-cardHover">
-          <div class="w-12 h-12 rounded-xl bg-accentTint text-accent font-serif text-lg font-medium flex items-center justify-center mb-6">04</div>
-          <h3 class="font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug mb-3">Consumable kits &amp; instruments</h3>
-          <p class="text-inkDim leading-relaxed text-[15px] md:text-base">I can provide options and manufacture various single use devices, such as sterile custom-made suture kits.</p>
-        </div>
+        <article class="card group relative overflow-hidden flex flex-col p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover ">
+          <span class="absolute inset-x-0 top-0 h-[3px] bg-accent/75" aria-hidden="true"></span>
+          
+      <svg class="absolute -bottom-10 -right-10 w-40 h-40 text-accent/10 pointer-events-none z-0" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+        <circle cx="60" cy="60" r="52"></circle>
+        <circle cx="60" cy="60" r="38"></circle>
+        <circle cx="60" cy="60" r="24"></circle>
+        <circle cx="60" cy="60" r="10"></circle>
+      </svg>
+          <div class="relative z-10 flex flex-col flex-grow">
+            <span class="micro-label text-accent">04</span>
+            <h3 class="mt-3 font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug">Consumable kits &amp; instruments</h3>
+            <p class="mt-3 text-inkDim leading-relaxed text-[15px] md:text-base flex-grow">I manufacture single-use devices for specific animals, like sterile suture kits made to order.</p>
+          </div>
+        </article>
         
-        <div class="card group p-8 md:p-9 transition-all duration-300 hover:border-ink/20 hover:shadow-cardHover">
-          <div class="w-12 h-12 rounded-xl bg-accentTint text-accent font-serif text-lg font-medium flex items-center justify-center mb-6">05</div>
-          <h3 class="font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug mb-3">On-the-ground support for vets</h3>
-          <p class="text-inkDim leading-relaxed text-[15px] md:text-base">I sit in on procedures, assist where I can, and develop new instruments and apparatus on the spot.</p>
-        </div>
+        <article class="card group relative overflow-hidden flex flex-col p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover ">
+          <span class="absolute inset-x-0 top-0 h-[3px] bg-accent/75" aria-hidden="true"></span>
+          
+      <svg class="absolute -bottom-10 -right-10 w-40 h-40 text-accent/10 pointer-events-none z-0" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+        <circle cx="60" cy="60" r="52"></circle>
+        <circle cx="60" cy="60" r="38"></circle>
+        <circle cx="60" cy="60" r="24"></circle>
+        <circle cx="60" cy="60" r="10"></circle>
+      </svg>
+          <div class="relative z-10 flex flex-col flex-grow">
+            <span class="micro-label text-accent">05</span>
+            <h3 class="mt-3 font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug">On-the-ground support for vets</h3>
+            <p class="mt-3 text-inkDim leading-relaxed text-[15px] md:text-base flex-grow">I sit in on procedures, assist where I can, and develop new instruments and apparatus on the spot.</p>
+          </div>
+        </article>
         
-        <div class="card group p-8 md:p-9 transition-all duration-300 hover:border-ink/20 hover:shadow-cardHover">
-          <div class="w-12 h-12 rounded-xl bg-accentTint text-accent font-serif text-lg font-medium flex items-center justify-center mb-6">06</div>
-          <h3 class="font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug mb-3">Sharks to hairy-nosed wombats</h3>
-          <p class="text-inkDim leading-relaxed text-[15px] md:text-base">Specialised instruments for avian, marine mammal, fish and wildlife patients worldwide.</p>
-        </div>
+        <article class="card group relative overflow-hidden flex flex-col p-8 md:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover">
+          <span class="absolute inset-x-0 top-0 h-[3px] bg-accent/75" aria-hidden="true"></span>
+          
+      <svg class="absolute -bottom-10 -right-10 w-40 h-40 text-accent/10 pointer-events-none z-0" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true">
+        <circle cx="60" cy="60" r="52"></circle>
+        <circle cx="60" cy="60" r="38"></circle>
+        <circle cx="60" cy="60" r="24"></circle>
+        <circle cx="60" cy="60" r="10"></circle>
+      </svg>
+          <div class="relative z-10 flex flex-col flex-grow">
+            <span class="micro-label text-accent">06</span>
+            <h3 class="mt-3 font-serif text-xl md:text-[1.35rem] font-medium tracking-tight leading-snug">Sharks to hairy-nosed wombats</h3>
+            <p class="mt-3 text-inkDim leading-relaxed text-[15px] md:text-base flex-grow">Specialised instruments for avian, marine mammal, fish and wildlife patients worldwide.</p>
+          </div>
+        </article>
+      </div>
+      <div>
+        <a href="contact.html" class="btn-ghost group" aria-label="Let me know about the animal you need help with">
+          <span>Let me know</span>
+          <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
       </div>
     </section>
 
-    <section id="projects" class="mt-36 md:mt-56 space-y-12 md:space-y-16">
+    <section id="news" class="mt-36 md:mt-56">
       <div class="section-head">
         
-        <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">My <span class="italic font-normal">projects &amp; news</span></h2>
-        <p class="text-lg md:text-xl text-inkDim leading-relaxed">I'm honoured to have been part of a project with Orangutan Foundation International Australia and a team of international veterinarians to save a sun bear in Borneo.</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">A case study</h2>
+        <p class="text-lg md:text-xl text-inkDim leading-relaxed">The story of a world-first implant that gave a rescued sun bear her life back.</p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div class="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         <div class="lg:col-span-6 order-2 lg:order-1">
           <figure class="card-media shadow-card">
             <img src="./assets/images/projects/sun-bear.webp" alt="Hitam the Sun Bear during Operation Sun Bear Borneo" class="media-img w-full h-full object-cover" width="540" height="304" loading="lazy">
           </figure>
         </div>
-        <div class="lg:col-span-6 space-y-8 order-1 lg:order-2">
-          <h3 class="font-serif text-3xl md:text-4xl font-medium tracking-tight leading-tight">Hitam Operation Sun Bear</h3>
-          <div class="space-y-6 text-ink/90 leading-relaxed">
+        <div class="lg:col-span-6 order-1 lg:order-2">
+          <h3 class="font-serif text-3xl md:text-4xl font-medium tracking-tight leading-tight">Hitam: Operation Sun Bear</h3>
+          <div class="mt-6 space-y-5 text-inkDim leading-relaxed">
             <p>The <span class="font-semibold italic">Operation Sun Bear Borneo</span> project tells the story of a sun bear taken from the forest as a cub and sold as a caged &ldquo;pet&rdquo;.</p>
-            <p>Fed an incorrect diet that led to poor bone development, Hitam was in constant pain and discomfort for almost all of her six years of life.</p>
-            <p>This was a world-first procedure. I developed a custom-made pelvic implant to enlarge her pelvic cavity to relieve her daily pain.</p>
+            <p>Fed an incorrect diet, Hitam lived in constant pain through almost all of her six years. A custom pelvic implant I developed finally relieved it.</p>
           </div>
-          <div class="pt-2">
-            <a href="https://orangutanfoundation.org.au/operation-sun-bear-borneo/" target="_blank" aria-label="Visit the Operation Sun Bear Project Website (opens in new tab)" class="group inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.14em] text-accent transition-colors hover:text-accentDeep">
-              <span>Project website</span>
+          <div class="mt-8">
+            <a href="https://orangutanfoundation.org.au/operation-sun-bear-borneo/" target="_blank" rel="noopener noreferrer" aria-label="Read the full Operation Sun Bear Borneo story (opens in new tab)" class="btn-ghost group">
+              <span>Read the full story</span>
               <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
@@ -355,14 +430,14 @@
     </section>
 
     <section id="donate" class="mt-36 md:mt-56">
-      <div class="bg-surfaceAlt border border-line rounded-3xl p-10 md:p-16">
+      <div class="bg-surfaceAlt border border-line rounded-2xl p-10 md:p-16">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div class="lg:col-span-5 space-y-5">
             
-            <h2 class="font-serif text-3xl md:text-5xl font-medium tracking-tight leading-[1.12]">You can help too <span class="italic font-normal">by sponsoring me</span></h2>
+            <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">You can help too <span class="italic font-normal">by sponsoring me</span></h2>
           </div>
           <div class="lg:col-span-7 space-y-8">
-            <p class="text-lg md:text-xl text-inkDim leading-relaxed">Most of what I do is self-funded. Every bit helps. Click below to support my work developing medical devices for wildlife.</p>
+            <p class="text-lg md:text-xl text-inkDim leading-relaxed">Most of what I do is self-funded, so donations go straight into building the next device for an animal that needs it.</p>
             <a href="https://www.paypal.com/donate/?hosted_button_id=N9DG984GYBSJE" target="_blank" rel="noopener noreferrer" aria-label="Sponsor GA Medical Veterinary via PayPal (opens in new tab)" class="btn-primary">Sponsor My Work</a>
           </div>
         </div>
@@ -373,7 +448,7 @@
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-10">
         <div class="section-head">
           
-          <h2 class="font-serif text-3xl md:text-5xl font-medium tracking-tight leading-[1.12]">Latest from <span class="italic font-normal">Instagram</span></h2>
+          <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">Latest from <span class="italic font-normal">Instagram</span></h2>
         </div>
         <a href="https://www.instagram.com/ga_veterinary/" target="_blank" class="btn-ghost group shrink-0">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -397,21 +472,21 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center">
         <div class="lg:col-span-5 space-y-6">
           
-          <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.12]">A big thank you to my <span class="italic font-normal">sponsors</span></h2>
+          <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.12]">A big thank you to my <span class="italic font-normal">sponsors</span></h2>
         </div>
         <div class="lg:col-span-7">
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            <a href="https://creative.vic.gov.au/" target="_blank" rel="noopener noreferrer" aria-label="Creative Victoria (opens in new tab)" title="Creative Victoria" class="card flex items-center justify-center p-6 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
-              <img src="./assets/images/sponsors/creative-victoria.jpg" alt="Creative Victoria Logo" class="max-h-[52px] w-auto object-contain" loading="lazy" width="500" height="175">
+            <a href="https://creative.vic.gov.au/" target="_blank" rel="noopener noreferrer" aria-label="Creative Victoria (opens in new tab)" title="Creative Victoria" class="card flex items-center justify-center p-6 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
+              <img src="./assets/images/sponsors/creative-victoria.jpg" alt="Creative Victoria Logo" class="max-h-12 w-auto object-contain" loading="lazy" width="500" height="175">
             </a>
-            <a href="https://gravurem.de/en/" target="_blank" rel="noopener noreferrer" aria-label="Gravurem Heidenpeter (opens in new tab)" title="Gravurem Heidenpeter" class="card flex items-center justify-center p-6 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
+            <a href="https://gravurem.de/en/" target="_blank" rel="noopener noreferrer" aria-label="Gravurem Heidenpeter (opens in new tab)" title="Gravurem Heidenpeter" class="card flex items-center justify-center p-6 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
               <img src="./assets/images/sponsors/gravurem.png" alt="Gravurem Heidenpeter Logo" class="max-h-12 w-auto object-contain" loading="lazy" width="150" height="123">
             </a>
-            <a href="https://www.bankaust.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Bank Australia (opens in new tab)" title="Bank Australia" class="card flex items-center justify-center p-6 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
-              <img src="./assets/images/sponsors/bank-australia.png" alt="Bank Australia Logo" class="max-h-[52px] w-auto object-contain" loading="lazy" width="150" height="51">
+            <a href="https://www.bankaust.com.au/" target="_blank" rel="noopener noreferrer" aria-label="Bank Australia (opens in new tab)" title="Bank Australia" class="card flex items-center justify-center p-6 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
+              <img src="./assets/images/sponsors/bank-australia.png" alt="Bank Australia Logo" class="max-h-12 w-auto object-contain" loading="lazy" width="150" height="51">
             </a>
-            <a href="https://www.komatsuseiki.co.jp/english/" target="_blank" rel="noopener noreferrer" aria-label="Komatsu Seiki Kosakusho (opens in new tab)" title="Komatsu Seiki Kosakusho" class="card flex items-center justify-center p-6 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
-              <img src="./assets/images/sponsors/komatsu-seiki.png" alt="Komatsu Seiki Kosakusho Logo" class="logo-invert max-h-[46px] w-auto object-contain" loading="lazy" width="230" height="44">
+            <a href="https://www.komatsuseiki.co.jp/english/" target="_blank" rel="noopener noreferrer" aria-label="Komatsu Seiki Kosakusho (opens in new tab)" title="Komatsu Seiki Kosakusho" class="card flex items-center justify-center p-6 hover:-translate-y-1 hover:border-ink/20 hover:shadow-cardHover transition-all duration-300">
+              <img src="./assets/images/sponsors/komatsu-seiki.png" alt="Komatsu Seiki Kosakusho Logo" class="logo-invert max-h-12 w-auto object-contain" loading="lazy" width="230" height="44">
             </a>
           </div>
         </div>
@@ -422,57 +497,59 @@
   <!-- Footer -->
   <footer class="bg-surfaceAlt border-t border-line" aria-label="Site Footer">
     <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-20">
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-10 pb-14 border-b border-line">
-        <div class="space-y-5">
-          <div class="flex items-center gap-3">
-            <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-12 w-auto" loading="lazy" width="85" height="90">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 items-start gap-y-8 md:gap-y-10 lg:gap-y-12 gap-x-6 md:gap-x-8 pb-14 border-b border-line">
+        <!-- Brand -->
+        <div class="lg:col-span-4 space-y-5">
+          <a href="/" aria-label="GA Medical Veterinary Home" class="flex items-center gap-3 group cursor-pointer">
+            <img src="./assets/images/logo.png" alt="GA Medical Veterinary logo" class="h-12 w-auto transition-transform duration-300 ease-in-out group-hover:scale-105" loading="lazy" width="85" height="90">
             <span class="flex flex-col justify-center">
               <span class="text-[13px] font-bold tracking-tight uppercase leading-none">GA Medical</span>
               <span class="text-[10px] uppercase tracking-[0.22em] font-semibold leading-none mt-1 opacity-70">Veterinary</span>
             </span>
-          </div>
-          <p class="text-sm text-inkDim leading-relaxed max-w-[220px]">Precision engineering for all life. Custom surgical solutions for the world's wildlife.</p>
+          </a>
+          <p class="text-[15px] text-inkDim leading-relaxed max-w-xs">Precision engineering for all life. Custom surgical solutions for the world's wildlife.</p>
           <p class="micro-label pt-1">Made by <a href="https://tomas.gorjux.net" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent transition-colors underline underline-offset-2 decoration-ink/30 hover:decoration-accent">Tomas Gorjux</a></p>
         </div>
-        <div class="space-y-5">
-          <h4 class="micro-label">Support</h4>
-          <ul class="space-y-3">
-            <li><a href="https://www.paypal.com/donate/?hosted_button_id=N9DG984GYBSJE" target="_blank" rel="noopener noreferrer" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">Donate</a></li>
-          </ul>
-        </div>
-        <div class="space-y-5">
+        <!-- Explore -->
+        <div class="lg:col-span-3 space-y-5">
           <h4 class="micro-label">Explore</h4>
           <ul class="space-y-3">
-            <li><a href="about.html" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">About</a></li>
-            <li><a href="projects.html" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">Projects</a></li>
-            <li><a href="contact.html" class="text-[15px] font-medium text-ink/85 hover:text-accent transition-colors">Contact</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="projects.html" class="footer-link">Projects</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li class="pt-1">
+              <a href="https://www.paypal.com/donate/?hosted_button_id=N9DG984GYBSJE" target="_blank" rel="noopener noreferrer" aria-label="Donate to GA Medical Veterinary (opens in new tab)" class="group inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.14em] text-accent transition-colors hover:text-accentDeep">
+                <span>Donate</span>
+                <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </li>
           </ul>
         </div>
-        <div class="space-y-5">
+        <!-- Contact -->
+        <div class="lg:col-span-3 space-y-5">
           <h4 class="micro-label">Contact</h4>
           <ul class="space-y-3 text-[15px]">
-            <li><a href="mailto:info@gamedical.com.au" class="font-medium text-ink/85 hover:text-accent transition-colors break-all">info@gamedical.com.au</a></li>
-            <li class="space-y-1">
-              <span class="micro-label block">Australia</span>
-              <a href="tel:+61421238399" class="font-medium text-ink/85 hover:text-accent transition-colors">+61 (0) 421 238 399</a>
-            </li>
-            <li class="space-y-1">
-              <span class="micro-label block">International</span>
-              <a href="tel:+37069544701" class="font-medium text-ink/85 hover:text-accent transition-colors">+370 695 44 701</a>
-            </li>
+            <li><a href="mailto:info@gamedical.com.au" class="footer-link break-all">info@gamedical.com.au</a></li>
+            <li class="space-y-1"><span class="micro-label block">Australia</span><a href="tel:+61421238399" class="footer-link">+61 (0) 421 238 399</a></li>
+            <li class="space-y-1"><span class="micro-label block">International</span><a href="tel:+37069544701" class="footer-link">+370 695 44 701</a></li>
           </ul>
         </div>
-        <div class="space-y-5">
+        <!-- Connect -->
+        <div class="lg:col-span-2 space-y-5">
           <h4 class="micro-label">Connect</h4>
           <div class="flex items-center gap-3">
-            <a href="https://www.instagram.com/ga_veterinary/" target="_blank" aria-label="GA Veterinary Instagram (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-            <a href="https://www.facebook.com/gamedicalveterinary/" target="_blank" aria-label="GA Medical Facebook (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>
-            <a href="https://au.linkedin.com/in/giriusantanaitis" target="_blank" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-11 h-11 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://www.instagram.com/ga_veterinary/" target="_blank" rel="noopener noreferrer" aria-label="GA Medical Veterinary Instagram (opens in new tab)" class="w-10 h-10 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.facebook.com/gamedicalveterinary/" target="_blank" rel="noopener noreferrer" aria-label="GA Medical Facebook (opens in new tab)" class="w-10 h-10 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>
+            <a href="https://au.linkedin.com/in/giriusantanaitis" target="_blank" rel="noopener noreferrer" aria-label="GA Medical LinkedIn (opens in new tab)" class="w-10 h-10 rounded-xl bg-surface border border-line flex items-center justify-center text-ink/80 hover:text-accent hover:border-accent/40 transition-all duration-200"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
           </div>
         </div>
       </div>
-      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] uppercase tracking-[0.14em] font-semibold text-inkFaint">
-        <p>&copy; <span id="copyright-year">2024</span> <span class="text-ink">GA Medical Veterinary</span>. All rights reserved.</p>
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] uppercase tracking-[0.12em] font-medium text-inkFaint">
+        <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+          <span>&copy; <span id="copyright-year">2024</span> <span class="text-ink font-semibold">GA Medical Veterinary</span>. All rights reserved.</span>
+          <span aria-hidden="true" class="text-ink/35">&middot;</span>
+          <span>ABN <span class="text-ink font-semibold">51 026 319 033</span></span>
+        </p>
         <a href="privacy.html" class="hover:text-accent transition-colors">Privacy Policy</a>
       </div>
     </div>
